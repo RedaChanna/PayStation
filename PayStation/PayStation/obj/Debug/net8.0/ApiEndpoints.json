@@ -1,0 +1,618 @@
+[
+  {
+    "ContainingType": "PayStation.Controllers.WeatherForecastController",
+    "Method": "Get",
+    "RelativePath": "WeatherForecast",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[PayStation.WeatherForecast, PayStation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "PayStation.RESTAPI.CashDeviceController",
+    "Method": "GetEnableStatus",
+    "RelativePath": "api/CashDevice/GetEnableStatus",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Boolean",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "PayStation.RESTAPI.CashDeviceController",
+    "Method": "GetEnableStatusRC",
+    "RelativePath": "api/CashDevice/GetEnableStatusRC",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Boolean",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "PayStation.RESTAPI.CashDeviceController",
+    "Method": "GetEnableStatusTwin",
+    "RelativePath": "api/CashDevice/GetEnableStatusTwin",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Boolean",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "PayStation.RESTAPI.CashDeviceController",
+    "Method": "reset",
+    "RelativePath": "api/CashDevice/Reset",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PayStation.RESTAPI.CoinDeviceController",
+    "Method": "EnableDisableDevice",
+    "RelativePath": "api/CoinDevice/EnableDisableDevice",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "enableDevice",
+        "Type": "System.Boolean",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PayStation.RESTAPI.CoinDeviceController",
+    "Method": "GetEnableStatus",
+    "RelativePath": "api/CoinDevice/GetEnableStatus",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Boolean",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "PayStation.RESTAPI.DataBaseController",
+    "Method": "GetAlarms",
+    "RelativePath": "api/DataBase/Alarms",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[PayStation.DataBase.AlarmsDB, PayStation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "PayStation.RESTAPI.DataBaseController",
+    "Method": "GetCashClosureReceipts",
+    "RelativePath": "api/DataBase/CashClosureReceipts",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[PayStation.DataBase.CashClosureReceiptDB, PayStation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "PayStation.RESTAPI.DataBaseController",
+    "Method": "GetCashDetails",
+    "RelativePath": "api/DataBase/CashDetails",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[PayStation.DataBase.CashDetailDB, PayStation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "PayStation.RESTAPI.DataBaseController",
+    "Method": "GetDevices",
+    "RelativePath": "api/DataBase/Devices",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[PayStation.DataBase.DeviceEntityDB, PayStation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "PayStation.RESTAPI.DataBaseController",
+    "Method": "GetIngenicoPosMovements",
+    "RelativePath": "api/DataBase/IngenicoPosMovements",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[PayStation.DataBase.IngenicoPosMovementDB, PayStation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "PayStation.RESTAPI.DataBaseController",
+    "Method": "GetMovements",
+    "RelativePath": "api/DataBase/Movements",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[PayStation.DataBase.MovementDB, PayStation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "PayStation.RESTAPI.DataBaseController",
+    "Method": "GetParameters",
+    "RelativePath": "api/DataBase/Parameters",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[PayStation.DataBase.ParameterDB, PayStation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "PayStation.RESTAPI.DataBaseController",
+    "Method": "GetPartialCashClosures",
+    "RelativePath": "api/DataBase/PartialCashClosures",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[PayStation.DataBase.PartialCashClosureDB, PayStation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "PayStation.RESTAPI.DataBaseController",
+    "Method": "GetSerialConnectionParameters",
+    "RelativePath": "api/DataBase/SerialConnectionParameters",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[PayStation.DataBase.SerialConnectionParameterDB, PayStation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "PayStation.RESTAPI.DataBaseController",
+    "Method": "GetSerialConnectionSetting",
+    "RelativePath": "api/DataBase/SerialConnectionSetting",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[PayStation.DataBase.SerialConnectionSettingDB, PayStation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "PayStation.RESTAPI.DataBaseController",
+    "Method": "GetTextPrinterObjects",
+    "RelativePath": "api/DataBase/TextPrinterObjects",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[PayStation.DataBase.TicketLayoutDB, PayStation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "PayStation.RESTAPI.DataBaseController",
+    "Method": "GetTicketLayout",
+    "RelativePath": "api/DataBase/TicketLayout",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[PayStation.DataBase.TicketLayoutDB, PayStation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "PayStation.RESTAPI.NotificationsController",
+    "Method": "SendMessage",
+    "RelativePath": "api/Notifications/send",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "message",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PayStation.RESTAPI.POSDeviceController",
+    "Method": "GetEnableStatus",
+    "RelativePath": "api/POSDevice/GetEnableStatus",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Boolean",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "PayStation.RESTAPI.PrinterDeviceController",
+    "Method": "GetEnableStatus",
+    "RelativePath": "api/PrinterDevice/GetEnableStatus",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Boolean",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "PayStation.RESTAPI.PrinterDeviceController",
+    "Method": "PrintTestPage",
+    "RelativePath": "api/PrinterDevice/PrintTestPage",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PayStation.RESTAPI.RegisterController",
+    "Method": "AutomaticInit",
+    "RelativePath": "api/Register/AutomaticInit",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PayStation.RESTAPI.RegisterController",
+    "Method": "EnableEntity",
+    "RelativePath": "api/Register/EnableEntity",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "device",
+        "Type": "PayStation.DataBase.DeviceEntityDB",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PayStation.RESTAPI.RegisterController",
+    "Method": "SetImporto",
+    "RelativePath": "api/Register/SetImporto",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "importo",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SampleController",
+    "Method": "TriggerEvent",
+    "RelativePath": "api/Sample/trigger-event",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PayStation.RESTAPI.SerialConnectionController",
+    "Method": "ConnectDevice",
+    "RelativePath": "api/SerialConnection/ConnectDevice",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "serialParameter",
+        "Type": "PayStation.DataBase.SerialConnectionParameterDB",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PayStation.RESTAPI.SerialConnectionController",
+    "Method": "ConnectDeviceRegistred",
+    "RelativePath": "api/SerialConnection/ConnectDeviceRegistred",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "deviceName",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PayStation.RESTAPI.SerialConnectionController",
+    "Method": "ConnectDisconnectDevice",
+    "RelativePath": "api/SerialConnection/ConnectDisconnectDevice",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "connectionObj",
+        "Type": "PayStation.ConnectionObj",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PayStation.RESTAPI.SerialConnectionController",
+    "Method": "DeleteDeviceConnectionParameters",
+    "RelativePath": "api/SerialConnection/DeleteDeviceConnectionParameters/{deviceName}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "deviceName",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PayStation.RESTAPI.SerialConnectionController",
+    "Method": "DisconnectDeviceRegistred",
+    "RelativePath": "api/SerialConnection/DisconnectDevice",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "deviceName",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PayStation.RESTAPI.SerialConnectionController",
+    "Method": "GetDeviceConnectionParameter",
+    "RelativePath": "api/SerialConnection/GetDeviceConnectionParameter",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "deviceName",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "PayStation.DataBase.SerialConnectionParameterDB",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "PayStation.RESTAPI.SerialConnectionController",
+    "Method": "SerialPortsAvailable",
+    "RelativePath": "api/SerialConnection/SerialPortsAvailable",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PayStation.RESTAPI.SerialConnectionController",
+    "Method": "SetDeviceConnectionParameters",
+    "RelativePath": "api/SerialConnection/SetDeviceConnectionParameters",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "deviceParameters",
+        "Type": "PayStation.DataBase.SerialConnectionParameterDB",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

@@ -1,0 +1,173 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\user\\Desktop\\PayStation\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{0CE9D55F-4012-4653-9BE1-685C143F6D00}|PayStation\\PayStationSW.csproj|c:\\users\\user\\desktop\\paystation\\paystation\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0CE9D55F-4012-4653-9BE1-685C143F6D00}|PayStation\\PayStationSW.csproj|solutionrelative:paystation\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0CE9D55F-4012-4653-9BE1-685C143F6D00}|PayStation\\PayStationSW.csproj|c:\\users\\user\\desktop\\paystation\\paystation\\stationmanagerws.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0CE9D55F-4012-4653-9BE1-685C143F6D00}|PayStation\\PayStationSW.csproj|solutionrelative:paystation\\stationmanagerws.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0CE9D55F-4012-4653-9BE1-685C143F6D00}|PayStation\\PayStationSW.csproj|c:\\users\\user\\desktop\\paystation\\paystation\\station.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0CE9D55F-4012-4653-9BE1-685C143F6D00}|PayStation\\PayStationSW.csproj|solutionrelative:paystation\\station.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0CE9D55F-4012-4653-9BE1-685C143F6D00}|PayStation\\PayStationSW.csproj|c:\\users\\user\\desktop\\paystation\\paystation\\database\\serialconnectionparametesdb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0CE9D55F-4012-4653-9BE1-685C143F6D00}|PayStation\\PayStationSW.csproj|solutionrelative:paystation\\database\\serialconnectionparametesdb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0CE9D55F-4012-4653-9BE1-685C143F6D00}|PayStation\\PayStationSW.csproj|c:\\users\\user\\desktop\\paystation\\paystation\\devices\\device.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0CE9D55F-4012-4653-9BE1-685C143F6D00}|PayStation\\PayStationSW.csproj|solutionrelative:paystation\\devices\\device.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0CE9D55F-4012-4653-9BE1-685C143F6D00}|PayStation\\PayStationSW.csproj|c:\\users\\user\\desktop\\paystation\\paystation\\migrations\\applicationdbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0CE9D55F-4012-4653-9BE1-685C143F6D00}|PayStation\\PayStationSW.csproj|solutionrelative:paystation\\migrations\\applicationdbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0CE9D55F-4012-4653-9BE1-685C143F6D00}|PayStation\\PayStationSW.csproj|c:\\users\\user\\desktop\\paystation\\paystation\\devices\\cash_dev.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0CE9D55F-4012-4653-9BE1-685C143F6D00}|PayStation\\PayStationSW.csproj|solutionrelative:paystation\\devices\\cash_dev.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0CE9D55F-4012-4653-9BE1-685C143F6D00}|PayStation\\PayStationSW.csproj|c:\\users\\user\\desktop\\paystation\\paystation\\migrations\\20240417141139_nome_migrazione.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0CE9D55F-4012-4653-9BE1-685C143F6D00}|PayStation\\PayStationSW.csproj|solutionrelative:paystation\\migrations\\20240417141139_nome_migrazione.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0CE9D55F-4012-4653-9BE1-685C143F6D00}|PayStation\\PayStationSW.csproj|c:\\users\\user\\desktop\\paystation\\paystation\\database\\seeding\\ingenicoposmovementseed.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0CE9D55F-4012-4653-9BE1-685C143F6D00}|PayStation\\PayStationSW.csproj|solutionrelative:paystation\\database\\seeding\\ingenicoposmovementseed.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\PayStation\\PayStation\\Program.cs",
+              "RelativeDocumentMoniker": "PayStation\\Program.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\PayStation\\PayStation\\Program.cs",
+              "RelativeToolTip": "PayStation\\Program.cs",
+              "ViewState": "AQIAAB8AAAAAAAAAAAAQwCoAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-17T22:37:15.91Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "StationManagerWS.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\PayStation\\PayStation\\StationManagerWS.cs",
+              "RelativeDocumentMoniker": "PayStation\\StationManagerWS.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\PayStation\\PayStation\\StationManagerWS.cs",
+              "RelativeToolTip": "PayStation\\StationManagerWS.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-17T22:36:54.338Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Station.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\PayStation\\PayStation\\Station.cs",
+              "RelativeDocumentMoniker": "PayStation\\Station.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\PayStation\\PayStation\\Station.cs",
+              "RelativeToolTip": "PayStation\\Station.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAAA4AAAAYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-17T22:36:31.192Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ApplicationDbContextModelSnapshot.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\PayStation\\PayStation\\Migrations\\ApplicationDbContextModelSnapshot.cs",
+              "RelativeDocumentMoniker": "PayStation\\Migrations\\ApplicationDbContextModelSnapshot.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\PayStation\\PayStation\\Migrations\\ApplicationDbContextModelSnapshot.cs",
+              "RelativeToolTip": "PayStation\\Migrations\\ApplicationDbContextModelSnapshot.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAjwAUAAAAUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-17T22:36:07.08Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "20240417141139_NOME_MIGRAZIONE.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\PayStation\\PayStation\\Migrations\\20240417141139_NOME_MIGRAZIONE.Designer.cs",
+              "RelativeDocumentMoniker": "PayStation\\Migrations\\20240417141139_NOME_MIGRAZIONE.Designer.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\PayStation\\PayStation\\Migrations\\20240417141139_NOME_MIGRAZIONE.Designer.cs",
+              "RelativeToolTip": "PayStation\\Migrations\\20240417141139_NOME_MIGRAZIONE.Designer.cs",
+              "ViewState": "AQIAAAQAAAAAAAAAAAAjwAYAAAAUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-17T22:36:01.546Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Device.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\PayStation\\PayStation\\Devices\\Device.cs",
+              "RelativeDocumentMoniker": "PayStation\\Devices\\Device.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\PayStation\\PayStation\\Devices\\Device.cs",
+              "RelativeToolTip": "PayStation\\Devices\\Device.cs",
+              "ViewState": "AQIAABEAAAAAAAAAAAAMwBYAAAAPAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-17T22:35:59.413Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Cash_Dev.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\PayStation\\PayStation\\Devices\\Cash_Dev.cs",
+              "RelativeDocumentMoniker": "PayStation\\Devices\\Cash_Dev.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\PayStation\\PayStation\\Devices\\Cash_Dev.cs",
+              "RelativeToolTip": "PayStation\\Devices\\Cash_Dev.cs",
+              "ViewState": "AQIAAB4AAAAAAAAAAIA2wCUAAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-17T22:35:56.242Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "SerialConnectionParametesDB.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\PayStation\\PayStation\\DataBase\\SerialConnectionParametesDB.cs",
+              "RelativeDocumentMoniker": "PayStation\\DataBase\\SerialConnectionParametesDB.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\PayStation\\PayStation\\DataBase\\SerialConnectionParametesDB.cs",
+              "RelativeToolTip": "PayStation\\DataBase\\SerialConnectionParametesDB.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAA4AAAAPAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-17T22:35:48.017Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "IngenicoPosMovementSeed.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\PayStation\\PayStation\\DataBase\\Seeding\\IngenicoPosMovementSeed.cs",
+              "RelativeDocumentMoniker": "PayStation\\DataBase\\Seeding\\IngenicoPosMovementSeed.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\PayStation\\PayStation\\DataBase\\Seeding\\IngenicoPosMovementSeed.cs",
+              "RelativeToolTip": "PayStation\\DataBase\\Seeding\\IngenicoPosMovementSeed.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-17T22:35:42.532Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

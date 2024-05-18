@@ -1,0 +1,7 @@
+C:\Users\user\Desktop\PayStation\PayStation\obj\Debug\net8.0\PayStationSW.csproj.AssemblyReference.cache
+C:\Users\user\Desktop\PayStation\PayStation\obj\Debug\net8.0\PayStationSW.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\Desktop\PayStation\PayStation\obj\Debug\net8.0\PayStationSW.AssemblyInfoInputs.cache
+C:\Users\user\Desktop\PayStation\PayStation\obj\Debug\net8.0\PayStationSW.AssemblyInfo.cs
+C:\Users\user\Desktop\PayStation\PayStation\obj\Debug\net8.0\PayStationSW.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\PayStation\PayStation\obj\Debug\net8.0\PayStationSW.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\user\Desktop\PayStation\PayStation\obj\Debug\net8.0\PayStationSW.MvcApplicationPartsAssemblyInfo.cache
