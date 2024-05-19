@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations.Schema;
 using System.IO.Ports;
 
-namespace PayStationName.DataBase
+namespace PayStationSW.DataBase
 {
     public class TextPrinterObjectsDB
     {

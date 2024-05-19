@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace PayStationName.DataBase.Seeding
+namespace PayStationSW.DataBase.Seeding
 {
     public class MovementsSeed : IEntityTypeConfiguration<MovementDB>
     {
@@ -12,7 +12,7 @@ namespace PayStationName.DataBase.Seeding
                 new MovementDB
                 {
                     Id = 1,
-                    MovementDate = DateTime.Now.AddDays(-5),
+                    MovementDateOpen = DateTime.Now.AddDays(-5),
                     Outcome = "IN",
                     Description = "Initial deposit",
                     PaidCents = 1000,

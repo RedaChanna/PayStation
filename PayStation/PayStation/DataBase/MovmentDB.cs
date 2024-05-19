@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace PayStationName.DataBase
+namespace PayStationSW.DataBase
 { 
     public class MovementDB
     {
@@ -10,8 +10,14 @@ namespace PayStationName.DataBase
         [Column("id_movement")]
         public int? Id { get; set; }
 
-        [Column("movement_date")]
-        public DateTime? MovementDate { get; set; }
+        [Column("movement_date_open")]
+        public DateTime? MovementDateOpen { get; set; }
+
+        [Column("movement_date_close")]
+        public DateTime? MovementDateClose { get; set; }
+
+        [Column("amount")]
+        public int? Amount { get; set; }
 
         [Column("outcome")]
         [MaxLength(3)]

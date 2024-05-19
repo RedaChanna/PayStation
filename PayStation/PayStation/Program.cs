@@ -1,12 +1,12 @@
-using PayStationName;
+using PayStationSW;
 using System.Security.Policy;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using PayStationName.DataBase;
-using PayStationName.DataBase.Seeding;
-using PayStationName.RESTAPI;
-using PayStationName.Devices;
+using PayStationSW.DataBase;
+using PayStationSW.DataBase.Seeding;
+using PayStationSW.RESTAPI;
+using PayStationSW.Devices;
 using Newtonsoft.Json;
 using System.Net.WebSockets;
 using System.Threading.Tasks;
@@ -20,7 +20,7 @@ class Program
         var builder = WebApplication.CreateBuilder(args);
 
         // Imposta l'indirizzo IP e la porta su cui ascoltare
-        builder.WebHost.UseUrls("http://10.10.20.93:5000");
+        builder.WebHost.UseUrls("http://192.168.1.100:5000");
         builder.Services.AddControllers()
             .AddNewtonsoftJson(options =>
             {

@@ -1,10 +1,10 @@
-﻿using PayStationName.Devices;
+﻿using PayStationSW.Devices;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.IO.Ports;
 
 
-namespace PayStationName.DataBase
+namespace PayStationSW.DataBase
 {
     public class SerialConnectionParameterDB
     {

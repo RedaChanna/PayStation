@@ -1,4 +1,4 @@
-﻿namespace PayStationName.Protocols.IO
+﻿namespace PayStationSW.Protocols.IO
 {
     public class CommandsDataResponseMR004
     {

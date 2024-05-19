@@ -1,6 +1,6 @@
 ﻿using Microsoft.OpenApi.Extensions;
-using PayStationName.Devices;
-using PayStationName.Protocols.Cash;
+using PayStationSW.Devices;
+using PayStationSW.Protocols.Cash;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 using static Google.Protobuf.Compiler.CodeGeneratorResponse.Types;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
-namespace PayStationName
+namespace PayStationSW
 {
 
     public partial class ProtocolVega100 : InterfaceCashProtocol

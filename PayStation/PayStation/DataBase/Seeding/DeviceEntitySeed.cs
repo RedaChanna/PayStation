@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using PayStationName.DataBase;
+using PayStationSW.DataBase;
 
-namespace PayStationName.DataBase.Seeding
+namespace PayStationSW.DataBase.Seeding
 {
     public class DeviceEntitySeed : IEntityTypeConfiguration<DeviceEntityDB>
         {

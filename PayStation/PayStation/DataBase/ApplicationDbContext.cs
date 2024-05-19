@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace PayStationName.DataBase
+namespace PayStationSW.DataBase
 {
     public class ApplicationDbContext : DbContext
     {

@@ -1,4 +1,4 @@
-﻿namespace PayStationName.RESTAPI
+﻿namespace PayStationSW.RESTAPI
 {
     using Microsoft.AspNetCore.Mvc;
     using System.Threading.Tasks;

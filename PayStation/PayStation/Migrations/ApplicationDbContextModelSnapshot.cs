@@ -3,11 +3,11 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using PayStationName.DataBase;
+using PayStationSW.DataBase;
 
 #nullable disable
 
-namespace PayStation.Migrations
+namespace PayStationSW.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
     partial class ApplicationDbContextModelSnapshot : ModelSnapshot
@@ -15,9 +15,9 @@ namespace PayStation.Migrations
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
-            modelBuilder.HasAnnotation("ProductVersion", "8.0.3");
+            modelBuilder.HasAnnotation("ProductVersion", "8.0.5");
 
-            modelBuilder.Entity("PayStation.DataBase.AlarmsDB", b =>
+            modelBuilder.Entity("PayStationSW.DataBase.AlarmsDB", b =>
                 {
                     b.Property<int?>("IdAlarm")
                         .ValueGeneratedOnAdd()
@@ -59,14 +59,14 @@ namespace PayStation.Migrations
                         {
                             IdAlarm = 1,
                             AlarmCode = "001",
-                            AlarmDate = new DateTime(2024, 4, 12, 16, 11, 38, 399, DateTimeKind.Local).AddTicks(5975),
+                            AlarmDate = new DateTime(2024, 5, 14, 17, 56, 57, 972, DateTimeKind.Local).AddTicks(1875),
                             Description = "Alarms",
                             OperatorCode = "A",
                             Status = "I"
                         });
                 });
 
-            modelBuilder.Entity("PayStation.DataBase.CashClosureReceiptDB", b =>
+            modelBuilder.Entity("PayStationSW.DataBase.CashClosureReceiptDB", b =>
                 {
                     b.Property<int?>("Id")
                         .ValueGeneratedOnAdd()
@@ -366,7 +366,7 @@ namespace PayStation.Migrations
                             ExcessCoin20 = 5,
                             ExcessCoin200 = 5,
                             ExcessCoin50 = 5,
-                            MovementDate = new DateTime(2024, 4, 17, 16, 11, 38, 399, DateTimeKind.Local).AddTicks(8434),
+                            MovementDate = new DateTime(2024, 5, 19, 17, 56, 57, 972, DateTimeKind.Local).AddTicks(2806),
                             NonGivenChange = 100,
                             NonLoadedBanknotes = 30,
                             NonLoadedBanknotes1 = 30,
@@ -390,7 +390,7 @@ namespace PayStation.Migrations
                         });
                 });
 
-            modelBuilder.Entity("PayStation.DataBase.CashDetailDB", b =>
+            modelBuilder.Entity("PayStationSW.DataBase.CashDetailDB", b =>
                 {
                     b.Property<int?>("Id")
                         .ValueGeneratedOnAdd()
@@ -442,7 +442,7 @@ namespace PayStation.Migrations
                         });
                 });
 
-            modelBuilder.Entity("PayStation.DataBase.DeviceEntityDB", b =>
+            modelBuilder.Entity("PayStationSW.DataBase.DeviceEntityDB", b =>
                 {
                     b.Property<string>("DeviceType")
                         .HasMaxLength(2)
@@ -501,7 +501,7 @@ namespace PayStation.Migrations
                         });
                 });
 
-            modelBuilder.Entity("PayStation.DataBase.IngenicoPosMovementDB", b =>
+            modelBuilder.Entity("PayStationSW.DataBase.IngenicoPosMovementDB", b =>
                 {
                     b.Property<int?>("Id")
                         .ValueGeneratedOnAdd()
@@ -546,16 +546,20 @@ namespace PayStation.Migrations
                             Overhead = "Some overhead data",
                             PaidCents = 1000,
                             Success = "Y",
-                            TransactionDate = new DateTime(2024, 4, 17, 16, 11, 38, 400, DateTimeKind.Local).AddTicks(4352)
+                            TransactionDate = new DateTime(2024, 5, 19, 17, 56, 57, 972, DateTimeKind.Local).AddTicks(4426)
                         });
                 });
 
-            modelBuilder.Entity("PayStation.DataBase.MovementDB", b =>
+            modelBuilder.Entity("PayStationSW.DataBase.MovementDB", b =>
                 {
                     b.Property<int?>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER")
                         .HasColumnName("id_movement");
+
+                    b.Property<int?>("Amount")
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("amount");
 
                     b.Property<int?>("Banknotes")
                         .HasColumnType("INTEGER")
@@ -585,9 +589,13 @@ namespace PayStation.Migrations
                         .HasColumnType("TEXT")
                         .HasColumnName("description");
 
-                    b.Property<DateTime?>("MovementDate")
+                    b.Property<DateTime?>("MovementDateClose")
                         .HasColumnType("TEXT")
-                        .HasColumnName("movement_date");
+                        .HasColumnName("movement_date_close");
+
+                    b.Property<DateTime?>("MovementDateOpen")
+                        .HasColumnType("TEXT")
+                        .HasColumnName("movement_date_open");
 
                     b.Property<string>("OperatorCode")
                         .HasColumnType("TEXT")
@@ -617,14 +625,14 @@ namespace PayStation.Migrations
                             ClosingProgress = 0,
                             Coins = 10,
                             Description = "Initial deposit",
-                            MovementDate = new DateTime(2024, 4, 12, 16, 11, 38, 400, DateTimeKind.Local).AddTicks(6194),
+                            MovementDateOpen = new DateTime(2024, 5, 14, 17, 56, 57, 972, DateTimeKind.Local).AddTicks(4898),
                             OperatorCode = "A",
                             Outcome = "IN",
                             PaidCents = 1000
                         });
                 });
 
-            modelBuilder.Entity("PayStation.DataBase.ParameterDB", b =>
+            modelBuilder.Entity("PayStationSW.DataBase.ParameterDB", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -721,7 +729,7 @@ namespace PayStation.Migrations
                         });
                 });
 
-            modelBuilder.Entity("PayStation.DataBase.PartialCashClosureDB", b =>
+            modelBuilder.Entity("PayStationSW.DataBase.PartialCashClosureDB", b =>
                 {
                     b.Property<int?>("ClosingProgress")
                         .ValueGeneratedOnAdd()
@@ -941,7 +949,7 @@ namespace PayStation.Migrations
                             CoinLoad20 = 20,
                             CoinLoad200 = 20,
                             CoinLoad50 = 20,
-                            DateUpdate = new DateTime(2024, 4, 17, 16, 11, 38, 401, DateTimeKind.Local).AddTicks(234),
+                            DateUpdate = new DateTime(2024, 5, 19, 17, 56, 57, 972, DateTimeKind.Local).AddTicks(5735),
                             ExcessCoin10 = 5,
                             ExcessCoin100 = 5,
                             ExcessCoin20 = 5,
@@ -954,7 +962,7 @@ namespace PayStation.Migrations
                         });
                 });
 
-            modelBuilder.Entity("PayStation.DataBase.SerialConnectionParameterDB", b =>
+            modelBuilder.Entity("PayStationSW.DataBase.SerialConnectionParameterDB", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -1039,7 +1047,7 @@ namespace PayStation.Migrations
                         });
                 });
 
-            modelBuilder.Entity("PayStation.DataBase.SerialConnectionSettingDB", b =>
+            modelBuilder.Entity("PayStationSW.DataBase.SerialConnectionSettingDB", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -1100,7 +1108,7 @@ namespace PayStation.Migrations
                         });
                 });
 
-            modelBuilder.Entity("PayStation.DataBase.TextPrinterObjectsDB", b =>
+            modelBuilder.Entity("PayStationSW.DataBase.TextPrinterObjectsDB", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -1197,7 +1205,7 @@ namespace PayStation.Migrations
                         });
                 });
 
-            modelBuilder.Entity("PayStation.DataBase.TicketLayoutDB", b =>
+            modelBuilder.Entity("PayStationSW.DataBase.TicketLayoutDB", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()

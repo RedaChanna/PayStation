@@ -1,8 +1,8 @@
 {
   "Version": 1,
-  "Hash": "7hoxDRv9LVNj2FtT3T6vFBprmR00aWFKwkpN9SoJbco=",
-  "Source": "PayStation",
-  "BasePath": "_content/PayStation",
+  "Hash": "aeYCRLOVCIumvjJB1oSn1FMZtrXH9fr+hl61L19vEP4=",
+  "Source": "PayStationSW",
+  "BasePath": "_content/PayStationSW",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],

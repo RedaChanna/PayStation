@@ -1,5 +1,5 @@
-﻿using PayStationName.Protocols.Coin;
-using PayStationName.Protocols.POS;
+﻿using PayStationSW.Protocols.Coin;
+using PayStationSW.Protocols.POS;
 using System;
 using System.Collections.Generic;
 using System.IO.Ports;
@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PayStationName.Devices
+namespace PayStationSW.Devices
 {
     public class IO_Dev : Device
     {

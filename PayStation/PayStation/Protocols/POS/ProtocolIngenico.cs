@@ -1,6 +1,6 @@
-﻿using PayStationName.Devices;
+﻿using PayStationSW.Devices;
 
-namespace PayStationName.Protocols.POS
+namespace PayStationSW.Protocols.POS
 {
 
 

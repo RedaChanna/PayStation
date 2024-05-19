@@ -1,4 +1,4 @@
-﻿namespace PayStationName.Devices
+﻿namespace PayStationSW.Devices
 {
     public class MessageObject
     {

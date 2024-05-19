@@ -1,4 +1,4 @@
-﻿namespace PayStationName.Protocols.Cash
+﻿namespace PayStationSW.Protocols.Cash
 {
 
     public class CRC16Kermit

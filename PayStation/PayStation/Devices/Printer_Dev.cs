@@ -1,6 +1,6 @@
-﻿using PayStationName.DataBase;
-using PayStationName.Protocols.POS;
-using PayStationName.Protocols.Printer;
+﻿using PayStationSW.DataBase;
+using PayStationSW.Protocols.POS;
+using PayStationSW.Protocols.Printer;
 using System;
 using System.Collections.Generic;
 using System.IO.Ports;
@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 
-namespace PayStationName.Devices
+namespace PayStationSW.Devices
 {
     public class PrinterDevice : Device
     {

@@ -1,7 +1,7 @@
 ﻿using Org.BouncyCastle.Bcpg;
 using Org.BouncyCastle.Utilities;
 
-namespace PayStationName
+namespace PayStationSW
 {
     public class CommandParameter
     {

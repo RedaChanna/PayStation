@@ -5,9 +5,9 @@ using System.IO.Ports;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using PayStationName.Devices;
+using PayStationSW.Devices;
 
-namespace PayStationName
+namespace PayStationSW
 {
     public class AutomaticConnection_Mng
     {

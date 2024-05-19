@@ -1,7 +1,7 @@
-﻿using PayStationName.Devices;
-using static PayStationName.ProtocolVega100;
+﻿using PayStationSW.Devices;
+using static PayStationSW.ProtocolVega100;
 
-namespace PayStationName.Protocols.Cash
+namespace PayStationSW.Protocols.Cash
 {
     public interface InterfaceCashProtocol
     {

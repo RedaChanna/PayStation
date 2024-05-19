@@ -1,14 +1,14 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using PayStationName.DataBase;
+using PayStationSW.DataBase;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 using Microsoft.EntityFrameworkCore;
-using PayStationName.Devices;
+using PayStationSW.Devices;
 
 
 
-namespace PayStationName.RESTAPI
+namespace PayStationSW.RESTAPI
 {
     [Route("api/CashDevice")]
     [ApiController]

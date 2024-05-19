@@ -2,13 +2,13 @@
 using Microsoft.AspNetCore.SignalR.Protocol;
 using Microsoft.IdentityModel.Tokens;
 using Mysqlx.Session;
-using PayStationName.Devices;
-using PayStationName.Protocols.Coin;
+using PayStationSW.Devices;
+using PayStationSW.Protocols.Coin;
 using System.Collections;
 using System.Linq;
 using System.Reflection.Metadata;
 
-namespace PayStationName
+namespace PayStationSW
 {
     public partial class ProtocolMDB_RS323 : InterfaceCoinProtocol
     {

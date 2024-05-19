@@ -1,4 +1,4 @@
-﻿namespace PayStationName.Protocols.POS
+﻿namespace PayStationSW.Protocols.POS
 {
     public interface InterfacePOSProtocol
     {

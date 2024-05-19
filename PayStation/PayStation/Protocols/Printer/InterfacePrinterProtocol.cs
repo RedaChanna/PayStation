@@ -1,7 +1,7 @@
-﻿using PayStationName.Devices;
-using static PayStationName.ProtocolCashino;
+﻿using PayStationSW.Devices;
+using static PayStationSW.ProtocolCashino;
 
-namespace PayStationName.Protocols.Printer
+namespace PayStationSW.Protocols.Printer
 {
     public interface InterfacePrinterProtocol
     {

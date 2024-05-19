@@ -5,10 +5,10 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
 
-namespace PayStation.Migrations
+namespace PayStationSW.Migrations
 {
     /// <inheritdoc />
-    public partial class NOME_MIGRAZIONE : Migration
+    public partial class InitialCreate : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -160,7 +160,9 @@ namespace PayStation.Migrations
                 {
                     id_movement = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    movement_date = table.Column<DateTime>(type: "TEXT", nullable: true),
+                    movement_date_open = table.Column<DateTime>(type: "TEXT", nullable: true),
+                    movement_date_close = table.Column<DateTime>(type: "TEXT", nullable: true),
+                    amount = table.Column<int>(type: "INTEGER", nullable: true),
                     outcome = table.Column<string>(type: "TEXT", maxLength: 3, nullable: true),
                     description = table.Column<string>(type: "TEXT", nullable: true),
                     paid_cents = table.Column<int>(type: "INTEGER", nullable: true),
@@ -340,12 +342,12 @@ namespace PayStation.Migrations
             migrationBuilder.InsertData(
                 table: "AlarmsDB",
                 columns: new[] { "id_alarm", "alarm_code", "alarm_date", "description", "operator_code", "status_code", "test_colum" },
-                values: new object[] { 1, "001", new DateTime(2024, 4, 12, 16, 11, 38, 399, DateTimeKind.Local).AddTicks(5975), "Alarms", "A", "I", null });
+                values: new object[] { 1, "001", new DateTime(2024, 5, 14, 17, 56, 57, 972, DateTimeKind.Local).AddTicks(1875), "Alarms", "A", "I", null });
 
             migrationBuilder.InsertData(
                 table: "CashClosureReceiptsDB",
                 columns: new[] { "id_movement", "banknotes_introduction", "banknotes_introduction_10", "banknotes_introduction_20", "banknotes_introduction_5", "banknotes_introduction_50", "banknotes_load", "banknotes_load_10_rc", "banknotes_load_10_stacker", "banknotes_load_20_rc", "banknotes_load_20_stacker", "banknotes_load_50_stacker", "banknotes_load_5_rc", "banknotes_load_5_stacker", "change", "change_10", "change_100", "change_1000", "change_20", "change_2000", "change_50", "change_500", "closing_progress", "coin_introduction", "coin_introduction_10", "coin_introduction_100", "coin_introduction_20", "coin_introduction_200", "coin_introduction_50", "coin_load", "coin_load_10", "coin_load_100", "coin_load_20", "coin_load_200", "coin_load_50", "description", "excess_coin_10", "excess_coin_100", "excess_coin_20", "excess_coin_200", "excess_coin_50", "movement_date", "non_given_change", "non_loaded_banknotes", "non_loaded_banknotes1", "non_loaded_banknotes_total", "operator", "outcome", "pos_income", "present_banknote_10", "present_banknote_20", "present_banknote_5", "present_banknote_50", "present_banknotes_total", "present_coin_10", "present_coin_100", "present_coin_20", "present_coin_200", "present_coin_50", "present_coins_total", "total_paid_cents", "total_paid_cents_cash" },
-                values: new object[] { 1, 150, 30, 30, 30, 30, 200, 50, 50, 50, 50, 50, 50, 50, 50, 10, 10, 0, 10, 0, 10, 0, 1, 50, 10, 10, 10, 10, 10, 100, 20, 20, 20, 20, 20, "Description1", 5, 5, 5, 5, 5, new DateTime(2024, 4, 17, 16, 11, 38, 399, DateTimeKind.Local).AddTicks(8434), 100, 30, 30, 150, "Operator1", "OUT", 300, 30, 30, 30, 30, 150, 10, 10, 10, 10, 10, 50, 500, 200 });
+                values: new object[] { 1, 150, 30, 30, 30, 30, 200, 50, 50, 50, 50, 50, 50, 50, 50, 10, 10, 0, 10, 0, 10, 0, 1, 50, 10, 10, 10, 10, 10, 100, 20, 20, 20, 20, 20, "Description1", 5, 5, 5, 5, 5, new DateTime(2024, 5, 19, 17, 56, 57, 972, DateTimeKind.Local).AddTicks(2806), 100, 30, 30, 150, "Operator1", "OUT", 300, 30, 30, 30, 30, 150, 10, 10, 10, 10, 10, 50, 500, 200 });
 
             migrationBuilder.InsertData(
                 table: "CashDetailsDB",
@@ -368,12 +370,12 @@ namespace PayStation.Migrations
             migrationBuilder.InsertData(
                 table: "IngenicoPosMovementsDB",
                 columns: new[] { "id_mov", "description", "id_movmentDB", "overhead", "paid_cents", "success", "transaction_date" },
-                values: new object[] { 1, "Payment successful", 0, "Some overhead data", 1000, "Y", new DateTime(2024, 4, 17, 16, 11, 38, 400, DateTimeKind.Local).AddTicks(4352) });
+                values: new object[] { 1, "Payment successful", 0, "Some overhead data", 1000, "Y", new DateTime(2024, 5, 19, 17, 56, 57, 972, DateTimeKind.Local).AddTicks(4426) });
 
             migrationBuilder.InsertData(
                 table: "MovementsDB",
-                columns: new[] { "id_movement", "banknotes", "change", "change_banknotes", "change_banknotes1", "closing_progress", "coins", "description", "movement_date", "operator_code", "outcome", "paid_cents" },
-                values: new object[] { 1, 5, 0, 0, 0, 0, 10, "Initial deposit", new DateTime(2024, 4, 12, 16, 11, 38, 400, DateTimeKind.Local).AddTicks(6194), "A", "IN", 1000 });
+                columns: new[] { "id_movement", "amount", "banknotes", "change", "change_banknotes", "change_banknotes1", "closing_progress", "coins", "description", "movement_date_close", "movement_date_open", "operator_code", "outcome", "paid_cents" },
+                values: new object[] { 1, null, 5, 0, 0, 0, 0, 10, "Initial deposit", null, new DateTime(2024, 5, 14, 17, 56, 57, 972, DateTimeKind.Local).AddTicks(4898), "A", "IN", 1000 });
 
             migrationBuilder.InsertData(
                 table: "ParametersDB",
@@ -383,7 +385,7 @@ namespace PayStation.Migrations
             migrationBuilder.InsertData(
                 table: "PartialCashClosuresDB",
                 columns: new[] { "closing_progress", "banknote_introduction", "banknote_introduction_10", "banknote_introduction_20", "banknote_introduction_5", "banknote_introduction_50", "banknote_load", "banknote_load_10_rc", "banknote_load_10_stacker", "banknote_load_20_rc", "banknote_load_20_stacker", "banknote_load_50_stacker", "banknote_load_5_rc", "banknote_load_5_stacker", "change", "change_10", "change_100", "change_1000", "change_20", "change_2000", "change_50", "change_500", "coin_introduction", "coin_introduction_10", "coin_introduction_100", "coin_introduction_20", "coin_introduction_200", "coin_introduction_50", "coin_load", "coin_load_10", "coin_load_100", "coin_load_20", "coin_load_200", "coin_load_50", "date_update", "excess_coin_10", "excess_coin_100", "excess_coin_20", "excess_coin_200", "excess_coin_50", "non_given_change", "pos_income", "total_paid_cents", "total_paid_cents_cash" },
-                values: new object[] { 1, 150, 30, 30, 30, 30, 200, 50, 50, 50, 50, 50, 50, 50, 50, 10, 10, 0, 10, 0, 10, 0, 50, 10, 10, 10, 10, 10, 100, 20, 20, 20, 20, 20, new DateTime(2024, 4, 17, 16, 11, 38, 401, DateTimeKind.Local).AddTicks(234), 5, 5, 5, 5, 5, 100, 300, 500, 200 });
+                values: new object[] { 1, 150, 30, 30, 30, 30, 200, 50, 50, 50, 50, 50, 50, 50, 50, 10, 10, 0, 10, 0, 10, 0, 50, 10, 10, 10, 10, 10, 100, 20, 20, 20, 20, 20, new DateTime(2024, 5, 19, 17, 56, 57, 972, DateTimeKind.Local).AddTicks(5735), 5, 5, 5, 5, 5, 100, 300, 500, 200 });
 
             migrationBuilder.InsertData(
                 table: "SerialConnectionParametersDB",

@@ -1,7 +1,7 @@
-﻿using PayStationName.DataBase;
+﻿using PayStationSW.DataBase;
 using System.IO.Ports;
 
-namespace PayStationName.Devices
+namespace PayStationSW.Devices
 {
     public abstract partial class Device
     {

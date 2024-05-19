@@ -1,4 +1,4 @@
-﻿namespace PayStationName.RESTAPI
+﻿namespace PayStationSW.RESTAPI
 {
     public interface IODeviceController
     {

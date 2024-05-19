@@ -1,4 +1,4 @@
-﻿namespace PayStationName
+﻿namespace PayStationSW
 {
     public partial class ProtocolCashino
     {

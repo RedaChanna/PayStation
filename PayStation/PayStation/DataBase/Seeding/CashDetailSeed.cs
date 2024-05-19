@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System;
 
-namespace PayStationName.DataBase.Seeding
+namespace PayStationSW.DataBase.Seeding
 {
     public class CashDetailSeed : IEntityTypeConfiguration<CashDetailDB>
     {

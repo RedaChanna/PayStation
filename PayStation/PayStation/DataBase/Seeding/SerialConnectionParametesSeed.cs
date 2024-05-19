@@ -1,10 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using PayStationName.DataBase;
+using PayStationSW.DataBase;
 using System;
 using System.IO.Ports;
 
-namespace PayStationName.DataBase.Seeding
+namespace PayStationSW.DataBase.Seeding
 {
     public class SerialConnectionParameterSeed : IEntityTypeConfiguration<SerialConnectionParameterDB>
     {

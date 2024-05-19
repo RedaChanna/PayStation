@@ -1,7 +1,7 @@
-﻿using PayStationName.Devices;
-using static PayStationName.ProtocolMDB_RS323;
+﻿using PayStationSW.Devices;
+using static PayStationSW.ProtocolMDB_RS323;
 
-namespace PayStationName.Protocols.Coin
+namespace PayStationSW.Protocols.Coin
 {
     public interface InterfaceCoinProtocol
     {

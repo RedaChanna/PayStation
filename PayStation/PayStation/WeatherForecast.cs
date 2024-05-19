@@ -1,4 +1,4 @@
-namespace PayStationName
+namespace PayStationSW
 {
     public class WeatherForecast
     {

@@ -1,14 +1,14 @@
-﻿using PayStationName.Devices;
-using PayStationName.Protocols.Cash;
-using PayStationName.Protocols.Coin;
-using PayStationName.Protocols.Printer;
+﻿using PayStationSW.Devices;
+using PayStationSW.Protocols.Cash;
+using PayStationSW.Protocols.Coin;
+using PayStationSW.Protocols.Printer;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PayStationName
+namespace PayStationSW
 {
 
     public partial class ProtocolCashino : InterfacePrinterProtocol

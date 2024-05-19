@@ -2,8 +2,8 @@
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
-using PayStationName.DataBase;
-using PayStationName;
+using PayStationSW.DataBase;
+using PayStationSW;
 
 public class StationManagerWS
 {

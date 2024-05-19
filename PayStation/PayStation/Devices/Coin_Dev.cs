@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.SignalR.Protocol;
-using PayStationName.DataBase;
-using PayStationName.Protocols.Coin;
+using PayStationSW.DataBase;
+using PayStationSW.Protocols.Coin;
 using System;
 using System.Collections.Generic;
 using System.IO.Ports;
@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 
 
-namespace PayStationName.Devices
+namespace PayStationSW.Devices
 {
 
     public class CoinDevice : Device

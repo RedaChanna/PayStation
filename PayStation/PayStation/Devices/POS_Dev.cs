@@ -1,6 +1,6 @@
-﻿using PayStationName.DataBase;
-using PayStationName.Protocols.Coin;
-using PayStationName.Protocols.POS;
+﻿using PayStationSW.DataBase;
+using PayStationSW.Protocols.Coin;
+using PayStationSW.Protocols.POS;
 using System;
 using System.Collections.Generic;
 using System.IO.Ports;
@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore;
 
 
 
-namespace PayStationName.Devices
+namespace PayStationSW.Devices
 {
     public class POSDevice : Device
     {

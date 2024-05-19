@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using PayStationName.DataBase;
+using PayStationSW.DataBase;
 
-namespace PayStationName.RESTAPI
+namespace PayStationSW.RESTAPI
 {
     [Route("api/DataBase")]
     [ApiController]

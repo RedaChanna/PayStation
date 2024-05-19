@@ -1,4 +1,4 @@
-﻿using PayStationName;
+﻿using PayStationSW;
 using System;
 using System.Collections.Generic;
 using System.IO.Ports;

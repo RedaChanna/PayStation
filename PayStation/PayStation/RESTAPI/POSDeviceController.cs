@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using PayStationName.DataBase;
-using PayStationName.Devices;
+using PayStationSW.DataBase;
+using PayStationSW.Devices;
 
-namespace PayStationName.RESTAPI
+namespace PayStationSW.RESTAPI
 {
     [Route("api/POSDevice")]
     [ApiController]

@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System;
 using System.Data.Entity;
 
-namespace PayStationName.DataBase.Seeding
+namespace PayStationSW.DataBase.Seeding
 {
     public class CashClosureReceiptSeed : IEntityTypeConfiguration<CashClosureReceiptDB>
     {

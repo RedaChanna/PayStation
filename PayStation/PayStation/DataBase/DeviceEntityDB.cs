@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace PayStationName.DataBase
+namespace PayStationSW.DataBase
 {
     public class DeviceEntityDB
     {

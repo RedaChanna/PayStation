@@ -1,9 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using PayStationName.DataBase;
+using PayStationSW.DataBase;
 using System;
 
-namespace PayStationName.DataBase.Seeding
+namespace PayStationSW.DataBase.Seeding
 {
     public class ParameterSeed : IEntityTypeConfiguration<ParameterDB>
     {

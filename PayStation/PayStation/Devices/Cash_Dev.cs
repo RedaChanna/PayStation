@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore.Diagnostics;
-using PayStationName.DataBase;
-using PayStationName.Protocols.Cash;
-using PayStationName.Protocols.Coin;
-using PayStationName.RESTAPI;
+using PayStationSW.DataBase;
+using PayStationSW.Protocols.Cash;
+using PayStationSW.Protocols.Coin;
+using PayStationSW.RESTAPI;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -13,11 +13,11 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
-using static PayStationName.ProtocolVega100;
+using static PayStationSW.ProtocolVega100;
 using Microsoft.EntityFrameworkCore;
 
 
-namespace PayStationName.Devices
+namespace PayStationSW.Devices
 {
     public class CashDevice : Device
     {

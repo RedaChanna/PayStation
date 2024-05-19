@@ -1,5 +1,5 @@
 ﻿using Microsoft.IdentityModel.Tokens;
-using PayStationName.DataBase;
+using PayStationSW.DataBase;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -12,7 +12,7 @@ using System.Threading.Tasks.Dataflow;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 using Microsoft.EntityFrameworkCore;
 
-namespace PayStationName.Devices
+namespace PayStationSW.Devices
 {
     public abstract partial class Device
     {

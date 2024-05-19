@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using PayStationName.DataBase;
-using PayStationName.Devices;
+using PayStationSW.DataBase;
+using PayStationSW.Devices;
 
-namespace PayStationName.RESTAPI
+namespace PayStationSW.RESTAPI
 {
     [Route("api/Register")]
     [ApiController]
@@ -62,9 +62,29 @@ namespace PayStationName.RESTAPI
         {
             try
             {
+                var station = await StationManager.GetStationAsync(_context);
+                if (!station.IsEnabled)
+                {
+                    return BadRequest(new { error = "The PayStation is not enable." });
+                }
                 Console.WriteLine($"Set Importo called {importo}");
-                //var station = await StationManager.GetStationAsync(_context);
-                //string response = await station.ReconfigureDevices(_context);
+                //Her I need to proccess the payment
+
+                // Create a new MovementDB instance
+                var movement = new MovementDB
+                {
+                    Amount = importo,
+                    MovementDateOpen = DateTime.Now
+                };
+
+                // Process the payment
+                var paymentProcessor = new PaymentProcessor(movement);
+                paymentProcessor.StartPaymentProcess();
+
+                // Add the movement to the database and save changes
+                _context.MovementsDB.Add(movement);
+                await _context.SaveChangesAsync();
+
                 return Ok("ACK");
             }
             catch (Exception ex)
@@ -72,6 +92,7 @@ namespace PayStationName.RESTAPI
                 return StatusCode(500, new { error = ex.Message });
             }
         }
+
 
 
         /*

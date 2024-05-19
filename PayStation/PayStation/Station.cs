@@ -1,18 +1,18 @@
 ﻿using Microsoft.AspNetCore.SignalR.Protocol;
-using PayStationName.DataBase;
-using PayStationName.Devices;
-using PayStationName.Protocols.Coin;
+using PayStationSW.DataBase;
+using PayStationSW.Devices;
+using PayStationSW.Protocols.Coin;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using PayStationName.RESTAPI;
-using static PayStationName.Devices.Device;
+using PayStationSW.RESTAPI;
+using static PayStationSW.Devices.Device;
 using System.IO.Ports;
 
-namespace PayStationName
+namespace PayStationSW
 {
     public class PayStation
     {

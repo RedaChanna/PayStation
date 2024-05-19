@@ -2,7 +2,7 @@
 using System.Net.NetworkInformation;
 using System.Runtime.CompilerServices;
 
-namespace PayStationName
+namespace PayStationSW
 {
 
     public partial class ProtocolVega100

@@ -7,13 +7,13 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using PayStationName.DataBase;
+using PayStationSW.DataBase;
 using System.ComponentModel.DataAnnotations.Schema;
-using PayStationName.Devices;
+using PayStationSW.Devices;
 using static System.Collections.Specialized.BitVector32;
 using Microsoft.Extensions.Logging;  // Assicurati di includere questa direttiva
 
-namespace PayStationName.RESTAPI
+namespace PayStationSW.RESTAPI
 {
 
     [Route("api/SerialConnection")]
