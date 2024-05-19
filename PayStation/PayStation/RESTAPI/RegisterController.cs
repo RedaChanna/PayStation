@@ -78,8 +78,8 @@ namespace PayStationSW.RESTAPI
                 };
 
                 // Process the payment
-                var paymentProcessor = new PaymentProcessor(movement);
-                paymentProcessor.StartPaymentProcess();
+               // var paymentProcessor = new PaymentProcessor(movement);
+                //paymentProcessor.StartPaymentProcess();
 
                 // Add the movement to the database and save changes
                 _context.MovementsDB.Add(movement);
