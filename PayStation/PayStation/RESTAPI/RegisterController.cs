@@ -93,8 +93,8 @@ namespace PayStationSW.RESTAPI
             }
         }
 
-        // GET: api/Register/Alarms
-        [HttpGet("Alarms")]
+        // GET: api/Register/GetAlarms
+        [HttpGet("GetAlarms")]
         public async Task<IActionResult> GetAlarms()
         {
             try
@@ -114,7 +114,36 @@ namespace PayStationSW.RESTAPI
                 return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
             }
         }
+        // GET: api/Register/GetStatus
+        [HttpGet("GetStatus")]
+        public async Task<IActionResult> GetStaus()
+        {
+            try
+            {
+                var station = await StationManager.GetStationAsync(_context);
+  
+                    return Ok("Status is");
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
+            }
+        }
+        // GET: api/Register/GetMovment
+        [HttpGet("GetMovment")]
+        public async Task<IActionResult> GetMovment()
+        {
+            try
+            {
+                var station = await StationManager.GetStationAsync(_context);
 
+                return Ok("Movment");
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
+            }
+        }
 
 
     }
