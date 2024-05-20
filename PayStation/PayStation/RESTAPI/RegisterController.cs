@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.AspNetCore.Mvc;
 using PayStationSW.DataBase;
 using PayStationSW.Devices;
@@ -10,13 +11,17 @@ namespace PayStationSW.RESTAPI
     [ApiController]
     public class RegisterController : ControllerBase
     {
+
+        private readonly StationManagerWS _stationManagerWS;
         private readonly ApplicationDbContext _context;
         private readonly DeviceService _deviceService;
 
-        public RegisterController(ApplicationDbContext context, DeviceService deviceService)
+        public RegisterController(ApplicationDbContext context, DeviceService deviceService, StationManagerWS stationManagerWS)
         {
             _context = context;
             _deviceService = deviceService;
+            _stationManagerWS = stationManagerWS;
+
         }
 
         [HttpPost("EnableEntity")]
@@ -84,8 +89,9 @@ namespace PayStationSW.RESTAPI
                 // Add the movement to the database and save changes
                 _context.MovementsDB.Add(movement);
                 await _context.SaveChangesAsync();
+                _stationManagerWS.StartPeriodicMessages();
+                return Ok(new { message = $"Set importo recived for importo {importo}, id movment is {movement.Id}." });
 
-                return Ok("ACK");
             }
             catch (Exception ex)
             {
