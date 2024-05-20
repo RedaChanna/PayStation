@@ -20,6 +20,7 @@ namespace PayStationSW
         //to add new Device add it to enumerato DeviceEnum
         public Dictionary<DeviceEnum, Device> Devices { get; private set; }
         //Flag to enable or disable PayStation
+        public bool InAlarm { get; private set; } = true;
         public bool IsEnabled { get; private set; } = true;
         //construct Station Object
         public PayStation()
@@ -124,7 +125,12 @@ namespace PayStationSW
                 throw new Exception($"Serial parameters not found for device {device.DeviceType}.");
             }
         }
-        
+
+        //Alarm Paystation
+        public void Alarm(bool alarm)
+        {
+            InAlarm = alarm;
+        }
 
         //Enable Paystation
         public void Enable()

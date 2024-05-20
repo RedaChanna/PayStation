@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using PayStationSW.DataBase;
 using PayStationSW.Devices;
+using System.Diagnostics.Eventing.Reader;
 
 namespace PayStationSW.RESTAPI
 {
@@ -17,7 +18,6 @@ namespace PayStationSW.RESTAPI
             _context = context;
             _deviceService = deviceService;
         }
-
 
         [HttpPost("EnableEntity")]
         public async Task<IActionResult> EnableEntity([FromBody] DeviceEntityDB device)
@@ -93,38 +93,30 @@ namespace PayStationSW.RESTAPI
             }
         }
 
-
-
-        /*
-
-        [HttpPost("amountPayment")]
-        public async Task<IActionResult> AmountPayment([FromBody] ParametriPayment parametri)
+        // GET: api/Register/Alarms
+        [HttpGet("Alarms")]
+        public async Task<IActionResult> GetAlarms()
         {
             try
             {
                 var station = await StationManager.GetStationAsync(_context);
-
-
-                if (station.IsEnabled)
+                if (!station.InAlarm)
                 {
-                    Console.WriteLine(parametri.Amount);
-                    Console.WriteLine(parametri.DateSend);
-
-                    Console.WriteLine(DateTime.Now);
-                    //Program.paymentStation.CoinMng.SetAmountToDeliver(parametri.Amount);
-                    return Ok(new { status = "Request recived" });
+                    return Ok("There is an allarm");
                 }
                 else
                 {
-                    return BadRequest(new { error = "The request can't be handeled beacuse Paystation is offline." });
+                    return Ok("No allarm");
                 }
-
             }
             catch (Exception ex)
             {
-                return StatusCode(500, new { error = ex.Message });
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
             }
-        }*/
+        }
+
+
+
     }
 
 
