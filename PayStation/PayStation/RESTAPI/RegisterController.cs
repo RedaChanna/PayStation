@@ -129,23 +129,29 @@ namespace PayStationSW.RESTAPI
                 return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
             }
         }
-        // GET: api/Register/GetMovment
-        [HttpGet("GetMovment")]
-        public async Task<IActionResult> GetMovment()
+
+        // GET: api/DataBase/GetMovment/{id}
+        [HttpGet("GetMovment/{id}")]
+        public async Task<ActionResult<MovementDB>> GetMovementById(int? id)
         {
+            if (id == null)
+            {
+                return BadRequest("Id cannot be null");
+            }
             try
             {
-                var station = await StationManager.GetStationAsync(_context);
-
-                return Ok("Movment");
+                var movement = await _context.MovementsDB.FindAsync(id);
+                if (movement == null)
+                {
+                    return NotFound($"Movement with id {id} not found");
+                }
+                return Ok(movement);
             }
             catch (Exception ex)
             {
                 return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
             }
         }
-
-
     }
 
 
