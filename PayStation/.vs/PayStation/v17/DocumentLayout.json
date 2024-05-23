@@ -1,58 +1,10 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\user\\Documents\\GitHub\\PayStation\\PayStation\\",
+  "WorkspaceRootPath": "C:\\Users\\Reda\\Desktop\\Cityware\\PayStation\\PayStation\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0CE9D55F-4012-4653-9BE1-685C143F6D00}|PayStation\\PayStationSW.csproj|c:\\users\\user\\documents\\github\\paystation\\paystation\\paystation\\restapi\\registercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0CE9D55F-4012-4653-9BE1-685C143F6D00}|PayStation\\PayStationSW.csproj|solutionrelative:paystation\\restapi\\registercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0CE9D55F-4012-4653-9BE1-685C143F6D00}|PayStation\\PayStationSW.csproj|c:\\users\\user\\documents\\github\\paystation\\paystation\\paystation\\websockethandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0CE9D55F-4012-4653-9BE1-685C143F6D00}|PayStation\\PayStationSW.csproj|solutionrelative:paystation\\websockethandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0CE9D55F-4012-4653-9BE1-685C143F6D00}|PayStation\\PayStationSW.csproj|c:\\users\\user\\documents\\github\\paystation\\paystation\\paystation\\weatherforecast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0CE9D55F-4012-4653-9BE1-685C143F6D00}|PayStation\\PayStationSW.csproj|solutionrelative:paystation\\weatherforecast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0CE9D55F-4012-4653-9BE1-685C143F6D00}|PayStation\\PayStationSW.csproj|c:\\users\\user\\documents\\github\\paystation\\paystation\\paystation\\restapi\\samplecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0CE9D55F-4012-4653-9BE1-685C143F6D00}|PayStation\\PayStationSW.csproj|solutionrelative:paystation\\restapi\\samplecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0CE9D55F-4012-4653-9BE1-685C143F6D00}|PayStation\\PayStationSW.csproj|C:\\Users\\user\\Documents\\GitHub\\PayStation\\PayStation\\paystation\\stationmanagerws.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0CE9D55F-4012-4653-9BE1-685C143F6D00}|PayStation\\PayStationSW.csproj|solutionrelative:paystation\\stationmanagerws.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0CE9D55F-4012-4653-9BE1-685C143F6D00}|PayStation\\PayStationSW.csproj|C:\\Users\\user\\Documents\\GitHub\\PayStation\\PayStation\\paystation\\station.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0CE9D55F-4012-4653-9BE1-685C143F6D00}|PayStation\\PayStationSW.csproj|solutionrelative:paystation\\station.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0CE9D55F-4012-4653-9BE1-685C143F6D00}|PayStation\\PayStationSW.csproj|C:\\Users\\user\\Documents\\GitHub\\PayStation\\PayStation\\paystation\\restapi\\databasecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0CE9D55F-4012-4653-9BE1-685C143F6D00}|PayStation\\PayStationSW.csproj|solutionrelative:paystation\\restapi\\databasecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0CE9D55F-4012-4653-9BE1-685C143F6D00}|PayStation\\PayStationSW.csproj|C:\\Users\\user\\Documents\\GitHub\\PayStation\\PayStation\\paystation\\database\\movmentdb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0CE9D55F-4012-4653-9BE1-685C143F6D00}|PayStation\\PayStationSW.csproj|solutionrelative:paystation\\database\\movmentdb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0CE9D55F-4012-4653-9BE1-685C143F6D00}|PayStation\\PayStationSW.csproj|C:\\Users\\user\\Documents\\GitHub\\PayStation\\PayStation\\paystation\\devices\\cash_dev.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0CE9D55F-4012-4653-9BE1-685C143F6D00}|PayStation\\PayStationSW.csproj|solutionrelative:paystation\\devices\\cash_dev.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0CE9D55F-4012-4653-9BE1-685C143F6D00}|PayStation\\PayStationSW.csproj|C:\\Users\\user\\Documents\\GitHub\\PayStation\\PayStation\\paystation\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0CE9D55F-4012-4653-9BE1-685C143F6D00}|PayStation\\PayStationSW.csproj|solutionrelative:paystation\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0CE9D55F-4012-4653-9BE1-685C143F6D00}|PayStation\\PayStationSW.csproj|C:\\Users\\user\\Documents\\GitHub\\PayStation\\PayStation\\paystation\\database\\serialconnectionparametesdb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0CE9D55F-4012-4653-9BE1-685C143F6D00}|PayStation\\PayStationSW.csproj|solutionrelative:paystation\\database\\serialconnectionparametesdb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0CE9D55F-4012-4653-9BE1-685C143F6D00}|PayStation\\PayStationSW.csproj|C:\\Users\\user\\Documents\\GitHub\\PayStation\\PayStation\\paystation\\devices\\device.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0CE9D55F-4012-4653-9BE1-685C143F6D00}|PayStation\\PayStationSW.csproj|solutionrelative:paystation\\devices\\device.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0CE9D55F-4012-4653-9BE1-685C143F6D00}|PayStation\\PayStationSW.csproj|C:\\Users\\user\\Documents\\GitHub\\PayStation\\PayStation\\paystation\\database\\seeding\\ingenicoposmovementseed.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0CE9D55F-4012-4653-9BE1-685C143F6D00}|PayStation\\PayStationSW.csproj|solutionrelative:paystation\\database\\seeding\\ingenicoposmovementseed.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0CE9D55F-4012-4653-9BE1-685C143F6D00}|PayStation\\PayStationSW.csproj|c:\\users\\reda\\desktop\\cityware\\paystation\\paystation\\paystation\\paymentproccessor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0CE9D55F-4012-4653-9BE1-685C143F6D00}|PayStation\\PayStationSW.csproj|solutionrelative:paystation\\paymentproccessor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -62,175 +14,19 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "SampleController.cs",
-              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\PayStation\\PayStation\\PayStation\\RESTAPI\\SampleController.cs",
-              "RelativeDocumentMoniker": "PayStation\\RESTAPI\\SampleController.cs",
-              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\PayStation\\PayStation\\PayStation\\RESTAPI\\SampleController.cs",
-              "RelativeToolTip": "PayStation\\RESTAPI\\SampleController.cs",
-              "ViewState": "AQIAAAUAAAAAAAAAAAAxwBEAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-20T14:00:28.287Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "WeatherForecast.cs",
-              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\PayStation\\PayStation\\PayStation\\WeatherForecast.cs",
-              "RelativeDocumentMoniker": "PayStation\\WeatherForecast.cs",
-              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\PayStation\\PayStation\\PayStation\\WeatherForecast.cs",
-              "RelativeToolTip": "PayStation\\WeatherForecast.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-20T13:59:48.448Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "WebSocketHandler.cs",
-              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\PayStation\\PayStation\\PayStation\\WebSocketHandler.cs",
-              "RelativeDocumentMoniker": "PayStation\\WebSocketHandler.cs",
-              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\PayStation\\PayStation\\PayStation\\WebSocketHandler.cs",
-              "RelativeToolTip": "PayStation\\WebSocketHandler.cs",
-              "ViewState": "AQIAAC0AAAAAAAAAAAAowDYAAAAvAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-20T13:43:29.683Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "RegisterController.cs",
-              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\PayStation\\PayStation\\PayStation\\RESTAPI\\RegisterController.cs",
-              "RelativeDocumentMoniker": "PayStation\\RESTAPI\\RegisterController.cs",
-              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\PayStation\\PayStation\\PayStation\\RESTAPI\\RegisterController.cs",
-              "RelativeToolTip": "PayStation\\RESTAPI\\RegisterController.cs",
-              "ViewState": "AQIAAFQAAAAAAAAAAAAIwFwAAABWAAAA",
+              "Title": "PaymentProccessor.cs",
+              "DocumentMoniker": "C:\\Users\\Reda\\Desktop\\Cityware\\PayStation\\PayStation\\PayStation\\PaymentProccessor.cs",
+              "RelativeDocumentMoniker": "PayStation\\PaymentProccessor.cs",
+              "ToolTip": "C:\\Users\\Reda\\Desktop\\Cityware\\PayStation\\PayStation\\PayStation\\PaymentProccessor.cs",
+              "RelativeToolTip": "PayStation\\PaymentProccessor.cs",
+              "ViewState": "AQIAAC0AAAAAAAAAAAAowDwAAABIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-19T16:05:51.251Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\PayStation\\PayStation\\PayStation\\Program.cs",
-              "RelativeDocumentMoniker": "PayStation\\Program.cs",
-              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\PayStation\\PayStation\\PayStation\\Program.cs",
-              "RelativeToolTip": "PayStation\\Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAAANAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-17T22:37:15.91Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "StationManagerWS.cs",
-              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\PayStation\\PayStation\\PayStation\\StationManagerWS.cs",
-              "RelativeDocumentMoniker": "PayStation\\StationManagerWS.cs",
-              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\PayStation\\PayStation\\PayStation\\StationManagerWS.cs",
-              "RelativeToolTip": "PayStation\\StationManagerWS.cs",
-              "ViewState": "AQIAABsAAAAAAAAAAAAowBwAAAAlAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-17T22:36:54.338Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Station.cs",
-              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\PayStation\\PayStation\\PayStation\\Station.cs",
-              "RelativeDocumentMoniker": "PayStation\\Station.cs",
-              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\PayStation\\PayStation\\PayStation\\Station.cs",
-              "RelativeToolTip": "PayStation\\Station.cs",
-              "ViewState": "AQIAAB0AAAAAAAAAAAAAwCgAAAAeAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-17T22:36:31.192Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "DataBaseController.cs",
-              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\PayStation\\PayStation\\PayStation\\RESTAPI\\DataBaseController.cs",
-              "RelativeDocumentMoniker": "PayStation\\RESTAPI\\DataBaseController.cs",
-              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\PayStation\\PayStation\\PayStation\\RESTAPI\\DataBaseController.cs",
-              "RelativeToolTip": "PayStation\\RESTAPI\\DataBaseController.cs",
-              "ViewState": "AQIAAA4AAAAAAAAAAABQwBMAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-19T16:05:22.031Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "MovmentDB.cs",
-              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\PayStation\\PayStation\\PayStation\\DataBase\\MovmentDB.cs",
-              "RelativeDocumentMoniker": "PayStation\\DataBase\\MovmentDB.cs",
-              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\PayStation\\PayStation\\PayStation\\DataBase\\MovmentDB.cs",
-              "RelativeToolTip": "PayStation\\DataBase\\MovmentDB.cs",
-              "ViewState": "AQIAABsAAAAAAAAAAAAQwDEAAAAxAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-20T13:09:26.831Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Device.cs",
-              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\PayStation\\PayStation\\PayStation\\Devices\\Device.cs",
-              "RelativeDocumentMoniker": "PayStation\\Devices\\Device.cs",
-              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\PayStation\\PayStation\\PayStation\\Devices\\Device.cs",
-              "RelativeToolTip": "PayStation\\Devices\\Device.cs",
-              "ViewState": "AQIAABEAAAAAAAAAAAAMwBYAAAAPAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-17T22:35:59.413Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Cash_Dev.cs",
-              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\PayStation\\PayStation\\PayStation\\Devices\\Cash_Dev.cs",
-              "RelativeDocumentMoniker": "PayStation\\Devices\\Cash_Dev.cs",
-              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\PayStation\\PayStation\\PayStation\\Devices\\Cash_Dev.cs",
-              "RelativeToolTip": "PayStation\\Devices\\Cash_Dev.cs",
-              "ViewState": "AQIAAB8AAAAAAAAAAAAWwDkAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-17T22:35:56.242Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "SerialConnectionParametesDB.cs",
-              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\PayStation\\PayStation\\PayStation\\DataBase\\SerialConnectionParametesDB.cs",
-              "RelativeDocumentMoniker": "PayStation\\DataBase\\SerialConnectionParametesDB.cs",
-              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\PayStation\\PayStation\\PayStation\\DataBase\\SerialConnectionParametesDB.cs",
-              "RelativeToolTip": "PayStation\\DataBase\\SerialConnectionParametesDB.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAIBJwA4AAAAPAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-17T22:35:48.017Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "IngenicoPosMovementSeed.cs",
-              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\PayStation\\PayStation\\PayStation\\DataBase\\Seeding\\IngenicoPosMovementSeed.cs",
-              "RelativeDocumentMoniker": "PayStation\\DataBase\\Seeding\\IngenicoPosMovementSeed.cs",
-              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\PayStation\\PayStation\\PayStation\\DataBase\\Seeding\\IngenicoPosMovementSeed.cs",
-              "RelativeToolTip": "PayStation\\DataBase\\Seeding\\IngenicoPosMovementSeed.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAUAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-17T22:35:42.532Z",
+              "WhenOpened": "2024-05-23T05:44:42.469Z",
               "EditorCaption": ""
             }
           ]

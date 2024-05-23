@@ -3,8 +3,6 @@ using PayStationSW.DataBase;
 
 namespace PayStationSW
 {
-
-
     public class PaymentProcessor
     {
         private MovementDB movement;
@@ -17,7 +15,7 @@ namespace PayStationSW
             this.movement.Coins = 0;
             this.movement.Banknotes = 0;
             this.movement.Change = 0;
-            this.movement.Outcome = "N/A";  // Assuming default outcome as Not Applicable
+            this.movement.Outcome = "N/A";
         }
 
         public void StartPaymentProcess()
@@ -29,7 +27,6 @@ namespace PayStationSW
                 Console.WriteLine($"Amount due: {movement.Amount / 100:C}. Please insert coins or notes.");
                 int amountInserted = InsertMoney();
                 movement.PaidCents += amountInserted;
-
                 if (amountInserted > 0)
                 {
                     if (amountInserted < 100)

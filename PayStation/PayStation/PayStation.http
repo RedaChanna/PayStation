@@ -1,6 +1,7 @@
 @PayStation_HostAddress = http://localhost:5088
 
-GET {{PayStation_HostAddress}}/weatherforecast/
+GET {{PayStation_HostAddress}}/
+/
 Accept: application/json
 
 ###
