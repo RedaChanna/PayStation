@@ -128,7 +128,7 @@ namespace PayStationSW.RESTAPI
             {
                 var station = await StationManager.GetStationAsync(_context);
   
-                    return Ok("Status is");
+                    return Ok("1,100");
             }
             catch (Exception ex)
             {

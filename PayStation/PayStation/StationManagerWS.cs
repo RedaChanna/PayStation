@@ -32,9 +32,13 @@ public class StationManagerWS
         _timer = new Timer(async _ =>
         {
             _messageCounter++;
-            if (_messageCounter <= 4)
+            if (_messageCounter <= 2)
             {
-                await NotifyClientsAsync($"messaggio {_messageCounter}");
+                if(_messageCounter == 2)
+                {
+                    await NotifyClientsAsync("2");
+
+                }
             }
             else
             {
