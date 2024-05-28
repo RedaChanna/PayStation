@@ -23,8 +23,6 @@ namespace PayStationSW.RESTAPI
             _deviceService = deviceService;
         }
 
-
-
         [HttpPost("Reset")]
         public async Task<IActionResult> reset()
         {

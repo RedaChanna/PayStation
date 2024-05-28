@@ -32,6 +32,8 @@ namespace PayStationSW.Devices
         private bool PayedOut;
         private bool PoweredUp;
 
+        private Timer _pollingTimer;
+
         private readonly InterfaceCashProtocol _protocol;
         public CashDevice(ApplicationDbContext context)
         {
@@ -49,7 +51,37 @@ namespace PayStationSW.Devices
             RCModule.BillDenominations = new List<decimal>();
             RCModule.BillCount5 = 0;
             RCModule.BillCount10 = 0;
+
+            _pollingTimer = new Timer(PollDevices, null, 0, 300); // Attiva immediatamente il timer, ripete ogni 300ms
+
         }
+        private void PollStatus(object state)
+        {
+            CommandParameter _commandParameter = new CommandParameter();
+            _commandParameter = _protocol.StatusCommand();
+            Task<string> statusTask = this.Command(_commandParameter);
+            statusTask.ContinueWith(task =>
+            {
+                if (task.Exception != null)
+                {
+                    // Gestisci eccezioni
+                    Console.WriteLine("Error polling status: " + task.Exception.InnerException?.Message);
+                }
+                else
+                {
+                    // Processa la risposta
+                    Console.WriteLine("Status: " + task.Result);
+                }
+            });
+        }
+
+        // Assicurati di liberare il timer quando non è più necessario
+        public override void Dispose()
+        {
+            _statusPollingTimer?.Dispose();
+            base.Dispose();
+        }
+    }
 
         public override void ApplyConfig()
         {

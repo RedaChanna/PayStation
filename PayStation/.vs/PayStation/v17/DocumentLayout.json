@@ -1,88 +1,12 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\user\\Documents\\GitHub\\PayStation\\PayStation\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{0CE9D55F-4012-4653-9BE1-685C143F6D00}|PayStation\\PayStationSW.csproj|C:\\Users\\user\\Documents\\GitHub\\PayStation\\PayStation\\paystation\\devices\\web2park.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0CE9D55F-4012-4653-9BE1-685C143F6D00}|PayStation\\PayStationSW.csproj|solutionrelative:paystation\\devices\\web2park.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0CE9D55F-4012-4653-9BE1-685C143F6D00}|PayStation\\PayStationSW.csproj|c:\\users\\user\\documents\\github\\paystation\\paystation\\paystation\\devices\\deviceserialconnection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0CE9D55F-4012-4653-9BE1-685C143F6D00}|PayStation\\PayStationSW.csproj|solutionrelative:paystation\\devices\\deviceserialconnection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0CE9D55F-4012-4653-9BE1-685C143F6D00}|PayStation\\PayStationSW.csproj|c:\\users\\user\\documents\\github\\paystation\\paystation\\paystation\\stationmanagerws.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0CE9D55F-4012-4653-9BE1-685C143F6D00}|PayStation\\PayStationSW.csproj|solutionrelative:paystation\\stationmanagerws.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0CE9D55F-4012-4653-9BE1-685C143F6D00}|PayStation\\PayStationSW.csproj|c:\\users\\user\\documents\\github\\paystation\\paystation\\paystation\\devices\\cash_dev.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0CE9D55F-4012-4653-9BE1-685C143F6D00}|PayStation\\PayStationSW.csproj|solutionrelative:paystation\\devices\\cash_dev.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "WorkspaceRootPath": "C:\\Users\\Reda\\Desktop\\Cityware\\PayStation\\PayStation\\",
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": [
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 3,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "StationManagerWS.cs",
-              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\PayStation\\PayStation\\PayStation\\StationManagerWS.cs",
-              "RelativeDocumentMoniker": "PayStation\\StationManagerWS.cs",
-              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\PayStation\\PayStation\\PayStation\\StationManagerWS.cs",
-              "RelativeToolTip": "PayStation\\StationManagerWS.cs",
-              "ViewState": "AQIAAB0AAAAAAAAAAAA9wCwAAAA9AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-23T15:13:26.573Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Cash_Dev.cs",
-              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\PayStation\\PayStation\\PayStation\\Devices\\Cash_Dev.cs",
-              "RelativeDocumentMoniker": "PayStation\\Devices\\Cash_Dev.cs",
-              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\PayStation\\PayStation\\PayStation\\Devices\\Cash_Dev.cs",
-              "RelativeToolTip": "PayStation\\Devices\\Cash_Dev.cs",
-              "ViewState": "AQIAAEYAAAAAAAAAAAAYwAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-23T09:50:40.602Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "DeviceSerialConnection.cs",
-              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\PayStation\\PayStation\\PayStation\\Devices\\DeviceSerialConnection.cs",
-              "RelativeDocumentMoniker": "PayStation\\Devices\\DeviceSerialConnection.cs",
-              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\PayStation\\PayStation\\PayStation\\Devices\\DeviceSerialConnection.cs",
-              "RelativeToolTip": "PayStation\\Devices\\DeviceSerialConnection.cs",
-              "ViewState": "AQIAABoBAAAAAAAAAAAiwJABAAAZAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-23T09:23:25.987Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Web2Park.cs",
-              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\PayStation\\PayStation\\PayStation\\Devices\\Web2Park.cs",
-              "RelativeDocumentMoniker": "PayStation\\Devices\\Web2Park.cs",
-              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\PayStation\\PayStation\\PayStation\\Devices\\Web2Park.cs",
-              "RelativeToolTip": "PayStation\\Devices\\Web2Park.cs",
-              "ViewState": "AQIAADEAAAAAAAAAAAAwwDsAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-23T07:32:19.819Z",
-              "EditorCaption": ""
-            }
-          ]
-        }
-      ]
+      "DocumentGroups": []
     }
   ]
 }

@@ -9,6 +9,7 @@ namespace PayStationSW.Protocols.Cash
        // CommandParameter TestCommand();
         CommandParameter ResetCommand();
         CommandParameter EnableCommand();
+        CommandParameter StatusCommand();
         CommandParameter DisableCommand();
 
 

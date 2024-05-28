@@ -104,6 +104,13 @@ namespace PayStationSW
             _commandParameter.validateAnyResponse = true;
             return _commandParameter;
         }
+        public CommandParameter StatusCommand()
+        {
+            CommandParameter _commandParameter = new CommandParameter();
+            _commandParameter.messageToSendBytes = [0xFC, 0x05, 0x11, 0x27, 0x56];
+            _commandParameter.validateAnyResponse = true;
+            return _commandParameter;
+        }
 
         /*
 
