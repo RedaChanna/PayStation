@@ -52,7 +52,8 @@ namespace PayStationSW.Devices
             _listenerCommand.messageStartingBytes = [0x01];
             _listenerCommand.messageEndingBytes = [0x04];
             _listenerCommand.expectedResponse = true;
-            bool ReciveSomething = await Command(_listenerCommand);
+            _listenerCommand = await Command(_listenerCommand);
+            bool ReciveSomething = _listenerCommand.validatedCommand;
 
 
             if (ReciveSomething)

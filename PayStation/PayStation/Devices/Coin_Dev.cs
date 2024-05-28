@@ -58,7 +58,8 @@ namespace PayStationSW.Devices
         {
             CommandParameter _commandParameter = new CommandParameter();
             _commandParameter = _protocol.StatusCommand();
-            Task<bool> statusTask = this.Command(_commandParameter);
+
+            Task<CommandParameter> statusTask = this.Command(_commandParameter);
             statusTask.ContinueWith(task =>
             {
                 if (task.Exception != null)
@@ -69,7 +70,7 @@ namespace PayStationSW.Devices
                 else
                 {
                     // Processa la risposta
-                    Console.WriteLine("Status: " + task.Result);
+                    Console.WriteLine("Status: " + task.Result.validatedCommand);
                 }
             });
         }
@@ -160,7 +161,9 @@ namespace PayStationSW.Devices
             {
                 CommandParameter _commandParameter = new CommandParameter();
                 _commandParameter = _protocol.ResetCommand();
-                Config.IsReset = await this.Command(_commandParameter);
+                _commandParameter = await this.Command(_commandParameter);
+
+                Config.IsReset = _commandParameter.validatedCommand;
             }
             if (Config.IsReset)
             {
@@ -177,7 +180,9 @@ namespace PayStationSW.Devices
             {
                 CommandParameter _commandParameter = new CommandParameter();
                 _commandParameter = _protocol.EnableCommand();
-                Config.IsEnabled = await this.Command(_commandParameter);
+                _commandParameter = await this.Command(_commandParameter);
+
+                Config.IsEnabled = _commandParameter.validatedCommand;
             }
             if (Config.IsEnabled)
             {
@@ -194,7 +199,8 @@ namespace PayStationSW.Devices
             {
                 CommandParameter _commandParameter = new CommandParameter();
                 _commandParameter = _protocol.DisableCommand();
-                Config.IsEnabled = await this.Command(_commandParameter);
+                _commandParameter = await this.Command(_commandParameter);
+                Config.IsEnabled = _commandParameter.validatedCommand;
             }
             Config.IsEnabled = !Config.IsEnabled;
             if (Config.IsEnabled)

@@ -78,7 +78,8 @@ namespace PayStationSW.Devices
             {
                 CommandParameter _commandParameter = new CommandParameter();
                 _commandParameter = _protocol.PrintTestPage();
-                IsPrinted = await this.Command(_commandParameter);
+                _commandParameter = await this.Command(_commandParameter);
+                IsPrinted = _commandParameter.validatedCommand;
             }
             if (IsPrinted)
             {

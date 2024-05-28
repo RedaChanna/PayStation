@@ -85,6 +85,7 @@ namespace PayStationSW
         public int retryDelayMilliseconds { get; set; } = 2000;
         public int maxRetryAttempts { get; set; } = 3;
         public bool isTimedMode { get; set; } = false;
+        public bool validatedCommand { get; set; } = false;
         #endregion
 
     }

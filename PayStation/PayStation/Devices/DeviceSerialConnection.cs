@@ -505,7 +505,7 @@ namespace PayStationSW.Devices
         }
         #endregion
         #region Command
-        public async Task<bool> Command(CommandParameter commandParameters)
+        public async Task<CommandParameter> Command(CommandParameter commandParameters)
         {
             _commandParameters = commandParameters;
             TimeSpan timeout = TimeSpan.FromSeconds(_commandParameters.timeOutResponseMilliseconds);
@@ -540,12 +540,14 @@ namespace PayStationSW.Devices
             var completedTask = await Task.WhenAny(tcs.Task, Task.Delay(timeout)); // Wait for completion or timeout
             if ((completedTask == tcs.Task && await tcs.Task) || !(_commandParameters.expectedResponse))
             {
-                return true; // Task completed successfully
+                _commandParameters.validatedCommand = true; // Task completed successfully
+                return _commandParameters;
             }
             else
             {
                 Console.WriteLine("Something went wrong. Device did not respond.");
-                return false; // Task failed or timed out
+                _commandParameters.validatedCommand = false; // Task failed or timed out
+                return _commandParameters;
             }
         }
         #endregion
