@@ -17,8 +17,6 @@ namespace PayStationSW.Devices
         private readonly InterfacePrinterProtocol _protocol;
         private readonly ApplicationDbContext _context;
 
-
-
         public PrinterDevice(ApplicationDbContext context)
         {
             DeviceType = DeviceEnum.Printer;
@@ -36,7 +34,6 @@ namespace PayStationSW.Devices
             device.Config.IsSetUp = await device.PreSetting(); 
             return device;
         }
-
         private async Task<bool> PreSetting()
         {
             try
@@ -65,8 +62,6 @@ namespace PayStationSW.Devices
                 return false;
             }
         }
-
-
         public async Task<string> Enable()
         {
             return "Coin device still enable";
@@ -76,10 +71,6 @@ namespace PayStationSW.Devices
             return "Coin device still disable";
 
         }
-
-
-
-
         public async Task<string> PrintTestPage()
         {
             bool IsPrinted = false;
@@ -98,6 +89,5 @@ namespace PayStationSW.Devices
                 return "Coin device dosen't print test page correctly";
             }
         }
-
     }
 }

@@ -36,6 +36,7 @@ namespace PayStationSW
             Devices[DeviceEnum.Printer] = await PrinterDevice.CreateAsync(context);
             Devices[DeviceEnum.RCModule] = await RCModule.CreateAsync(context);
             Devices[DeviceEnum.TwinModule] = await TwinModule.CreateAsync(context);
+            Devices[DeviceEnum.Web2Park] = await Web2Park.CreateAsync(context);
             var status = ReconfigureDevices(context);
         }
         public async Task<string> ReconfigureDevices(ApplicationDbContext context)
@@ -78,7 +79,8 @@ namespace PayStationSW
                     {"3", DeviceEnum.Pos},
                     {"4", DeviceEnum.Printer},
                     {"5", DeviceEnum.RCModule},
-                    {"6", DeviceEnum.TwinModule}
+                    {"6", DeviceEnum.TwinModule},
+                    {"7", DeviceEnum.Web2Park}
                 };
 
                 foreach (var entry in deviceTypes)
@@ -216,7 +218,8 @@ namespace PayStationSW
         Printer,
         RCModule,
         TwinModule,
-        IO
+        IO,
+        Web2Park
     }
 
     //PaymentObject da rivedere o usare direttamente MovementDB come modello

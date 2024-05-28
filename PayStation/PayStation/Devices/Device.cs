@@ -34,6 +34,8 @@ namespace PayStationSW.Devices
                 IsSetUpFeauture = false
                 // Altri campi inizializzati...
             };
+            retryTimer = new System.Timers.Timer();
+            SetRetryAndTimerResponse();
             serialPort = new SerialPort();
             serialPort.DataReceived += new SerialDataReceivedEventHandler(DataReceivedHandler);
             serialPort.ErrorReceived += SerialPort_ErrorReceived;

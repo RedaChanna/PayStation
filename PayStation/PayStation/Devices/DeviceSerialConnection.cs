@@ -276,6 +276,7 @@ namespace PayStationSW.Devices
                         // Check for complete message and process
                         if (CheckAndProcessMessageBufferByte())
                         {
+
                             ++countCompletBufferRecived;
 
                             if (countCompletBufferRecived == _commandParameters.nmbrResponseExpected)
@@ -391,11 +392,13 @@ namespace PayStationSW.Devices
                     {
                         endIndex = FindEndIndexOfCompleteMessage(messageBuffer);
                     }
-
                     if (endIndex != -1 && startIndex != -1 && endIndex > 0) // A complete message is found based on ending bytes or other criteria
                     {
                         byte[] completeMessageFragment = messageBuffer.Take(endIndex + 1).ToArray();
-                        messageBuffer.RemoveRange(startIndex, endIndex + 1);
+                        if (startIndex >= 0 && endIndex < messageBuffer.Count)
+                        {
+                            messageBuffer.RemoveRange(startIndex, endIndex - startIndex + 1);
+                        }
                         messageFragments.Add(completeMessageFragment);
                         messageProcessed = true;
                     }

@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
 using PayStationSW.DataBase;
 using PayStationSW;
+using PayStationSW.Devices;
 
 public class StationManagerWS
 {
@@ -37,7 +38,11 @@ public class StationManagerWS
                 if(_messageCounter == 2)
                 {
                     await NotifyClientsAsync("2");
-
+                    var station = await StationManager.GetStationAsync(_context);
+                    /*
+                    var web2Park = station.Devices[DeviceEnum.Web2Park] as Web2Park;
+                    byte[] message = [0x08];
+                    web2Park.SendMessageWithRetry(message);*/
                 }
             }
             else
