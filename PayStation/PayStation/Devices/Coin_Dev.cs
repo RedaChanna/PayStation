@@ -17,7 +17,8 @@ namespace PayStationSW.Devices
     {
         private readonly InterfaceCoinProtocol _protocol;
         private readonly ApplicationDbContext _context;
-
+        private Timer _statusPollingTimer;
+        private bool _isPollingActive;
 
         public bool En_CoinIntroducedLstn { get; set; }
 
@@ -34,6 +35,45 @@ namespace PayStationSW.Devices
         {
 
         }
+
+        public void StartPolling()
+        {
+            if (!_isPollingActive)
+            {
+                // Imposta il timer per avviare il polling subito e ripetere ogni 300 ms
+                _statusPollingTimer = new Timer(PollStatus, null, 0, 300);
+                _isPollingActive = true;
+            }
+        }
+
+        public void StopPolling()
+        {
+            if (_isPollingActive)
+            {
+                _isPollingActive = false;
+            }
+        }
+
+        private void PollStatus(object state)
+        {
+            CommandParameter _commandParameter = new CommandParameter();
+            _commandParameter = _protocol.StatusCommand();
+            Task<bool> statusTask = this.Command(_commandParameter);
+            statusTask.ContinueWith(task =>
+            {
+                if (task.Exception != null)
+                {
+                    // Gestisci eccezioni
+                    Console.WriteLine("Error polling status: " + task.Exception.InnerException?.Message);
+                }
+                else
+                {
+                    // Processa la risposta
+                    Console.WriteLine("Status: " + task.Result);
+                }
+            });
+        }
+
         public static async Task<CoinDevice> CreateAsync(ApplicationDbContext context)
         {
             var device = new CoinDevice(context);
@@ -131,7 +171,7 @@ namespace PayStationSW.Devices
                 return "Coin device is NOT reset correctly";
             }
         }
-        public async Task<string> EnableCommand()
+        public async Task<string> Enable()
         {
             if (_protocol is ProtocolMDB_RS323 gryphonProtocol)
             {
@@ -141,7 +181,6 @@ namespace PayStationSW.Devices
             }
             if (Config.IsEnabled)
             {
-                CoinIntroducedLstn(En_CoinIntroducedLstn);
                 return "Coin device is enable.";
             }
             else

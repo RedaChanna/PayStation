@@ -10,6 +10,7 @@ namespace PayStationSW.Protocols.Coin
         CommandParameter ResetCommand();
         CommandParameter EnableCommand();
         CommandParameter DisableCommand();
+        CommandParameter StatusCommand();
 
 
         Task<bool> setUp();

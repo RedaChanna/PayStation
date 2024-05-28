@@ -46,5 +46,13 @@ namespace PayStationSW
             _commandParameter.validateAnyResponse = true;
             return _commandParameter;
         }
+        public CommandParameter StatusCommand()
+        {
+            CommandParameter _commandParameter = new CommandParameter();
+            _commandParameter.messageToSendBytes = coinIntroducedRequest;
+            _commandParameter.validateAnyResponse = true;
+            return _commandParameter;
+        }
+
     }
 }

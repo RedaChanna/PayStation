@@ -3,16 +3,48 @@
   "WorkspaceRootPath": "C:\\Users\\user\\Documents\\GitHub\\PayStation\\PayStation\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{0CE9D55F-4012-4653-9BE1-685C143F6D00}|PayStation\\PayStationSW.csproj|c:\\users\\user\\documents\\github\\paystation\\paystation\\paystation\\restapi\\coindevicecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0CE9D55F-4012-4653-9BE1-685C143F6D00}|PayStation\\PayStationSW.csproj|solutionrelative:paystation\\restapi\\coindevicecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{0CE9D55F-4012-4653-9BE1-685C143F6D00}|PayStation\\PayStationSW.csproj|c:\\users\\user\\documents\\github\\paystation\\paystation\\paystation\\restapi\\registercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0CE9D55F-4012-4653-9BE1-685C143F6D00}|PayStation\\PayStationSW.csproj|solutionrelative:paystation\\restapi\\registercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0CE9D55F-4012-4653-9BE1-685C143F6D00}|PayStation\\PayStationSW.csproj|c:\\users\\user\\documents\\github\\paystation\\paystation\\paystation\\restapi\\cashdevicecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0CE9D55F-4012-4653-9BE1-685C143F6D00}|PayStation\\PayStationSW.csproj|solutionrelative:paystation\\restapi\\cashdevicecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0CE9D55F-4012-4653-9BE1-685C143F6D00}|PayStation\\PayStationSW.csproj|c:\\users\\user\\documents\\github\\paystation\\paystation\\paystation\\devices\\coin_dev.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0CE9D55F-4012-4653-9BE1-685C143F6D00}|PayStation\\PayStationSW.csproj|solutionrelative:paystation\\devices\\coin_dev.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0CE9D55F-4012-4653-9BE1-685C143F6D00}|PayStation\\PayStationSW.csproj|c:\\users\\user\\documents\\github\\paystation\\paystation\\paystation\\devices\\cash_dev.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0CE9D55F-4012-4653-9BE1-685C143F6D00}|PayStation\\PayStationSW.csproj|solutionrelative:paystation\\devices\\cash_dev.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0CE9D55F-4012-4653-9BE1-685C143F6D00}|PayStation\\PayStationSW.csproj|c:\\users\\user\\documents\\github\\paystation\\paystation\\paystation\\restapi\\printerdevicecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0CE9D55F-4012-4653-9BE1-685C143F6D00}|PayStation\\PayStationSW.csproj|solutionrelative:paystation\\restapi\\printerdevicecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0CE9D55F-4012-4653-9BE1-685C143F6D00}|PayStation\\PayStationSW.csproj|c:\\users\\user\\documents\\github\\paystation\\paystation\\paystation\\restapi\\posdevicecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0CE9D55F-4012-4653-9BE1-685C143F6D00}|PayStation\\PayStationSW.csproj|solutionrelative:paystation\\restapi\\posdevicecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0CE9D55F-4012-4653-9BE1-685C143F6D00}|PayStation\\PayStationSW.csproj|c:\\users\\user\\documents\\github\\paystation\\paystation\\paystation\\restapi\\notificationscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0CE9D55F-4012-4653-9BE1-685C143F6D00}|PayStation\\PayStationSW.csproj|solutionrelative:paystation\\restapi\\notificationscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0CE9D55F-4012-4653-9BE1-685C143F6D00}|PayStation\\PayStationSW.csproj|c:\\users\\user\\documents\\github\\paystation\\paystation\\paystation\\restapi\\iodevicecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0CE9D55F-4012-4653-9BE1-685C143F6D00}|PayStation\\PayStationSW.csproj|solutionrelative:paystation\\restapi\\iodevicecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0CE9D55F-4012-4653-9BE1-685C143F6D00}|PayStation\\PayStationSW.csproj|c:\\users\\user\\documents\\github\\paystation\\paystation\\paystation\\restapi\\databasecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0CE9D55F-4012-4653-9BE1-685C143F6D00}|PayStation\\PayStationSW.csproj|solutionrelative:paystation\\restapi\\databasecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0CE9D55F-4012-4653-9BE1-685C143F6D00}|PayStation\\PayStationSW.csproj|c:\\users\\user\\documents\\github\\paystation\\paystation\\paystation\\protocols\\coin\\protocolmdb_rs323.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0CE9D55F-4012-4653-9BE1-685C143F6D00}|PayStation\\PayStationSW.csproj|solutionrelative:paystation\\protocols\\coin\\protocolmdb_rs323.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0CE9D55F-4012-4653-9BE1-685C143F6D00}|PayStation\\PayStationSW.csproj|c:\\users\\user\\documents\\github\\paystation\\paystation\\paystation\\protocols\\coin\\sequencemdb_rs323.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0CE9D55F-4012-4653-9BE1-685C143F6D00}|PayStation\\PayStationSW.csproj|solutionrelative:paystation\\protocols\\coin\\sequencemdb_rs323.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,45 +54,149 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "CashDeviceController.cs",
-              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\PayStation\\PayStation\\PayStation\\RESTAPI\\CashDeviceController.cs",
-              "RelativeDocumentMoniker": "PayStation\\RESTAPI\\CashDeviceController.cs",
-              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\PayStation\\PayStation\\PayStation\\RESTAPI\\CashDeviceController.cs",
-              "RelativeToolTip": "PayStation\\RESTAPI\\CashDeviceController.cs",
-              "ViewState": "AQIAABEAAAAAAAAAAAAQwCAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-28T13:37:41.151Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "RegisterController.cs",
-              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\PayStation\\PayStation\\PayStation\\RESTAPI\\RegisterController.cs",
-              "RelativeDocumentMoniker": "PayStation\\RESTAPI\\RegisterController.cs",
-              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\PayStation\\PayStation\\PayStation\\RESTAPI\\RegisterController.cs",
-              "RelativeToolTip": "PayStation\\RESTAPI\\RegisterController.cs",
-              "ViewState": "AQIAAE8AAAAAAAAAAAAwwGMAAAAuAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-28T13:36:48.094Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "Coin_Dev.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\PayStation\\PayStation\\PayStation\\Devices\\Coin_Dev.cs",
+              "RelativeDocumentMoniker": "PayStation\\Devices\\Coin_Dev.cs",
+              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\PayStation\\PayStation\\PayStation\\Devices\\Coin_Dev.cs",
+              "RelativeToolTip": "PayStation\\Devices\\Coin_Dev.cs",
+              "ViewState": "AQIAAKUAAAAAAAAAAADgv60AAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-28T14:44:37.847Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "Cash_Dev.cs",
               "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\PayStation\\PayStation\\PayStation\\Devices\\Cash_Dev.cs",
               "RelativeDocumentMoniker": "PayStation\\Devices\\Cash_Dev.cs",
               "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\PayStation\\PayStation\\PayStation\\Devices\\Cash_Dev.cs",
               "RelativeToolTip": "PayStation\\Devices\\Cash_Dev.cs",
-              "ViewState": "AQIAACgAAAAAAAAAAADwv0YAAAAAAAAA",
+              "ViewState": "AQIAAG4AAAAAAAAAAIAwwHAAAAAoAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-28T13:24:58.699Z",
+              "WhenOpened": "2024-05-28T14:44:25.495Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "RegisterController.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\PayStation\\PayStation\\PayStation\\RESTAPI\\RegisterController.cs",
+              "RelativeDocumentMoniker": "PayStation\\RESTAPI\\RegisterController.cs",
+              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\PayStation\\PayStation\\PayStation\\RESTAPI\\RegisterController.cs",
+              "RelativeToolTip": "PayStation\\RESTAPI\\RegisterController.cs",
+              "ViewState": "AQIAAFcAAAAAAAAAAAAiwGYAAAAuAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-28T14:41:38.017Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "PrinterDeviceController.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\PayStation\\PayStation\\PayStation\\RESTAPI\\PrinterDeviceController.cs",
+              "RelativeDocumentMoniker": "PayStation\\RESTAPI\\PrinterDeviceController.cs",
+              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\PayStation\\PayStation\\PayStation\\RESTAPI\\PrinterDeviceController.cs",
+              "RelativeToolTip": "PayStation\\RESTAPI\\PrinterDeviceController.cs",
+              "ViewState": "AQIAACcAAAAAAAAAAAAowAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-28T14:41:22.821Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CoinDeviceController.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\PayStation\\PayStation\\PayStation\\RESTAPI\\CoinDeviceController.cs",
+              "RelativeDocumentMoniker": "PayStation\\RESTAPI\\CoinDeviceController.cs",
+              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\PayStation\\PayStation\\PayStation\\RESTAPI\\CoinDeviceController.cs",
+              "RelativeToolTip": "PayStation\\RESTAPI\\CoinDeviceController.cs",
+              "ViewState": "AQIAACIAAAAAAAAAAADgvzEAAABIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-28T14:40:04.702Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "POSDeviceController.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\PayStation\\PayStation\\PayStation\\RESTAPI\\POSDeviceController.cs",
+              "RelativeDocumentMoniker": "PayStation\\RESTAPI\\POSDeviceController.cs",
+              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\PayStation\\PayStation\\PayStation\\RESTAPI\\POSDeviceController.cs",
+              "RelativeToolTip": "PayStation\\RESTAPI\\POSDeviceController.cs",
+              "ViewState": "AQIAADYAAAAAAAAAAAAowAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-28T14:41:14.179Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "NotificationsController.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\PayStation\\PayStation\\PayStation\\RESTAPI\\NotificationsController.cs",
+              "RelativeDocumentMoniker": "PayStation\\RESTAPI\\NotificationsController.cs",
+              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\PayStation\\PayStation\\PayStation\\RESTAPI\\NotificationsController.cs",
+              "RelativeToolTip": "PayStation\\RESTAPI\\NotificationsController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-28T14:41:10.506Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "IODeviceController.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\PayStation\\PayStation\\PayStation\\RESTAPI\\IODeviceController.cs",
+              "RelativeDocumentMoniker": "PayStation\\RESTAPI\\IODeviceController.cs",
+              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\PayStation\\PayStation\\PayStation\\RESTAPI\\IODeviceController.cs",
+              "RelativeToolTip": "PayStation\\RESTAPI\\IODeviceController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-28T14:41:08.035Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "DataBaseController.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\PayStation\\PayStation\\PayStation\\RESTAPI\\DataBaseController.cs",
+              "RelativeDocumentMoniker": "PayStation\\RESTAPI\\DataBaseController.cs",
+              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\PayStation\\PayStation\\PayStation\\RESTAPI\\DataBaseController.cs",
+              "RelativeToolTip": "PayStation\\RESTAPI\\DataBaseController.cs",
+              "ViewState": "AQIAACQAAAAAAAAAAAAowAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-28T14:41:00.099Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ProtocolMDB_RS323.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\PayStation\\PayStation\\PayStation\\Protocols\\Coin\\ProtocolMDB_RS323.cs",
+              "RelativeDocumentMoniker": "PayStation\\Protocols\\Coin\\ProtocolMDB_RS323.cs",
+              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\PayStation\\PayStation\\PayStation\\Protocols\\Coin\\ProtocolMDB_RS323.cs",
+              "RelativeToolTip": "PayStation\\Protocols\\Coin\\ProtocolMDB_RS323.cs",
+              "ViewState": "AQIAAKQAAAAAAAAAAAAwwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-28T14:40:30.697Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "SequenceMDB_RS323.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\PayStation\\PayStation\\PayStation\\Protocols\\Coin\\SequenceMDB_RS323.cs",
+              "RelativeDocumentMoniker": "PayStation\\Protocols\\Coin\\SequenceMDB_RS323.cs",
+              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\PayStation\\PayStation\\PayStation\\Protocols\\Coin\\SequenceMDB_RS323.cs",
+              "RelativeToolTip": "PayStation\\Protocols\\Coin\\SequenceMDB_RS323.cs",
+              "ViewState": "AQIAACYAAAAAAAAAAAAwwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-28T14:40:09.754Z",
               "EditorCaption": ""
             }
           ]

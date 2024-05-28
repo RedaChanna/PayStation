@@ -47,7 +47,7 @@ namespace PayStationSW.RESTAPI
                 {
                     return BadRequest(new { error = "The Coin device is not a connected device." });
                 }
-                string response = enableDevice ? await coinDevice.EnableCommand() : await coinDevice.DisableCommand();
+                string response = enableDevice ? await coinDevice.Enable() : await coinDevice.DisableCommand();
                 return Ok(new { status = response });
             }
             catch (Exception ex)

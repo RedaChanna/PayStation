@@ -90,15 +90,19 @@ namespace PayStationSW.RESTAPI
                 _context.MovementsDB.Add(movement);
                 await _context.SaveChangesAsync();
 
+                var coinDevice = station.Devices[DeviceEnum.Coin] as CoinDevice;
                 var cashDevice = station.Devices[DeviceEnum.Cash] as CashDevice;
-                if (!cashDevice.Config.IsConnected)
+                if (coinDevice.Config.IsConnected)
                 {
-                    return BadRequest(new { error = "The cash device is not a connected device." });
+                    await coinDevice.Enable();
+                    coinDevice.StartPolling();
                 }
-                else
+                if (cashDevice.Config.IsConnected)
                 {
+                    await cashDevice.Enable();
                     cashDevice.StartPolling();
                 }
+
 
 
                 _stationManagerWS.StartPeriodicMessages();
