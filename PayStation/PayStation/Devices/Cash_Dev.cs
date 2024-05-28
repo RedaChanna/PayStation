@@ -32,7 +32,8 @@ namespace PayStationSW.Devices
         private bool PayedOut;
         private bool PoweredUp;
 
-        private Timer _pollingTimer;
+        private Timer _statusPollingTimer;
+        private bool _isPollingActive;
 
         private readonly InterfaceCashProtocol _protocol;
         public CashDevice(ApplicationDbContext context)
@@ -52,14 +53,30 @@ namespace PayStationSW.Devices
             RCModule.BillCount5 = 0;
             RCModule.BillCount10 = 0;
 
-            _pollingTimer = new Timer(PollDevices, null, 0, 300); // Attiva immediatamente il timer, ripete ogni 300ms
-
         }
+        public void StartPolling()
+        {
+            if (!_isPollingActive)
+            {
+                // Imposta il timer per avviare il polling subito e ripetere ogni 300 ms
+                _statusPollingTimer = new Timer(PollStatus, null, 0, 300);
+                _isPollingActive = true;
+            }
+        }
+
+        public void StopPolling()
+        {
+            if (_isPollingActive)
+            {
+                _isPollingActive = false;
+            }
+        }
+
         private void PollStatus(object state)
         {
             CommandParameter _commandParameter = new CommandParameter();
             _commandParameter = _protocol.StatusCommand();
-            Task<string> statusTask = this.Command(_commandParameter);
+            Task<bool> statusTask = this.Command(_commandParameter);
             statusTask.ContinueWith(task =>
             {
                 if (task.Exception != null)
@@ -74,14 +91,6 @@ namespace PayStationSW.Devices
                 }
             });
         }
-
-        // Assicurati di liberare il timer quando non è più necessario
-        public override void Dispose()
-        {
-            _statusPollingTimer?.Dispose();
-            base.Dispose();
-        }
-    }
 
         public override void ApplyConfig()
         {

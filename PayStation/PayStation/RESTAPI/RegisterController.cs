@@ -89,6 +89,18 @@ namespace PayStationSW.RESTAPI
                 // Add the movement to the database and save changes
                 _context.MovementsDB.Add(movement);
                 await _context.SaveChangesAsync();
+
+                var cashDevice = station.Devices[DeviceEnum.Cash] as CashDevice;
+                if (!cashDevice.Config.IsConnected)
+                {
+                    return BadRequest(new { error = "The cash device is not a connected device." });
+                }
+                else
+                {
+                    cashDevice.StartPolling();
+                }
+
+
                 _stationManagerWS.StartPeriodicMessages();
                 return Ok(new { message = $"Set importo recived for importo {importo}, id movment is {movement.Id}." });
 
