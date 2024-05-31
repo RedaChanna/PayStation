@@ -41,7 +41,7 @@ namespace PayStationSW.RESTAPI
             try
             {
                 var station = await StationManager.GetStationAsync(_context);
-                var pos = station.Devices[DeviceEnum.Printer] as POSDevice;
+                var pos = station.Devices[DeviceEnum.Pos] as POSDevice;
                 if (!pos.Config.IsConnected)
                 {
                     return BadRequest(new { error = "The Pos device is not a connected device." });

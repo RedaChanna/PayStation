@@ -363,6 +363,16 @@
   },
   {
     "ContainingType": "PayStationSW.RESTAPI.POSDeviceController",
+    "Method": "ActivatePos",
+    "RelativePath": "api/POSDevice/ActivatePos",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PayStationSW.RESTAPI.POSDeviceController",
     "Method": "GetEnableStatus",
     "RelativePath": "api/POSDevice/GetEnableStatus",
     "HttpMethod": "GET",

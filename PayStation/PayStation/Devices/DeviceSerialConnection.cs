@@ -124,6 +124,12 @@ namespace PayStationSW.Devices
                     Config.IsConnected = true;
                     Console.WriteLine($"Connected to {serialPort.PortName}.");
                 }
+                else
+                {
+                    Config.IsConnected = false;
+                    Console.WriteLine($"Not connect to {serialPort.PortName}.");
+
+                }
             }
             catch (Exception ex)
             {

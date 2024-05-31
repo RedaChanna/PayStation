@@ -20,7 +20,7 @@ class Program
         var builder = WebApplication.CreateBuilder(args);
 
         // Imposta l'indirizzo IP e la porta su cui ascoltare
-        builder.WebHost.UseUrls("http://10.10.20.93:5000");
+        builder.WebHost.UseUrls("http://10.10.20.21:5000");
         builder.Services.AddControllers()
             .AddNewtonsoftJson(options =>
             {
