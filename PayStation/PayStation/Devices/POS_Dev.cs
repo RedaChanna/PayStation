@@ -80,11 +80,11 @@ namespace PayStationSW.Devices
                 _commandParameter = await this.Command(_commandParameter);
 
 
-                IsPosActivated = _commandParameter.validatedCommand;
+                Config.IsSetUp = _commandParameter.validatedCommand;
 
 
             }
-            if (IsPosActivated)
+            if (Config.IsSetUp)
             {
                 _commandParameter = new CommandParameter();
                 _commandParameter = _protocol.ACK();
@@ -97,8 +97,28 @@ namespace PayStationSW.Devices
             }
         }
 
+        public async Task<string> SetImportoPos()
+        {
+            CommandParameter _commandParameter = new CommandParameter();
 
-        
+            if (_protocol is ProtocolIngenico ingenicoProtocol)
+            {
+
+
+
+                if (Config.IsConnected && Config.IsSetUp)
+                {
+                    _commandParameter = new CommandParameter();
+                    _commandParameter = _protocol.SendAmount("11077128",10);
+                    _commandParameter = await this.Command(_commandParameter);
+                    return "Pos importo is setted.";
+                }
+            }
+
+            return "Pos importo couldn't be setted.";
+
+        }
+
 
 
 
