@@ -61,6 +61,54 @@ namespace PayStationSW.Protocols.POS
 
 
                 CommandParameter commandParameter = new CommandParameter();
+                commandParameter.validateAnyResponse = false;
+                commandParameter.minBufferLength = 32;
+                commandParameter.timeOutResponseMilliseconds = 20000;
+                commandParameter.expectedMinLength = true;
+                commandParameter.expectedMinLengthList = [32];
+                commandParameter.messageToSendBytes = hexBytes;
+
+                commandParameter.retryDelayMilliseconds = 20000;
+
+                commandParameter.expectedResponse = true;
+                return commandParameter;
+
+
+
+
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error in WaitForResponse: {ex.Message}");
+                CommandParameter commandParameter = new CommandParameter();
+                return commandParameter;
+            }
+        }
+
+        public CommandParameter ACK()
+        {
+
+         try
+            {
+
+                // Send activation message
+                string message = "06037A";
+
+
+                // Convert message from hexadecimal string to byte array
+                byte[] hexBytes = Enumerable.Range(0, message.Length)
+                   .Where(x => x % 2 == 0)
+                   .Select(x => Convert.ToByte(message.Substring(x, 2), 16))
+                   .ToArray();
+
+                // Convert byte array to hexadecimal string for logging
+                string hexString = BitConverter.ToString(hexBytes).Replace("-", " ");
+                Console.WriteLine("\n" + $"Sending message ACK to POS");
+
+
+
+                CommandParameter commandParameter = new CommandParameter();
 
 
                 commandParameter.messageToSendBytes = hexBytes;
@@ -74,7 +122,8 @@ namespace PayStationSW.Protocols.POS
 
 
 
-            }catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 Console.WriteLine($"Error in WaitForResponse: {ex.Message}");
                 CommandParameter commandParameter = new CommandParameter();
@@ -82,7 +131,60 @@ namespace PayStationSW.Protocols.POS
             }
         }
 
-        
+        public CommandParameter SendAmount(string terminalID, int amountInCents)
+        {
+            try
+            {
+                string hexTerminalID = BitConverter.ToString(Encoding.ASCII.GetBytes(terminalID)).Replace("-", "");
+
+                // Convert amount to string with 8 digits
+                string amountString = amountInCents.ToString("D8");
+
+                // Convert amount string to hexadecimal representation
+                string hexAmount = BitConverter.ToString(Encoding.ASCII.GetBytes(amountString)).Replace("-", "");
+
+                // Construct the amount message
+                string posAmountMessage = $"{MESSAGE_START}{hexTerminalID}305030303030{hexAmount}3031302A30303030303030303030303003";
+                string lcrPosAmount = CalculateLCR(posAmountMessage);
+
+
+
+
+
+                string message = posAmountMessage + lcrPosAmount;
+
+
+                // Convert message from hexadecimal string to byte array
+                byte[] hexBytes = Enumerable.Range(0, message.Length)
+                   .Where(x => x % 2 == 0)
+                   .Select(x => Convert.ToByte(message.Substring(x, 2), 16))
+                   .ToArray();
+
+                // Convert byte array to hexadecimal string for logging
+                string hexString = BitConverter.ToString(hexBytes).Replace("-", " ");
+                Console.WriteLine("\n" + $"Sending message ACK to POS");
+
+
+
+                CommandParameter commandParameter = new CommandParameter();
+
+
+                commandParameter.messageToSendBytes = hexBytes;
+
+
+
+                commandParameter.expectedResponse = false;
+                return commandParameter;
+
+            }
+            catch
+            {
+                CommandParameter commandParameter = new CommandParameter();
+                return commandParameter;
+
+            }
+
+        }
 
         // Method to calculate the LCR for a given message
         private string CalculateLCR(string message)

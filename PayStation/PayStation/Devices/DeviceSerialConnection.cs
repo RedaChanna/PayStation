@@ -222,25 +222,28 @@ namespace PayStationSW.Devices
         #region Recive Message
         private void OnResponseTimeout(object sender, System.Timers.ElapsedEventArgs e)
         {
-            isWaitingForResponse = false; // Stop waiting for response
-
-            if ((currentRetryCount < _commandParameters.maxRetryAttempts) && (_commandParameters.sendWithRetry))
+            if (_commandParameters.expectedResponse)
             {
-                currentRetryCount++;
-                Console.WriteLine($"No response received, retrying... Attempt {currentRetryCount} of {_commandParameters.maxRetryAttempts}");
-                if (_commandParameters.sendStringOrHEX)
+                isWaitingForResponse = false; // Stop waiting for response
+
+                if ((currentRetryCount < _commandParameters.maxRetryAttempts) && (_commandParameters.sendWithRetry))
                 {
-                    SendMessage(lastSentMessageString); // Retrying with the last string message
+                    currentRetryCount++;
+                    Console.WriteLine($"No response received, retrying... Attempt {currentRetryCount} of {_commandParameters.maxRetryAttempts}");
+                    if (_commandParameters.sendStringOrHEX)
+                    {
+                        SendMessage(lastSentMessageString); // Retrying with the last string message
+                    }
+                    else
+                    {
+                        SendMessage(lastSentMessageByte); // Retrying with the last byte array message
+                    }
                 }
                 else
                 {
-                    SendMessage(lastSentMessageByte); // Retrying with the last byte array message
+                    Console.WriteLine("Device doesn't answer after maximum retry attempts.");
+                    // Handle the case where the device is not responding after retries (e.g., alert the user, log the error, etc.)
                 }
-            }
-            else
-            {
-                Console.WriteLine("Device doesn't answer after maximum retry attempts.");
-                // Handle the case where the device is not responding after retries (e.g., alert the user, log the error, etc.)
             }
         }
         private void DataReceivedHandler(object sender, SerialDataReceivedEventArgs e)

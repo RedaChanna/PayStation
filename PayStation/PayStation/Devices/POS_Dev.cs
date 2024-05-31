@@ -67,25 +67,28 @@ namespace PayStationSW.Devices
 
 
 
-
         public async Task<string> ActivatePOS()
         {
+            CommandParameter _commandParameter = new CommandParameter();
+
             bool IsPosActivated = false;
             if (_protocol is ProtocolIngenico ingenicoProtocol)
             {
-                CommandParameter _commandParameter = new CommandParameter();
-                _commandParameter = _protocol.ActivationCommand();
 
+                
+                _commandParameter = _protocol.ActivationCommand();
                 _commandParameter = await this.Command(_commandParameter);
-                _commandParameter.expectedMinLength = true;
-                _commandParameter.expectedMinLengthList = [32];
-                Console.WriteLine(_commandParameter.responseByte);
-                Console.WriteLine($"{_commandParameter.responseByte}");
+
 
                 IsPosActivated = _commandParameter.validatedCommand;
+
+
             }
             if (IsPosActivated)
             {
+                _commandParameter = new CommandParameter();
+                _commandParameter = _protocol.ACK();
+                _commandParameter = await this.Command(_commandParameter);
                 return "Pos is activated.";
             }
             else
@@ -94,6 +97,8 @@ namespace PayStationSW.Devices
             }
         }
 
+
+        
 
 
 

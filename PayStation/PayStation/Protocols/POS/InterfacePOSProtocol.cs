@@ -6,5 +6,7 @@
         Task<bool> enableDevice();
         Task<bool> disableDevice();
         CommandParameter ActivationCommand();
+        CommandParameter ACK();
+        CommandParameter SendAmount(string terminalID, int amountInCents);
     }
 }
