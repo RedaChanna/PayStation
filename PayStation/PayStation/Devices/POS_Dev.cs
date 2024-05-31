@@ -1,4 +1,4 @@
-﻿using PayStationSW.DataBase;
+﻿ using PayStationSW.DataBase;
 using PayStationSW.Protocols.Coin;
 using PayStationSW.Protocols.POS;
 using System;
@@ -64,6 +64,32 @@ namespace PayStationSW.Devices
                 return false;
             }
         }
+
+
+
+
+        public async Task<string> ActivatePOS()
+        {
+            bool IsPosActivated = false;
+            if (_protocol is ProtocolCashino cashinoProtocol)
+            {
+                CommandParameter _commandParameter = new CommandParameter();
+                _commandParameter = _protocol.ActivationCommand();
+
+                _commandParameter = await this.Command(_commandParameter);
+                Console.WriteLine(_commandParameter.responseByte);
+                IsPosActivated = _commandParameter.validatedCommand;
+            }
+            if (IsPosActivated)
+            {
+                return "Pos is activated.";
+            }
+            else
+            {
+                return "Pos in not activated.";
+            }
+        }
+
 
 
 

@@ -5,5 +5,6 @@
         Task<bool> resetDevice();
         Task<bool> enableDevice();
         Task<bool> disableDevice();
+        CommandParameter ActivationCommand();
     }
 }

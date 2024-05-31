@@ -35,7 +35,25 @@ namespace PayStationSW.RESTAPI
             }
         }
 
-
+        [HttpPost("ActivatePos")]
+        public async Task<IActionResult> ActivatePos()
+        {
+            try
+            {
+                var station = await StationManager.GetStationAsync(_context);
+                var pos = station.Devices[DeviceEnum.Printer] as POSDevice;
+                if (!pos.Config.IsConnected)
+                {
+                    return BadRequest(new { error = "The Pos device is not a connected device." });
+                }
+                string response = await pos.ActivatePOS();
+                return Ok(new { status = response });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { error = ex.Message });
+            }
+        }
 
 
 
