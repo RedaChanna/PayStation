@@ -77,8 +77,11 @@ namespace PayStationSW.Devices
                 _commandParameter = _protocol.ActivationCommand();
 
                 _commandParameter = await this.Command(_commandParameter);
+                _commandParameter.expectedMinLength = true;
+                _commandParameter.expectedMinLengthList = [32];
                 Console.WriteLine(_commandParameter.responseByte);
                 Console.WriteLine($"{_commandParameter.responseByte}");
+
                 IsPosActivated = _commandParameter.validatedCommand;
             }
             if (IsPosActivated)
