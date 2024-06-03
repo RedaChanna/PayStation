@@ -1,37 +1,37 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Reda\\Desktop\\Cityware\\PayStation\\PayStation\\",
+  "WorkspaceRootPath": "C:\\Users\\user\\Documents\\GitHub\\PayStation\\PayStation\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0CE9D55F-4012-4653-9BE1-685C143F6D00}|PayStation\\PayStationSW.csproj|c:\\users\\reda\\desktop\\cityware\\paystation\\paystation\\paystation\\protocols\\pos\\protocolingenico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0CE9D55F-4012-4653-9BE1-685C143F6D00}|PayStation\\PayStationSW.csproj|solutionrelative:paystation\\protocols\\pos\\protocolingenico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0CE9D55F-4012-4653-9BE1-685C143F6D00}|PayStation\\PayStationSW.csproj|C:\\Users\\Reda\\Desktop\\Cityware\\PayStation\\PayStation\\paystation\\devices\\pos_dev.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0CE9D55F-4012-4653-9BE1-685C143F6D00}|PayStation\\PayStationSW.csproj|solutionrelative:paystation\\devices\\pos_dev.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0CE9D55F-4012-4653-9BE1-685C143F6D00}|PayStation\\PayStationSW.csproj|C:\\Users\\Reda\\Desktop\\Cityware\\PayStation\\PayStation\\paystation\\restapi\\printerdevicecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0CE9D55F-4012-4653-9BE1-685C143F6D00}|PayStation\\PayStationSW.csproj|solutionrelative:paystation\\restapi\\printerdevicecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0CE9D55F-4012-4653-9BE1-685C143F6D00}|PayStation\\PayStationSW.csproj|C:\\Users\\Reda\\Desktop\\Cityware\\PayStation\\PayStation\\paystation\\restapi\\posdevicecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0CE9D55F-4012-4653-9BE1-685C143F6D00}|PayStation\\PayStationSW.csproj|solutionrelative:paystation\\restapi\\posdevicecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0CE9D55F-4012-4653-9BE1-685C143F6D00}|PayStation\\PayStationSW.csproj|c:\\users\\reda\\desktop\\cityware\\paystation\\paystation\\paystation\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0CE9D55F-4012-4653-9BE1-685C143F6D00}|PayStation\\PayStationSW.csproj|C:\\Users\\user\\Documents\\GitHub\\PayStation\\PayStation\\paystation\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0CE9D55F-4012-4653-9BE1-685C143F6D00}|PayStation\\PayStationSW.csproj|solutionrelative:paystation\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0CE9D55F-4012-4653-9BE1-685C143F6D00}|PayStation\\PayStationSW.csproj|C:\\Users\\Reda\\Desktop\\Cityware\\PayStation\\PayStation\\paystation\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "AbsoluteMoniker": "D:0:0:{0CE9D55F-4012-4653-9BE1-685C143F6D00}|PayStation\\PayStationSW.csproj|c:\\users\\user\\documents\\github\\paystation\\paystation\\paystation\\protocols\\pos\\protocolingenico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0CE9D55F-4012-4653-9BE1-685C143F6D00}|PayStation\\PayStationSW.csproj|solutionrelative:paystation\\protocols\\pos\\protocolingenico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0CE9D55F-4012-4653-9BE1-685C143F6D00}|PayStation\\PayStationSW.csproj|C:\\Users\\user\\Documents\\GitHub\\PayStation\\PayStation\\paystation\\devices\\pos_dev.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0CE9D55F-4012-4653-9BE1-685C143F6D00}|PayStation\\PayStationSW.csproj|solutionrelative:paystation\\devices\\pos_dev.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0CE9D55F-4012-4653-9BE1-685C143F6D00}|PayStation\\PayStationSW.csproj|C:\\Users\\user\\Documents\\GitHub\\PayStation\\PayStation\\paystation\\restapi\\printerdevicecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0CE9D55F-4012-4653-9BE1-685C143F6D00}|PayStation\\PayStationSW.csproj|solutionrelative:paystation\\restapi\\printerdevicecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0CE9D55F-4012-4653-9BE1-685C143F6D00}|PayStation\\PayStationSW.csproj|C:\\Users\\user\\Documents\\GitHub\\PayStation\\PayStation\\paystation\\restapi\\posdevicecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0CE9D55F-4012-4653-9BE1-685C143F6D00}|PayStation\\PayStationSW.csproj|solutionrelative:paystation\\restapi\\posdevicecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0CE9D55F-4012-4653-9BE1-685C143F6D00}|PayStation\\PayStationSW.csproj|C:\\Users\\user\\Documents\\GitHub\\PayStation\\PayStation\\paystation\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{0CE9D55F-4012-4653-9BE1-685C143F6D00}|PayStation\\PayStationSW.csproj|solutionrelative:paystation\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0CE9D55F-4012-4653-9BE1-685C143F6D00}|PayStation\\PayStationSW.csproj|C:\\Users\\Reda\\Desktop\\Cityware\\PayStation\\PayStation\\paystation\\devices\\deviceserialconnection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0CE9D55F-4012-4653-9BE1-685C143F6D00}|PayStation\\PayStationSW.csproj|C:\\Users\\user\\Documents\\GitHub\\PayStation\\PayStation\\paystation\\devices\\deviceserialconnection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0CE9D55F-4012-4653-9BE1-685C143F6D00}|PayStation\\PayStationSW.csproj|solutionrelative:paystation\\devices\\deviceserialconnection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0CE9D55F-4012-4653-9BE1-685C143F6D00}|PayStation\\PayStationSW.csproj|c:\\users\\reda\\desktop\\cityware\\paystation\\paystation\\paystation\\devices\\device.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0CE9D55F-4012-4653-9BE1-685C143F6D00}|PayStation\\PayStationSW.csproj|C:\\Users\\user\\Documents\\GitHub\\PayStation\\PayStation\\paystation\\devices\\device.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0CE9D55F-4012-4653-9BE1-685C143F6D00}|PayStation\\PayStationSW.csproj|solutionrelative:paystation\\devices\\device.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -42,17 +42,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "ProtocolIngenico.cs",
-              "DocumentMoniker": "C:\\Users\\Reda\\Desktop\\Cityware\\PayStation\\PayStation\\PayStation\\Protocols\\POS\\ProtocolIngenico.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\PayStation\\PayStation\\PayStation\\Protocols\\POS\\ProtocolIngenico.cs",
               "RelativeDocumentMoniker": "PayStation\\Protocols\\POS\\ProtocolIngenico.cs",
-              "ToolTip": "C:\\Users\\Reda\\Desktop\\Cityware\\PayStation\\PayStation\\PayStation\\Protocols\\POS\\ProtocolIngenico.cs",
+              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\PayStation\\PayStation\\PayStation\\Protocols\\POS\\ProtocolIngenico.cs",
               "RelativeToolTip": "PayStation\\Protocols\\POS\\ProtocolIngenico.cs",
-              "ViewState": "AQIAAKQAAAAAAAAAAAAuwK8AAAAAAAAA",
+              "ViewState": "AQIAAJ4AAAAAAAAAAAAuwK8AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-31T14:30:37.69Z",
               "EditorCaption": ""
@@ -61,92 +61,86 @@
               "$type": "Document",
               "DocumentIndex": 7,
               "Title": "Device.cs",
-              "DocumentMoniker": "C:\\Users\\Reda\\Desktop\\Cityware\\PayStation\\PayStation\\PayStation\\Devices\\Device.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\PayStation\\PayStation\\PayStation\\Devices\\Device.cs",
               "RelativeDocumentMoniker": "PayStation\\Devices\\Device.cs",
-              "ToolTip": "C:\\Users\\Reda\\Desktop\\Cityware\\PayStation\\PayStation\\PayStation\\Devices\\Device.cs",
+              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\PayStation\\PayStation\\PayStation\\Devices\\Device.cs",
               "RelativeToolTip": "PayStation\\Devices\\Device.cs",
               "ViewState": "AQIAABEAAAAAAAAAAAAgwB8AAAAXAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-31T14:22:45.013Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-31T14:22:45.013Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
               "Title": "DeviceSerialConnection.cs",
-              "DocumentMoniker": "C:\\Users\\Reda\\Desktop\\Cityware\\PayStation\\PayStation\\PayStation\\Devices\\DeviceSerialConnection.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\PayStation\\PayStation\\PayStation\\Devices\\DeviceSerialConnection.cs",
               "RelativeDocumentMoniker": "PayStation\\Devices\\DeviceSerialConnection.cs",
-              "ToolTip": "C:\\Users\\Reda\\Desktop\\Cityware\\PayStation\\PayStation\\PayStation\\Devices\\DeviceSerialConnection.cs",
+              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\PayStation\\PayStation\\PayStation\\Devices\\DeviceSerialConnection.cs",
               "RelativeToolTip": "PayStation\\Devices\\DeviceSerialConnection.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABgAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-31T05:58:07.266Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-31T05:58:07.266Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
               "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\Reda\\Desktop\\Cityware\\PayStation\\PayStation\\PayStation\\appsettings.json",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\PayStation\\PayStation\\PayStation\\appsettings.json",
               "RelativeDocumentMoniker": "PayStation\\appsettings.json",
-              "ToolTip": "C:\\Users\\Reda\\Desktop\\Cityware\\PayStation\\PayStation\\PayStation\\appsettings.json",
+              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\PayStation\\PayStation\\PayStation\\appsettings.json",
               "RelativeToolTip": "PayStation\\appsettings.json",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-05-31T05:50:41.527Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-31T05:50:41.527Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Reda\\Desktop\\Cityware\\PayStation\\PayStation\\PayStation\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\PayStation\\PayStation\\PayStation\\Program.cs",
               "RelativeDocumentMoniker": "PayStation\\Program.cs",
-              "ToolTip": "C:\\Users\\Reda\\Desktop\\Cityware\\PayStation\\PayStation\\PayStation\\Program.cs",
+              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\PayStation\\PayStation\\PayStation\\Program.cs",
               "RelativeToolTip": "PayStation\\Program.cs",
-              "ViewState": "AQIAAEkAAAAAAAAAAAArwFkAAAAIAAAA",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABYAAAA3AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-31T05:50:38.004Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "POS_Dev.cs",
-              "DocumentMoniker": "C:\\Users\\Reda\\Desktop\\Cityware\\PayStation\\PayStation\\PayStation\\Devices\\POS_Dev.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\PayStation\\PayStation\\PayStation\\Devices\\POS_Dev.cs",
               "RelativeDocumentMoniker": "PayStation\\Devices\\POS_Dev.cs",
-              "ToolTip": "C:\\Users\\Reda\\Desktop\\Cityware\\PayStation\\PayStation\\PayStation\\Devices\\POS_Dev.cs",
+              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\PayStation\\PayStation\\PayStation\\Devices\\POS_Dev.cs",
               "RelativeToolTip": "PayStation\\Devices\\POS_Dev.cs",
               "ViewState": "AQIAAGcAAAAAAAAAAAAIwG8AAAA3AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-31T05:43:12.869Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "PrinterDeviceController.cs",
-              "DocumentMoniker": "C:\\Users\\Reda\\Desktop\\Cityware\\PayStation\\PayStation\\PayStation\\RESTAPI\\PrinterDeviceController.cs",
-              "RelativeDocumentMoniker": "PayStation\\RESTAPI\\PrinterDeviceController.cs",
-              "ToolTip": "C:\\Users\\Reda\\Desktop\\Cityware\\PayStation\\PayStation\\PayStation\\RESTAPI\\PrinterDeviceController.cs",
-              "RelativeToolTip": "PayStation\\RESTAPI\\PrinterDeviceController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAACYAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-31T05:41:36.579Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-31T05:43:12.869Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
+              "Title": "PrinterDeviceController.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\PayStation\\PayStation\\PayStation\\RESTAPI\\PrinterDeviceController.cs",
+              "RelativeDocumentMoniker": "PayStation\\RESTAPI\\PrinterDeviceController.cs",
+              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\PayStation\\PayStation\\PayStation\\RESTAPI\\PrinterDeviceController.cs",
+              "RelativeToolTip": "PayStation\\RESTAPI\\PrinterDeviceController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACYAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-31T05:41:36.579Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "POSDeviceController.cs",
-              "DocumentMoniker": "C:\\Users\\Reda\\Desktop\\Cityware\\PayStation\\PayStation\\PayStation\\RESTAPI\\POSDeviceController.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\PayStation\\PayStation\\PayStation\\RESTAPI\\POSDeviceController.cs",
               "RelativeDocumentMoniker": "PayStation\\RESTAPI\\POSDeviceController.cs",
-              "ToolTip": "C:\\Users\\Reda\\Desktop\\Cityware\\PayStation\\PayStation\\PayStation\\RESTAPI\\POSDeviceController.cs",
+              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\PayStation\\PayStation\\PayStation\\RESTAPI\\POSDeviceController.cs",
               "RelativeToolTip": "PayStation\\RESTAPI\\POSDeviceController.cs",
               "ViewState": "AQIAAA8AAAAAAAAAAAAAADAAAAA0AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-31T05:41:27.942Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-31T05:41:27.942Z"
             }
           ]
         }
