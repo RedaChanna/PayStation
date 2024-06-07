@@ -92,6 +92,8 @@ namespace PayStationSW.RESTAPI
 
                 var coinDevice = station.Devices[DeviceEnum.Coin] as CoinDevice;
                 var cashDevice = station.Devices[DeviceEnum.Cash] as CashDevice;
+                var posDevice = station.Devices[DeviceEnum.Pos] as POSDevice;
+
                 if (coinDevice.Config.IsConnected)
                 {
                     await coinDevice.Enable();
@@ -101,6 +103,10 @@ namespace PayStationSW.RESTAPI
                 {
                     await cashDevice.Enable();
                     cashDevice.StartPolling();
+                }
+                if (posDevice.Config.IsConnected && posDevice.Config.IsSetUp)
+                {
+                    await posDevice.SetImportoPos();
                 }
 
 

@@ -172,8 +172,6 @@ namespace PayStationSW.Protocols.POS
                 commandParameter.messageToSendBytes = hexBytes;
                 commandParameter.validateAnyResponse = true;
 
-
-
                 commandParameter.expectedResponse = false;
                 return commandParameter;
 

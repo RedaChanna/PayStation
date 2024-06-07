@@ -71,18 +71,11 @@ namespace PayStationSW.Devices
         {
             CommandParameter _commandParameter = new CommandParameter();
 
-            bool IsPosActivated = false;
             if (_protocol is ProtocolIngenico ingenicoProtocol)
             {
-
-                
                 _commandParameter = _protocol.ActivationCommand();
                 _commandParameter = await this.Command(_commandParameter);
-
-
                 Config.IsSetUp = _commandParameter.validatedCommand;
-
-
             }
             if (Config.IsSetUp)
             {
