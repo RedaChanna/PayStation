@@ -97,12 +97,12 @@ namespace PayStationSW.RESTAPI
                 if (coinDevice.Config.IsConnected)
                 {
                     await coinDevice.Enable();
-                    coinDevice.StartPolling();
+                    //coinDevice.StartPolling();
                 }
                 if (cashDevice.Config.IsConnected)
                 {
                     await cashDevice.Enable();
-                    cashDevice.StartPolling();
+                    //cashDevice.StartPolling();
                 }
                 if (posDevice.Config.IsConnected && posDevice.Config.IsSetUp)
                 {

@@ -135,6 +135,7 @@ namespace PayStationSW.Protocols.POS
         {
             try
             {
+                Console.WriteLine("SendAmount called");
                 string hexTerminalID = BitConverter.ToString(Encoding.ASCII.GetBytes(terminalID)).Replace("-", "");
 
                 // Convert amount to string with 8 digits
