@@ -736,3 +736,14 @@ C:\Users\User\Desktop\test\PayStation\PayStation\obj\Debug\net8.0\refint\PayStat
 C:\Users\User\Desktop\test\PayStation\PayStation\obj\Debug\net8.0\PayStationSW.pdb
 C:\Users\User\Desktop\test\PayStation\PayStation\obj\Debug\net8.0\PayStationSW.genruntimeconfig.cache
 C:\Users\User\Desktop\test\PayStation\PayStation\obj\Debug\net8.0\ref\PayStationSW.dll
+C:\Users\Reda\Desktop\Desktop\Cityware\PayStation\PayStation\PayStation\obj\Debug\net8.0\PayStationSW.csproj.AssemblyReference.cache
+C:\Users\Reda\Desktop\Desktop\Cityware\PayStation\PayStation\PayStation\obj\Debug\net8.0\PayStationSW.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Reda\Desktop\Desktop\Cityware\PayStation\PayStation\PayStation\obj\Debug\net8.0\PayStationSW.AssemblyInfoInputs.cache
+C:\Users\Reda\Desktop\Desktop\Cityware\PayStation\PayStation\PayStation\obj\Debug\net8.0\PayStationSW.AssemblyInfo.cs
+C:\Users\Reda\Desktop\Desktop\Cityware\PayStation\PayStation\PayStation\obj\Debug\net8.0\PayStationSW.csproj.CoreCompileInputs.cache
+C:\Users\Reda\Desktop\Desktop\Cityware\PayStation\PayStation\PayStation\obj\Debug\net8.0\PayStationSW.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Reda\Desktop\Desktop\Cityware\PayStation\PayStation\PayStation\obj\Debug\net8.0\PayStationSW.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Reda\Desktop\Desktop\Cityware\PayStation\PayStation\PayStation\obj\Debug\net8.0\PayStationSW.sourcelink.json
+C:\Users\Reda\Desktop\Desktop\Cityware\PayStation\PayStation\PayStation\obj\Debug\net8.0\PayStationSW.dll
+C:\Users\Reda\Desktop\Desktop\Cityware\PayStation\PayStation\PayStation\obj\Debug\net8.0\refint\PayStationSW.dll
+C:\Users\Reda\Desktop\Desktop\Cityware\PayStation\PayStation\PayStation\obj\Debug\net8.0\PayStationSW.pdb

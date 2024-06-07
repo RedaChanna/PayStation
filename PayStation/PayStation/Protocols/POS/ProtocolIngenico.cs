@@ -171,9 +171,29 @@ namespace PayStationSW.Protocols.POS
 
 
                 commandParameter.messageToSendBytes = hexBytes;
-                commandParameter.validateAnyResponse = true;
 
-                commandParameter.expectedResponse = false;
+                // Check if the received data contains the expected card reading message
+                string expectedCardReadingMessage = $"{MESSAGE_START}{hexTerminalID}3049{MESSAGE_END}";
+                string lcrExpectedCardReadingMessage = CalculateLCR(expectedCardReadingMessage);
+
+
+                // Convert message from hexadecimal string to byte array
+                byte[] hexBytesExpected = Enumerable.Range(0, message.Length)
+                   .Where(x => x % 2 == 0)
+                   .Select(x => Convert.ToByte(message.Substring(x, 2), 16))
+                   .ToArray();
+
+
+
+                commandParameter.validateAnyResponse = false;
+
+                commandParameter.expectedResponse = true;
+
+                commandParameter.expectedResponsesListByte[0] = hexBytesExpected;
+                commandParameter.nmbrResponseExpected = 1;
+                commandParameter.messageStartingBytes = [0x02];
+                commandParameter.messageEndingBytes = [0x30, 0x49, 0x03];
+           
                 return commandParameter;
 
             }
@@ -185,6 +205,26 @@ namespace PayStationSW.Protocols.POS
             }
 
         }
+
+
+        public CommandParameter CardReading(string terminalID, int amountInCents)
+        {
+            try
+            {
+       
+                return commandParameter;
+
+            }
+            catch
+            {
+                CommandParameter commandParameter = new CommandParameter();
+                return commandParameter;
+
+            }
+
+        }
+
+
 
         // Method to calculate the LCR for a given message
         private string CalculateLCR(string message)
