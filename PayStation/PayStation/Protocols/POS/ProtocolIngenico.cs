@@ -115,7 +115,10 @@ namespace PayStationSW.Protocols.POS
 
 
 
-                commandParameter.expectedResponse = false;
+                commandParameter.expectedResponse = true;
+                commandParameter.messageStartingBytes = [0x02];
+                commandParameter.messageEndingBytes = [0x30, 0x49, 0x03,0x0C];
+
                 return commandParameter;
 
 
@@ -185,14 +188,9 @@ namespace PayStationSW.Protocols.POS
 
 
 
-                commandParameter.validateAnyResponse = false;
+                commandParameter.validateAnyResponse = true;
 
-                commandParameter.expectedResponse = true;
 
-                commandParameter.expectedResponsesListByte[0] = hexBytesExpected;
-                commandParameter.nmbrResponseExpected = 1;
-                commandParameter.messageStartingBytes = [0x02];
-                commandParameter.messageEndingBytes = [0x30, 0x49, 0x03];
            
                 return commandParameter;
 
@@ -207,22 +205,6 @@ namespace PayStationSW.Protocols.POS
         }
 
 
-        public CommandParameter CardReading(string terminalID, int amountInCents)
-        {
-            try
-            {
-       
-                return commandParameter;
-
-            }
-            catch
-            {
-                CommandParameter commandParameter = new CommandParameter();
-                return commandParameter;
-
-            }
-
-        }
 
 
 
