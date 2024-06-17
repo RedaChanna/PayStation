@@ -1,0 +1,1894 @@
+{
+	"info": {
+		"_postman_id": "8a33148e-a821-42b8-a299-f52663d16dea",
+		"name": "Cityware",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "8517847"
+	},
+	"item": [
+		{
+			"name": "WS",
+			"item": [
+				{
+					"name": "New Request",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Register",
+			"item": [
+				{
+					"name": "EnableDisableEntity",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"DeviceType\": \"4\",\r\n  \"Description\": \"Vega Pro\",\r\n  \"Enabled\": \"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host_cassa}}/{{root_api}}/Register/EnableDiasbleEntity",
+							"host": [
+								"{{host_cassa}}"
+							],
+							"path": [
+								"{{root_api}}",
+								"Register",
+								"EnableDiasbleEntity"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetEntityStatus",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host_cassa}}/{{root_api}}/Register/GetEntityStatus/4",
+							"host": [
+								"{{host_cassa}}"
+							],
+							"path": [
+								"{{root_api}}",
+								"Register",
+								"GetEntityStatus",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SetImporto",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "12",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host_cassa}}/{{root_api}}/Register/SetImporto",
+							"host": [
+								"{{host_cassa}}"
+							],
+							"path": [
+								"{{root_api}}",
+								"Register",
+								"SetImporto"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Coin",
+			"item": [
+				{
+					"name": "Serial Connection",
+					"item": [
+						{
+							"name": "SerialConnectionParameter",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host_cassa}}/{{root_api}}/CoinDevice/GetSerialConnectionParameter",
+									"host": [
+										"{{host_cassa}}"
+									],
+									"path": [
+										"{{root_api}}",
+										"CoinDevice",
+										"GetSerialConnectionParameter"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "SerialConnectionParameter",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"lastPortName\": \"COM4\",\r\n    \"baudRate\": 9600,\r\n    \"dataBits\": 8,\r\n    \"parity\": 0,\r\n    \"stopBits\": 1,\r\n    \"handshake\": 0\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host_cassa}}/{{root_api}}/CoinDevice/SerialConnectionParameter",
+									"host": [
+										"{{host_cassa}}"
+									],
+									"path": [
+										"{{root_api}}",
+										"CoinDevice",
+										"SerialConnectionParameter"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "SerialConnectionParameter",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{host_cassa}}/{{root_api}}/CoinDevice/DeleteSerialConnectionParameter",
+									"host": [
+										"{{host_cassa}}"
+									],
+									"path": [
+										"{{root_api}}",
+										"CoinDevice",
+										"DeleteSerialConnectionParameter"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "SerialConnect",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{host_cassa}}/{{root_api}}/CoinDevice/SerialConnect",
+									"host": [
+										"{{host_cassa}}"
+									],
+									"path": [
+										"{{root_api}}",
+										"CoinDevice",
+										"SerialConnect"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "SerialDisconnect",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{host_cassa}}/{{root_api}}/CoinDevice/SerialDisconnect",
+									"host": [
+										"{{host_cassa}}"
+									],
+									"path": [
+										"{{root_api}}",
+										"CoinDevice",
+										"SerialDisconnect"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Prestting",
+					"item": [
+						{
+							"name": "PreSettingSequence",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{host_cassa}}/{{root_api}}/CoinDevice/PreSettingSequence",
+									"host": [
+										"{{host_cassa}}"
+									],
+									"path": [
+										"{{root_api}}",
+										"CoinDevice",
+										"PreSettingSequence"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Reset",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{host_cassa}}/{{root_api}}/CoinDevice/Reset",
+									"host": [
+										"{{host_cassa}}"
+									],
+									"path": [
+										"{{root_api}}",
+										"CoinDevice",
+										"Reset"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "SetUp",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{host_cassa}}/{{root_api}}/CoinDevice/SetUp",
+									"host": [
+										"{{host_cassa}}"
+									],
+									"path": [
+										"{{root_api}}",
+										"CoinDevice",
+										"SetUp"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "SetUpExpansion",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{host_cassa}}/{{root_api}}/CoinDevice/SetUpExpansion",
+									"host": [
+										"{{host_cassa}}"
+									],
+									"path": [
+										"{{root_api}}",
+										"CoinDevice",
+										"SetUpExpansion"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "SetUpFeature",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{host_cassa}}/{{root_api}}/CoinDevice/SetUpFeature",
+									"host": [
+										"{{host_cassa}}"
+									],
+									"path": [
+										"{{root_api}}",
+										"CoinDevice",
+										"SetUpFeature"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Enable Disable Device",
+					"item": [
+						{
+							"name": "EnableDevice",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{host_cassa}}/{{root_api}}/CoinDevice/EnableDevice",
+									"host": [
+										"{{host_cassa}}"
+									],
+									"path": [
+										"{{root_api}}",
+										"CoinDevice",
+										"EnableDevice"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DisableDevice",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{host_cassa}}/{{root_api}}/CoinDevice/DisableDevice",
+									"host": [
+										"{{host_cassa}}"
+									],
+									"path": [
+										"{{root_api}}",
+										"CoinDevice",
+										"DisableDevice"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "EnStatusDevice",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host_cassa}}/{{root_api}}/CoinDevice/GetEnStatusDevice",
+									"host": [
+										"{{host_cassa}}"
+									],
+									"path": [
+										"{{root_api}}",
+										"CoinDevice",
+										"GetEnStatusDevice"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Enable Disable Entity",
+					"item": [
+						{
+							"name": "EnableEntity",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host_cassa}}/{{root_api}}/CoinDevice/EnableEntity",
+									"host": [
+										"{{host_cassa}}"
+									],
+									"path": [
+										"{{root_api}}",
+										"CoinDevice",
+										"EnableEntity"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DisableEntity",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host_cassa}}/{{root_api}}/CoinDevice/DisableEntity",
+									"host": [
+										"{{host_cassa}}"
+									],
+									"path": [
+										"{{root_api}}",
+										"CoinDevice",
+										"DisableEntity"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "StatusEntity",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host_cassa}}/{{root_api}}/CoinDevice/GetEntityStatus",
+									"host": [
+										"{{host_cassa}}"
+									],
+									"path": [
+										"{{root_api}}",
+										"CoinDevice",
+										"GetEntityStatus"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "General",
+					"item": [
+						{
+							"name": "Inhibit",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{host_cassa}}/{{root_api}}/CoinDevice/Inhibit",
+									"host": [
+										"{{host_cassa}}"
+									],
+									"path": [
+										"{{root_api}}",
+										"CoinDevice",
+										"Inhibit"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Disinhibit",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{host_cassa}}/{{root_api}}/CoinDevice/Disinhibit",
+									"host": [
+										"{{host_cassa}}"
+									],
+									"path": [
+										"{{root_api}}",
+										"CoinDevice",
+										"Disinhibit"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "StartPolling",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{host_cassa}}/{{root_api}}/CoinDevice/StartPolling",
+									"host": [
+										"{{host_cassa}}"
+									],
+									"path": [
+										"{{root_api}}",
+										"CoinDevice",
+										"StartPolling"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "StopPolling",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{host_cassa}}/{{root_api}}/CoinDevice/StopPolling",
+									"host": [
+										"{{host_cassa}}"
+									],
+									"path": [
+										"{{root_api}}",
+										"CoinDevice",
+										"StopPolling"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Cash",
+			"item": [
+				{
+					"name": "Serial Connection",
+					"item": [
+						{
+							"name": "SerialConnectionParameter",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host_cassa}}/{{root_api}}/CashDevice/GetSerialConnectionParameter",
+									"host": [
+										"{{host_cassa}}"
+									],
+									"path": [
+										"{{root_api}}",
+										"CashDevice",
+										"GetSerialConnectionParameter"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "SerialConnectionParameter",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"lastPortName\": \"COM4\",\r\n    \"baudRate\": 9600,\r\n    \"dataBits\": 8,\r\n    \"parity\": 2,\r\n    \"stopBits\": 1,\r\n    \"handshake\": 0\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host_cassa}}/{{root_api}}/CashDevice/SerialConnectionParameter",
+									"host": [
+										"{{host_cassa}}"
+									],
+									"path": [
+										"{{root_api}}",
+										"CashDevice",
+										"SerialConnectionParameter"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "SerialConnectionParameter",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{host_cassa}}/{{root_api}}/CashDevice/DeleteSerialConnectionParameter",
+									"host": [
+										"{{host_cassa}}"
+									],
+									"path": [
+										"{{root_api}}",
+										"CashDevice",
+										"DeleteSerialConnectionParameter"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "SerialConnect",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{host_cassa}}/{{root_api}}/CashDevice/SerialConnect",
+									"host": [
+										"{{host_cassa}}"
+									],
+									"path": [
+										"{{root_api}}",
+										"CashDevice",
+										"SerialConnect"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "SerialDisconnect",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{host_cassa}}/{{root_api}}/CashDevice/SerialDisconnect",
+									"host": [
+										"{{host_cassa}}"
+									],
+									"path": [
+										"{{root_api}}",
+										"CashDevice",
+										"SerialDisconnect"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Presetting",
+					"item": [
+						{
+							"name": "Reset",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{host_cassa}}/{{root_api}}/CashDevice/Reset",
+									"host": [
+										"{{host_cassa}}"
+									],
+									"path": [
+										"{{root_api}}",
+										"CashDevice",
+										"Reset"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Enable Disable Device",
+					"item": [
+						{
+							"name": "EnableDevice",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{host_cassa}}/{{root_api}}/CashDevice/EnableDevice",
+									"host": [
+										"{{host_cassa}}"
+									],
+									"path": [
+										"{{root_api}}",
+										"CashDevice",
+										"EnableDevice"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DisableDevice",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{host_cassa}}/{{root_api}}/CashDevice/DisableDevice",
+									"host": [
+										"{{host_cassa}}"
+									],
+									"path": [
+										"{{root_api}}",
+										"CashDevice",
+										"DisableDevice"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "EnStatusDevice",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host_cassa}}/{{root_api}}/CashDevice/GetEnStatusDevice",
+									"host": [
+										"{{host_cassa}}"
+									],
+									"path": [
+										"{{root_api}}",
+										"CashDevice",
+										"GetEnStatusDevice"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "EnableDeviceRC",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{host_cassa}}/{{root_api}}/CashDevice/EnableDeviceRC",
+									"host": [
+										"{{host_cassa}}"
+									],
+									"path": [
+										"{{root_api}}",
+										"CashDevice",
+										"EnableDeviceRC"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DisableDeviceRC",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{host_cassa}}/{{root_api}}/CashDevice/DisableDeviceRC",
+									"host": [
+										"{{host_cassa}}"
+									],
+									"path": [
+										"{{root_api}}",
+										"CashDevice",
+										"DisableDeviceRC"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "EnStatusDeviceRC",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host_cassa}}/{{root_api}}/CashDevice/GetEnStatusDeviceRC",
+									"host": [
+										"{{host_cassa}}"
+									],
+									"path": [
+										"{{root_api}}",
+										"CashDevice",
+										"GetEnStatusDeviceRC"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "EnableDeviceTwin",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{host_cassa}}/{{root_api}}/CashDevice/EnableDeviceTwin",
+									"host": [
+										"{{host_cassa}}"
+									],
+									"path": [
+										"{{root_api}}",
+										"CashDevice",
+										"EnableDeviceTwin"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DisableDeviceTwin",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{host_cassa}}/{{root_api}}/CashDevice/DisableDeviceTwin",
+									"host": [
+										"{{host_cassa}}"
+									],
+									"path": [
+										"{{root_api}}",
+										"CashDevice",
+										"DisableDeviceTwin"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "EnStatusDeviceTwin",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host_cassa}}/{{root_api}}/CashDevice/GetEnStatusDeviceTwin",
+									"host": [
+										"{{host_cassa}}"
+									],
+									"path": [
+										"{{root_api}}",
+										"CashDevice",
+										"GetEnStatusDeviceTwin"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Enable Disable Entity",
+					"item": [
+						{
+							"name": "EnableEntity",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host_cassa}}/{{root_api}}/CashDevice/EnableEntity",
+									"host": [
+										"{{host_cassa}}"
+									],
+									"path": [
+										"{{root_api}}",
+										"CashDevice",
+										"EnableEntity"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DisableEntity",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host_cassa}}/{{root_api}}/CashDevice/DisableEntity",
+									"host": [
+										"{{host_cassa}}"
+									],
+									"path": [
+										"{{root_api}}",
+										"CashDevice",
+										"DisableEntity"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "StatusEntity",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host_cassa}}/{{root_api}}/CashDevice/GetEntityStatus",
+									"host": [
+										"{{host_cassa}}"
+									],
+									"path": [
+										"{{root_api}}",
+										"CashDevice",
+										"GetEntityStatus"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Pos",
+			"item": [
+				{
+					"name": "Serial Connection",
+					"item": [
+						{
+							"name": "SerialConnectionParameter",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host_cassa}}/{{root_api}}/POSDevice/GetSerialConnectionParameter",
+									"host": [
+										"{{host_cassa}}"
+									],
+									"path": [
+										"{{root_api}}",
+										"POSDevice",
+										"GetSerialConnectionParameter"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "SerialConnectionParameter",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"lastPortName\": \"COM4\",\r\n    \"baudRate\": 9600,\r\n    \"dataBits\": 8,\r\n    \"parity\": 2,\r\n    \"stopBits\": 1,\r\n    \"handshake\": 0\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host_cassa}}/{{root_api}}/POSDevice/SerialConnectionParameter",
+									"host": [
+										"{{host_cassa}}"
+									],
+									"path": [
+										"{{root_api}}",
+										"POSDevice",
+										"SerialConnectionParameter"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "SerialConnectionParameter",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{host_cassa}}/{{root_api}}/POSDevice/DeleteSerialConnectionParameter",
+									"host": [
+										"{{host_cassa}}"
+									],
+									"path": [
+										"{{root_api}}",
+										"POSDevice",
+										"DeleteSerialConnectionParameter"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "SerialConnect",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{host_cassa}}/{{root_api}}/POSDevice/SerialConnect",
+									"host": [
+										"{{host_cassa}}"
+									],
+									"path": [
+										"{{root_api}}",
+										"POSDevice",
+										"SerialConnect"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "SerialDisconnect",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{host_cassa}}/{{root_api}}/POSDevice/SerialDisconnect",
+									"host": [
+										"{{host_cassa}}"
+									],
+									"path": [
+										"{{root_api}}",
+										"POSDevice",
+										"SerialDisconnect"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Enable Disable Device",
+					"item": [
+						{
+							"name": "EnableDevice",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{host_cassa}}/{{root_api}}/POSDevice/EnableDevice",
+									"host": [
+										"{{host_cassa}}"
+									],
+									"path": [
+										"{{root_api}}",
+										"POSDevice",
+										"EnableDevice"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DisableDevice",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{host_cassa}}/{{root_api}}/POSDevice/DisableDevice",
+									"host": [
+										"{{host_cassa}}"
+									],
+									"path": [
+										"{{root_api}}",
+										"POSDevice",
+										"DisableDevice"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "EnStatusDevice",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host_cassa}}/{{root_api}}/POSDevice/GetEnStatusDevice",
+									"host": [
+										"{{host_cassa}}"
+									],
+									"path": [
+										"{{root_api}}",
+										"POSDevice",
+										"GetEnStatusDevice"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Enable Disable Entity",
+					"item": [
+						{
+							"name": "EnableEntity",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host_cassa}}/{{root_api}}/POSDevice/EnableEntity",
+									"host": [
+										"{{host_cassa}}"
+									],
+									"path": [
+										"{{root_api}}",
+										"POSDevice",
+										"EnableEntity"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DisableEntity",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host_cassa}}/{{root_api}}/POSDevice/DisableEntity",
+									"host": [
+										"{{host_cassa}}"
+									],
+									"path": [
+										"{{root_api}}",
+										"POSDevice",
+										"DisableEntity"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "StatusEntity",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host_cassa}}/{{root_api}}/POSDevice/GetEntityStatus",
+									"host": [
+										"{{host_cassa}}"
+									],
+									"path": [
+										"{{root_api}}",
+										"POSDevice",
+										"GetEntityStatus"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "ActivatePOS",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://10.10.20.93:6000/api/POSDevice/ActivatePos",
+							"protocol": "http",
+							"host": [
+								"10",
+								"10",
+								"20",
+								"93"
+							],
+							"port": "6000",
+							"path": [
+								"api",
+								"POSDevice",
+								"ActivatePos"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Printer",
+			"item": [
+				{
+					"name": "Serial Connection",
+					"item": [
+						{
+							"name": "SerialConnectionParameter",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host_cassa}}/{{root_api}}/PrinterDevice/GetSerialConnectionParameter",
+									"host": [
+										"{{host_cassa}}"
+									],
+									"path": [
+										"{{root_api}}",
+										"PrinterDevice",
+										"GetSerialConnectionParameter"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "SerialConnectionParameter",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"lastPortName\": \"COM4\",\r\n    \"baudRate\": 9600,\r\n    \"dataBits\": 8,\r\n    \"parity\": 0,\r\n    \"stopBits\": 1,\r\n    \"handshake\": 0\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host_cassa}}/{{root_api}}/PrinterDevice/SerialConnectionParameter",
+									"host": [
+										"{{host_cassa}}"
+									],
+									"path": [
+										"{{root_api}}",
+										"PrinterDevice",
+										"SerialConnectionParameter"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "SerialConnectionParameter",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{host_cassa}}/{{root_api}}/PrinterDevice/DeleteSerialConnectionParameter",
+									"host": [
+										"{{host_cassa}}"
+									],
+									"path": [
+										"{{root_api}}",
+										"PrinterDevice",
+										"DeleteSerialConnectionParameter"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "SerialConnect",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{host_cassa}}/{{root_api}}/PrinterDevice/SerialConnect",
+									"host": [
+										"{{host_cassa}}"
+									],
+									"path": [
+										"{{root_api}}",
+										"PrinterDevice",
+										"SerialConnect"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "SerialDisconnect",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{host_cassa}}/{{root_api}}/PrinterDevice/SerialDisconnect",
+									"host": [
+										"{{host_cassa}}"
+									],
+									"path": [
+										"{{root_api}}",
+										"PrinterDevice",
+										"SerialDisconnect"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Enable Disable Device",
+					"item": [
+						{
+							"name": "EnableDevice",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{host_cassa}}/{{root_api}}/PrinterDevice/EnableDevice",
+									"host": [
+										"{{host_cassa}}"
+									],
+									"path": [
+										"{{root_api}}",
+										"PrinterDevice",
+										"EnableDevice"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DisableDevice",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{host_cassa}}/{{root_api}}/PrinterDevice/DisableDevice",
+									"host": [
+										"{{host_cassa}}"
+									],
+									"path": [
+										"{{root_api}}",
+										"PrinterDevice",
+										"DisableDevice"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "EnStatusDevice",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host_cassa}}/{{root_api}}/PrinterDevice/GetEnStatusDevice",
+									"host": [
+										"{{host_cassa}}"
+									],
+									"path": [
+										"{{root_api}}",
+										"PrinterDevice",
+										"GetEnStatusDevice"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Enable Disable Entity",
+					"item": [
+						{
+							"name": "EnableEntity",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host_cassa}}/{{root_api}}/PrinterDevice/EnableEntity",
+									"host": [
+										"{{host_cassa}}"
+									],
+									"path": [
+										"{{root_api}}",
+										"PrinterDevice",
+										"EnableEntity"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DisableEntity",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host_cassa}}/{{root_api}}/PrinterDevice/DisableEntity",
+									"host": [
+										"{{host_cassa}}"
+									],
+									"path": [
+										"{{root_api}}",
+										"PrinterDevice",
+										"DisableEntity"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "StatusEntity",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host_cassa}}/{{root_api}}/PrinterDevice/GetEntityStatus",
+									"host": [
+										"{{host_cassa}}"
+									],
+									"path": [
+										"{{root_api}}",
+										"PrinterDevice",
+										"GetEntityStatus"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "PrintTestPage",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{host_cassa}}/{{root_api}}/PrinterDevice/PrintTestPage",
+							"host": [
+								"{{host_cassa}}"
+							],
+							"path": [
+								"{{root_api}}",
+								"PrinterDevice",
+								"PrintTestPage"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Web2Park",
+			"item": [
+				{
+					"name": "Serial Connection",
+					"item": [
+						{
+							"name": "SerialConnectionParameter",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host_cassa}}/{{root_api}}/Web2ParkDevice/GetSerialConnectionParameter",
+									"host": [
+										"{{host_cassa}}"
+									],
+									"path": [
+										"{{root_api}}",
+										"Web2ParkDevice",
+										"GetSerialConnectionParameter"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "SerialConnectionParameter",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"lastPortName\": \"COM4\",\r\n    \"baudRate\": 9600,\r\n    \"dataBits\": 8,\r\n    \"parity\": 0,\r\n    \"stopBits\": 1,\r\n    \"handshake\": 0\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host_cassa}}/{{root_api}}/Web2ParkDevice/SerialConnectionParameter",
+									"host": [
+										"{{host_cassa}}"
+									],
+									"path": [
+										"{{root_api}}",
+										"Web2ParkDevice",
+										"SerialConnectionParameter"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "SerialConnectionParameter",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{host_cassa}}/{{root_api}}/Web2ParkDevice/DeleteSerialConnectionParameter",
+									"host": [
+										"{{host_cassa}}"
+									],
+									"path": [
+										"{{root_api}}",
+										"Web2ParkDevice",
+										"DeleteSerialConnectionParameter"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "SerialConnect",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{host_cassa}}/{{root_api}}/Web2ParkDevice/SerialConnect",
+									"host": [
+										"{{host_cassa}}"
+									],
+									"path": [
+										"{{root_api}}",
+										"Web2ParkDevice",
+										"SerialConnect"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "SerialDisconnect",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{host_cassa}}/{{root_api}}/Web2ParkDevice/SerialDisconnect",
+									"host": [
+										"{{host_cassa}}"
+									],
+									"path": [
+										"{{root_api}}",
+										"Web2ParkDevice",
+										"SerialDisconnect"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Enable Disable Device",
+					"item": [
+						{
+							"name": "EnableDevice",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{host_cassa}}/{{root_api}}/PrinterDevice/EnableDevice",
+									"host": [
+										"{{host_cassa}}"
+									],
+									"path": [
+										"{{root_api}}",
+										"PrinterDevice",
+										"EnableDevice"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DisableDevice",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{host_cassa}}/{{root_api}}/PrinterDevice/DisableDevice",
+									"host": [
+										"{{host_cassa}}"
+									],
+									"path": [
+										"{{root_api}}",
+										"PrinterDevice",
+										"DisableDevice"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "EnStatusDevice",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host_cassa}}/{{root_api}}/PrinterDevice/GetEnStatusDevice",
+									"host": [
+										"{{host_cassa}}"
+									],
+									"path": [
+										"{{root_api}}",
+										"PrinterDevice",
+										"GetEnStatusDevice"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Enable Disable Entity",
+					"item": [
+						{
+							"name": "EnableEntity",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host_cassa}}/{{root_api}}/PrinterDevice/EnableEntity",
+									"host": [
+										"{{host_cassa}}"
+									],
+									"path": [
+										"{{root_api}}",
+										"PrinterDevice",
+										"EnableEntity"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DisableEntity",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host_cassa}}/{{root_api}}/PrinterDevice/DisableEntity",
+									"host": [
+										"{{host_cassa}}"
+									],
+									"path": [
+										"{{root_api}}",
+										"PrinterDevice",
+										"DisableEntity"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "StatusEntity",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host_cassa}}/{{root_api}}/PrinterDevice/GetEntityStatus",
+									"host": [
+										"{{host_cassa}}"
+									],
+									"path": [
+										"{{root_api}}",
+										"PrinterDevice",
+										"GetEntityStatus"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "SendTestMessage",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{host_cassa}}/{{root_api}}/Web2ParkDevice/SendTestMessage",
+							"host": [
+								"{{host_cassa}}"
+							],
+							"path": [
+								"{{root_api}}",
+								"Web2ParkDevice",
+								"SendTestMessage"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "SerialConnection",
+			"item": [
+				{
+					"name": "SerialConnectionParameters",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host_cassa}}/{{root_api}}/SerialConnection/GetSerialConnectionParameters?deviceName=3",
+							"host": [
+								"{{host_cassa}}"
+							],
+							"path": [
+								"{{root_api}}",
+								"SerialConnection",
+								"GetSerialConnectionParameters"
+							],
+							"query": [
+								{
+									"key": "deviceName",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SerialConnectionParameter",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Device\" : 5,\r\n    \"lastPortName\": \"COM9\",\r\n    \"baudRate\": 9600,\r\n    \"dataBits\": 8,\r\n    \"parity\": 2,\r\n    \"stopBits\": 1,\r\n    \"handshake\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host_cassa}}/{{root_api}}/SerialConnection/SerialConnectionParameters",
+							"host": [
+								"{{host_cassa}}"
+							],
+							"path": [
+								"{{root_api}}",
+								"SerialConnection",
+								"SerialConnectionParameters"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SerialConnectionParameter",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host_cassa}}/{{root_api}}/SerialConnection/DeleteSerialConnectionParameters/5",
+							"host": [
+								"{{host_cassa}}"
+							],
+							"path": [
+								"{{root_api}}",
+								"SerialConnection",
+								"DeleteSerialConnectionParameters",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "POST",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "DataBase",
+			"item": [
+				{
+					"name": "DevicesEntity",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host_cassa}}/{{root_api}}/DataBase/DevicesEntity",
+							"host": [
+								"{{host_cassa}}"
+							],
+							"path": [
+								"{{root_api}}",
+								"DataBase",
+								"DevicesEntity"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SerialConnectionParameters",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host_cassa}}/{{root_api}}/DataBase/SerialConnectionParameters",
+							"host": [
+								"{{host_cassa}}"
+							],
+							"path": [
+								"{{root_api}}",
+								"DataBase",
+								"SerialConnectionParameters"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
