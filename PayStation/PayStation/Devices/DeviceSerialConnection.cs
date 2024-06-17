@@ -1,4 +1,6 @@
 ﻿using PayStationSW.DataBase;
+using System;
+using System.ComponentModel.DataAnnotations;
 using System.IO.Ports;
 
 namespace PayStationSW.Devices
@@ -98,21 +100,26 @@ namespace PayStationSW.Devices
             serialPort.Handshake = HandshakeValue;
         }
         // Disconect Device
-        public void Disconnect()
+        public string Disconnect()
         {
-            if (serialPort.IsOpen)
+
+            try
             {
-                serialPort.Close();
-                Console.WriteLine("Serial connection closed.");
+                if (serialPort.IsOpen)
+                {
+                    serialPort.Close();
+                }
+                Config.IsConnected = serialPort.IsOpen;
+                return "";
             }
-            else
+            catch (Exception ex)
             {
-                Console.WriteLine("Serial connection is not open.");
+                Config.IsConnected = false;
+                return ($"Failed to disconnect to {serialPort.PortName}: {ex.Message}");
             }
-            Config.IsConnected = false; // Renamed property
         }
         // Connect Device
-        public void Connect()
+        public string Connect()
         {
             try
             {
@@ -122,19 +129,17 @@ namespace PayStationSW.Devices
                 if (serialPort.IsOpen)
                 {
                     Config.IsConnected = true;
-                    Console.WriteLine($"Connected to {serialPort.PortName}.");
                 }
                 else
                 {
                     Config.IsConnected = false;
-                    Console.WriteLine($"Not connect to {serialPort.PortName}.");
-
                 }
+                return "";
             }
             catch (Exception ex)
             {
                 Config.IsConnected = false;
-                Console.WriteLine($"Failed to connect to {serialPort.PortName}: {ex.Message}");
+                return ($"Failed to connect to {serialPort.PortName}: {ex.Message}");
             }
         }
         public virtual void IdentifyDevice() { }
@@ -274,7 +279,7 @@ namespace PayStationSW.Devices
                         int bytesToRead = serialPort.BytesToRead;
                         byte[] receivedBytes = new byte[bytesToRead];
                         int bytesRead = serialPort.Read(receivedBytes, 0, bytesToRead);
-                        Console.WriteLine("Received byte data: " + BitConverter.ToString(receivedBytes, 0, bytesRead));
+                        // Console.WriteLine("Received byte data: " + BitConverter.ToString(receivedBytes, 0, bytesRead));
 
                         // Thread-safe addition of received bytes to the buffer
                         lock (bufferLock)
@@ -390,26 +395,39 @@ namespace PayStationSW.Devices
                 int endIndex = 0;
 
                 // Process the buffer while it contains enough data for at least the minimum message length
-                while (messageBuffer.Count >= _commandParameters.minBufferLength)
+                while (!messageProcessed)
                 {
-                    if (_commandParameters.messageResponseHaveStartingByte)
+
+                    //message have a start index and endindex 
+                    if (_commandParameters.messageResponseHaveStartingByte && _commandParameters.messageResponseHaveEndingByte)
                     {
                         startIndex = FindStartIndexOfCompleteMessage(messageBuffer);
+                        endIndex = FindEndIndexOfCompleteMessage(messageBuffer);
+                        if (endIndex != -1 && startIndex != -1 && endIndex > 0) // A complete message is found based on ending bytes or other criteria
+                        {
+                            byte[] completeMessageFragment = messageBuffer.Take(endIndex + 1).ToArray();
+                            if (startIndex >= 0 && endIndex < messageBuffer.Count)
+                            {
+                                messageBuffer.RemoveRange(startIndex, endIndex - startIndex + 1);
+                            }
+                            messageFragments.Add(completeMessageFragment);
+                            messageProcessed = true;
+                        }
                     }
-
-                    if (_commandParameters.messageResponseHaveEndingByte)
+                    //message have only endindex 
+                    else if (!_commandParameters.messageResponseHaveStartingByte && _commandParameters.messageResponseHaveEndingByte)
                     {
                         endIndex = FindEndIndexOfCompleteMessage(messageBuffer);
-                    }
-                    if (endIndex != -1 && startIndex != -1 && endIndex > 0) // A complete message is found based on ending bytes or other criteria
-                    {
-                        byte[] completeMessageFragment = messageBuffer.Take(endIndex + 1).ToArray();
-                        if (startIndex >= 0 && endIndex < messageBuffer.Count)
+                        if (endIndex != -1 && endIndex > 0)
                         {
-                            messageBuffer.RemoveRange(startIndex, endIndex - startIndex + 1);
+                            byte[] completeMessageFragment = messageBuffer.Take(endIndex + 1).ToArray();
+                            if (endIndex < messageBuffer.Count)
+                            {
+                                messageBuffer.RemoveRange(startIndex, endIndex - startIndex + 1);
+                            }
+                            messageFragments.Add(completeMessageFragment);
+                            messageProcessed = true;
                         }
-                        messageFragments.Add(completeMessageFragment);
-                        messageProcessed = true;
                     }
                     else if (messageBuffer.Count >= _commandParameters.minBufferLength) // Not found or not specifid ending, and not found or specified start, but minimum length is met
                     {
@@ -417,13 +435,10 @@ namespace PayStationSW.Devices
                         messageBuffer.Clear(); // Clear the buffer since we've taken all its content
                         messageFragments.Add(messageFragment);
                         messageProcessed = true;
-                        break; // Exit the loop since we've processed the whole buffer
                     }
-                    else
-                    {
-                        // Not enough data for a complete message, exit the loop
-                        break;
-                    }
+ 
+                    break;
+                    
                 }
                 return messageProcessed;
             }
@@ -538,13 +553,16 @@ namespace PayStationSW.Devices
             };
 
             DataReceived += dataReceivedHandler; // Subscribe to the DataReceived event
-            if (_commandParameters.sendStringOrHEX)
+            if (!commandParameters.listenerMode)
             {
-                SendMessageWithRetry(_commandParameters.messageToSendString ?? "");
-            }
-            else
-            {
-                SendMessageWithRetry(_commandParameters.messageToSendBytes ?? []);
+                if (_commandParameters.sendStringOrHEX)
+                {
+                    SendMessageWithRetry(_commandParameters.messageToSendString ?? "");
+                }
+                else
+                {
+                    SendMessageWithRetry(_commandParameters.messageToSendBytes ?? []);
+                }
             }
             var completedTask = await Task.WhenAny(tcs.Task, Task.Delay(timeout)); // Wait for completion or timeout
             if ((completedTask == tcs.Task && await tcs.Task) || !(_commandParameters.expectedResponse))
@@ -643,6 +661,8 @@ namespace PayStationSW.Devices
                 }
                 else if (response[i] is byte[] bytes && bytes.Length < minLengths[i])
                 {
+                    Console.WriteLine($"Min Leng : {bytes.Length}");
+
                     return false; // Response length is less than expected minimum length
                 }
             }

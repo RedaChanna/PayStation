@@ -3,49 +3,76 @@
 namespace PayStationSW
 {
 
-
     public partial class ProtocolMDB_RS323
     {
-
-        public async Task<bool> PowerUPSequence()
-        {
-            /*
-            await command((byte)StatusCommandAcceptor.StatusRequest, (byte)PowerUpResponseAcceptor.PowerUpWithBillInAcceptor);
-            await command((byte)StatusCommandAcceptor.StatusRequest, (byte)PowerUpResponseAcceptor.PowerUpWithBillInStacker);
-
-
-            await command((byte)OperationCommandAcceptor.Reset, (byte)OperationResponseAcceptor.ACK);
-
-            await command((byte)StatusCommandAcceptor.StatusRequest, (byte)StatusResponseAcceptor.Initialize);
-            await command((byte)StatusCommandAcceptor.StatusRequest, (byte)StatusResponseAcceptor.StatusRequest);
-            */
-            return false;
-        }
-
 
         public CommandParameter ResetCommand()
         {
             CommandParameter _commandParameter = new CommandParameter();
             _commandParameter.messageToSendBytes = resetRequest;
-            _commandParameter.validateAnyResponse = true;
+            _commandParameter.validateAnyResponse = false;
+            _commandParameter.expectedMultipleResponse = true;
+            _commandParameter.nmbrResponseExpected = 2;
+            _commandParameter.messageEndingBytes = [0x0D, 0x0A];
+            _commandParameter.messageResponseHaveEndingByte = true;
             return _commandParameter;
         }
 
-        public CommandParameter EnableCommand()
+        public CommandParameter SetUpCommand()
         {
             CommandParameter _commandParameter = new CommandParameter();
-            _commandParameter.messageToSendBytes = enableRequest;
-            _commandParameter.validateAnyResponse = true;
+            _commandParameter.messageToSendBytes = setUpRequest;
+            _commandParameter.expectedMinLength = true;
+            _commandParameter.expectedMinLengthList = [24];
+            _commandParameter.messageEndingBytes = [0x0D, 0x0A];
+            _commandParameter.messageResponseHaveEndingByte = true;
             return _commandParameter;
         }
 
-        public CommandParameter DisableCommand()
+        public CommandParameter SetUpExpansionCommand()
         {
             CommandParameter _commandParameter = new CommandParameter();
-            _commandParameter.messageToSendBytes = disableRequest;
-            _commandParameter.validateAnyResponse = true;
+            _commandParameter.messageToSendBytes = setUpExpansionRequest;
+            _commandParameter.expectedMinLength = true;
+            _commandParameter.expectedMinLengthList = [36];
+            _commandParameter.messageEndingBytes = [0x0D, 0x0A];
+            _commandParameter.messageResponseHaveEndingByte = true; ;
             return _commandParameter;
         }
+
+        public CommandParameter SetUpFeautureCommand()
+        {
+            CommandParameter _commandParameter = new CommandParameter();
+            _commandParameter.messageToSendBytes = setUpFeatureRequest;
+            _commandParameter.expectedResponse = true;
+            _commandParameter.messageEndingBytes = [0x0D, 0x0A];
+            _commandParameter.messageResponseHaveEndingByte = true ;
+            return _commandParameter;
+        }
+
+
+        public CommandParameter InhibitionCommand()
+        {
+            CommandParameter _commandParameter = new CommandParameter();
+            _commandParameter.messageToSendBytes = inhibitionRequest;
+            _commandParameter.expectedResponse = true;
+            _commandParameter.messageEndingBytes = [0x0D, 0x0A];
+            _commandParameter.messageResponseHaveEndingByte = true;
+            return _commandParameter;
+        }
+
+        public CommandParameter DisinhibitionCommand()
+        {
+            CommandParameter _commandParameter = new CommandParameter();
+            _commandParameter.messageToSendBytes = disinhibitionRequest;
+            _commandParameter.expectedResponse = true;
+            _commandParameter.messageEndingBytes = [0x0D, 0x0A];
+            _commandParameter.messageResponseHaveEndingByte = true;
+            return _commandParameter;
+        }
+
+
+
         public CommandParameter StatusCommand()
         {
             CommandParameter _commandParameter = new CommandParameter();

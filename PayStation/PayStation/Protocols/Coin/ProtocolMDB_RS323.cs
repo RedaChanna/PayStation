@@ -40,12 +40,13 @@ namespace PayStationSW
 
         //Commands
         private readonly byte[] resetRequest = [0x08];
-        private readonly byte[] setupDataRequest = [0x09];
+        private readonly byte[] setUpRequest = [0x09];
+        private readonly byte[] setUpExpansionRequest = [0x0F, 0X00];
+        private readonly byte[] setUpFeatureRequest = [0x0F, 0x01, 0x00, 0x00, 0x00, 0x00];
+
         private readonly byte[] coinIntroducedRequest = [0x0B];
-        private readonly byte[] espansionSetUpRequest = [0x0F, 0X00];
-        private readonly byte[] setupMessageFeatureRequest = [0x0F, 0x01, 0x00, 0x00, 0x00, 0x00];
-        private readonly byte[] enableRequest = [0x0C, 0x00, 0x1F, 0x00, 0x00];
-        private readonly byte[] disableRequest = [0x0C, 0x00, 0x00, 0x00, 0x00];
+        private readonly byte[] inhibitionRequest = [0x0C, 0x00, 0x1F, 0x00, 0x00];
+        private readonly byte[] disinhibitionRequest = [0x0C, 0x00, 0x00, 0x00, 0x00];
 
         /*
         public async Task<bool> reset()
@@ -165,7 +166,7 @@ namespace PayStationSW
             */
             return true;
         }
-        public async Task<bool> expansionSetUp()
+        public async Task<bool> setUpExpansion()
         {
             /*
             var timeout = TimeSpan.FromSeconds(timeOutTask);

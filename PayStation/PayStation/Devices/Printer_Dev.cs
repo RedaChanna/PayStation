@@ -62,11 +62,11 @@ namespace PayStationSW.Devices
                 return false;
             }
         }
-        public async Task<string> Enable()
+        public string InhibitionCommand()
         {
             return "Coin device still enable";
         }
-        public async Task<string> Disable()
+        public string DisinhibitionCommand()
         {
             return "Coin device still disable";
 

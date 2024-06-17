@@ -127,7 +127,7 @@ namespace PayStationSW.Devices
                 Console.WriteLine("Reset not acknowledged. Gryphon disabled.");
             }
         }
-        public async Task<string> Enable()
+        public async Task<string> InhibitionCommand()
         {
             Config.IsEnabled = await _protocol.enableDevice();
 
@@ -140,7 +140,7 @@ namespace PayStationSW.Devices
                 return  "Coin Device not enabled.";
             }
         }
-        public async Task<string> Disable()
+        public async Task<string> DisinhibitionCommand()
         {
             Config.IsEnabled = await _protocol.disableDevice();
 

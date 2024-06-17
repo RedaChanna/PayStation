@@ -7,6 +7,8 @@ namespace PayStationSW
     {
         #region Parameter validation
 
+        // Indicates whether a command is in Listen Mode. False means is no Listening so is expected e message to send; true means is Listening so no message to send is expected.
+        public bool listenerMode { get; set; } = false;
         // Indicates whether a response is expected from a request. False means no response is expected; true means a response is anticipated.
         public bool expectedResponse { get; set; } = true;
         // Determines whether any received response should be automatically validated. False implies that other conditions and flags will be checked to validate the response; true means any received response will be considered valid without further checks.

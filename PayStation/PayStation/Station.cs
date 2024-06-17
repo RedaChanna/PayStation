@@ -36,7 +36,7 @@ namespace PayStationSW
             Devices[DeviceEnum.Printer] = await PrinterDevice.CreateAsync(context);
             Devices[DeviceEnum.RCModule] = await RCModule.CreateAsync(context);
             Devices[DeviceEnum.TwinModule] = await TwinModule.CreateAsync(context);
-            Devices[DeviceEnum.Web2Park] = await Web2Park.CreateAsync(context);
+            Devices[DeviceEnum.Web2Park] = await Web2ParkDevice.CreateAsync(context);
             var status = ReconfigureDevices(context);
         }
         public async Task<string> ReconfigureDevices(ApplicationDbContext context)

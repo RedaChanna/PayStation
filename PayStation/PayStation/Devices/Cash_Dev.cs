@@ -44,6 +44,7 @@ namespace PayStationSW.Devices
             _protocol = new ProtocolVega100(this);
             this.ErrorReceived += Device_ErrorReceived;
             RCModule = new RCModule(_context);
+            TwinModule = new TwinModule(_context);
             IsRCModuleType1 = true; // Set the default type to 1 (€5 bills)
             IsRCModuleType2 = false;
 
@@ -110,7 +111,7 @@ namespace PayStationSW.Devices
         {
         }
 
-        public async Task<string> Enable()
+        public async Task<string> InhibitionCommand()
         {
             if (_protocol is ProtocolVega100 vegaProtocol)
             {
@@ -130,7 +131,7 @@ namespace PayStationSW.Devices
             }
 
         }
-        public async Task<string> Disable()
+        public async Task<string> DisinhibitionCommand()
         {
             if (_protocol is ProtocolVega100 vegaProtocol)
             {

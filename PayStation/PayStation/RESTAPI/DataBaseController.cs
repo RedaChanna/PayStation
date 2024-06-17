@@ -109,7 +109,7 @@ namespace PayStationSW.RESTAPI
 
         // GET: dotnet ef database update
 
-        [HttpGet("Devices")]
+        [HttpGet("DevicesEntity")]
         public async Task<ActionResult<IEnumerable<DeviceEntityDB>>> GetDevices()
         {
             try

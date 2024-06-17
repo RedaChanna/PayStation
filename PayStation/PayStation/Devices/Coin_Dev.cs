@@ -50,6 +50,8 @@ namespace PayStationSW.Devices
         {
             if (_isPollingActive)
             {
+                _statusPollingTimer?.Change(Timeout.Infinite, Timeout.Infinite); // Ferma il timer
+                _statusPollingTimer?.Dispose(); // Rilascia le risorse del timer
                 _isPollingActive = false;
             }
         }
@@ -78,82 +80,56 @@ namespace PayStationSW.Devices
         public static async Task<CoinDevice> CreateAsync(ApplicationDbContext context)
         {
             var device = new CoinDevice(context);
-            device.Config.IsSetUp = await device.PreSetting();
+            //device.Config.IsSetUp = await device.PreSetting();
             return device;
         }
 
-        private async Task<bool> PreSetting()
+
+        public async Task<string> PreSettingSequence()
         {
             try
             {
-                string codeDevice = "1";
-                // Usa FirstOrDefaultAsync invece di First
-                var existingDevice = await _context.DevicesDB
-                    .Where(x => x.DeviceType == codeDevice).FirstOrDefaultAsync();
-                // Controllo corretto del valore null
-                if (existingDevice != null)
+                var retrayCount = 0;
+                
+                while (!Config.IsPreSetted  || retrayCount < 3)
                 {
-                    if (existingDevice.Enabled == "1")
+                    retrayCount += 1;
+                    await Reset();
+                    if (Config.IsReset)
                     {
-                        this.Config.IsEnabled = true;
-                    }
-                    else
-                    {
-                        this.Config.IsEnabled = false;
+                        await SetUp();
+                        if (Config.IsSetUp)
+                        {
+                            await SetUpExpansion();
+                            if (Config.IsSetUpExpansion)
+                            {
+                                await SetUpFeauture();
+                                if (Config.IsSetUpFeauture)
+                                {
+                                    Config.IsPreSetted = true;
+                                }
+                            }
+                        }
                     }
                 }
-                return true;
+                if (Config.IsPreSetted)
+                {
+                    return "Coin device pre-setted correctly.";
+                }
+                else
+                {
+                    return ($"Coin device is not pre-reset correctly: " +
+                        $"Reset result:{Config.IsReset}, " +
+                        $"Set up result:{Config.IsSetUp}, " +
+                        $"Set up expansion result:{Config.IsSetUpExpansion}, " +
+                        $"Set up feauture result:{Config.IsSetUpFeauture}.");
+                }
             }
             catch (Exception ex)
             {
-                // Considera di loggare l'eccezione ex per un debugging più efficace
-                return false;
+                return ($"Error occurred: {ex.Message}");
             }
         }
-
-
-
-
-        public async Task<string> SetUp()
-        {
-            Config.IsSetUp = await _protocol.setUp();
-            if (Config.IsSetUp)
-            {
-                return "Coin device set up correctly.";
-            }
-            else
-            {
-                return "Coin device is NOT set up correctly";
-            }
-        }
-        public async Task<string> SetUpFeauture()
-        {
-            Config.IsSetUpFeauture = await _protocol.setUpFeauture();
-            if (Config.IsSetUpFeauture)
-            {
-                return "Coin device set up feauture correctly.";
-            }
-            else
-            {
-                return "Coin device is NOT set up feature correctly";
-            }
-        }
-        public async Task<string> ExpansionSetUp()
-        {
-            Config.IsExpansionSetUp = await _protocol.expansionSetUp();
-            if (Config.IsExpansionSetUp)
-            {
-                return "Coin device expansion set up correctly.";
-            }
-            else
-            {
-                return "Coin device expansion is NOT set up correctly";
-            }
-        }
-
-
-
-
 
         public async Task<string> Reset()
         {
@@ -162,7 +138,6 @@ namespace PayStationSW.Devices
                 CommandParameter _commandParameter = new CommandParameter();
                 _commandParameter = _protocol.ResetCommand();
                 _commandParameter = await this.Command(_commandParameter);
-
                 Config.IsReset = _commandParameter.validatedCommand;
             }
             if (Config.IsReset)
@@ -174,43 +149,132 @@ namespace PayStationSW.Devices
                 return "Coin device is NOT reset correctly";
             }
         }
-        public async Task<string> Enable()
+
+        public async Task<string> SetUp()
         {
             if (_protocol is ProtocolMDB_RS323 gryphonProtocol)
             {
                 CommandParameter _commandParameter = new CommandParameter();
-                _commandParameter = _protocol.EnableCommand();
+                _commandParameter = _protocol.SetUpCommand();
                 _commandParameter = await this.Command(_commandParameter);
-
-                Config.IsEnabled = _commandParameter.validatedCommand;
+                Config.IsSetUp = _commandParameter.validatedCommand;
             }
-            if (Config.IsEnabled)
+            if (Config.IsSetUp)
             {
-                return "Coin device is enable.";
+                return "Coin device is set up correctly.";
             }
             else
             {
-                return "Coin device still disable";
+                return "Coin device is NOT set up correctly";
             }
         }
-        public async Task<string> DisableCommand()
+
+        public async Task<string> SetUpExpansion()
         {
             if (_protocol is ProtocolMDB_RS323 gryphonProtocol)
             {
                 CommandParameter _commandParameter = new CommandParameter();
-                _commandParameter = _protocol.DisableCommand();
+                _commandParameter = _protocol.SetUpExpansionCommand();
                 _commandParameter = await this.Command(_commandParameter);
-                Config.IsEnabled = _commandParameter.validatedCommand;
+
+                Config.IsSetUpExpansion = _commandParameter.validatedCommand;
             }
-            Config.IsEnabled = !Config.IsEnabled;
-            if (Config.IsEnabled)
+            if (Config.IsSetUpExpansion)
             {
-                CoinIntroducedLstn(En_CoinIntroducedLstn);
-                return "Coin device still enable";
+                return "Coin device expansion set up correctly.";
             }
             else
             {
-                return "Coin device is disable.";
+                return "Coin device expansion is NOT set up correctly";
+            }
+        }
+
+        public async Task<string> SetUpFeauture()
+        {
+
+            if (_protocol is ProtocolMDB_RS323 gryphonProtocol)
+            {
+                CommandParameter _commandParameter = new CommandParameter();
+                _commandParameter = _protocol.SetUpFeautureCommand();
+                _commandParameter = await this.Command(_commandParameter);
+                Config.IsSetUpFeauture = _commandParameter.validatedCommand;
+            }
+            if (Config.IsSetUpFeauture)
+            {
+                return "Coin device set up feauture correctly.";
+            }
+            else
+            {
+                return "Coin device is NOT set up feature correctly";
+            }
+        }
+        public async Task<string> InhibitionCommand()
+        {
+            try
+            {
+                if (_protocol is ProtocolMDB_RS323 gryphonProtocol)
+                {
+                    if (!Config.IsConnected)
+                    {
+                        return "Coin device is not connected.";
+                    }
+                    if (!Config.IsPreSetted)
+                    {
+                        return "Coin device is not pre-setted.";
+                    }
+                    CommandParameter _commandParameter = new CommandParameter();
+                    _commandParameter = _protocol.InhibitionCommand();
+                    _commandParameter = await this.Command(_commandParameter);
+                    Config.IsInhibited = _commandParameter.validatedCommand;
+                }
+                if (Config.IsInhibited)
+                {
+                    return "Coin device is Inhibited.";
+                }
+                else
+                {
+                    return "Coin device still Disinhibited";
+                }
+
+            }
+            catch (Exception ex)
+            {
+                return ($"Error occurred: {ex.Message}");
+            }
+            
+        }
+        public async Task<string> DisinhibitionCommand()
+        {
+            try
+            {
+                if (_protocol is ProtocolMDB_RS323 gryphonProtocol)
+                {
+                    if (!Config.IsConnected)
+                    {
+                        return "Coin device is not connected.";
+                    }
+                    if (!Config.IsPreSetted)
+                    {
+                        return "Coin device is not pre-setted.";
+                    }
+                    CommandParameter _commandParameter = new CommandParameter();
+                    _commandParameter = _protocol.DisinhibitionCommand();
+                    _commandParameter = await this.Command(_commandParameter);
+                    Config.IsInhibited = !_commandParameter.validatedCommand;
+                }
+                if (!Config.IsInhibited)
+                {
+                    return "Coin device is Disinhibited.";
+                }
+                else
+                {
+                    return "Coin device still Inhibited";
+                }
+
+            }
+            catch (Exception ex)
+            {
+                return ($"Error occurred: {ex.Message}");
             }
         }
 

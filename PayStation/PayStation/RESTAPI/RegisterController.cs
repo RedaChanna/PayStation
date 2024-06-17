@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using PayStationSW.DataBase;
 using PayStationSW.Devices;
 using System.Diagnostics.Eventing.Reader;
+using Microsoft.EntityFrameworkCore;
 
 namespace PayStationSW.RESTAPI
 {
@@ -24,9 +25,10 @@ namespace PayStationSW.RESTAPI
 
         }
 
-        [HttpPost("EnableEntity")]
-        public async Task<IActionResult> EnableEntity([FromBody] DeviceEntityDB device)
+        [HttpPost("EnableDiasbleEntity")]
+        public async Task<IActionResult> EnableDiasbleEntity([FromBody] DeviceEntityDB device)
         {
+
             try
             {
                 // Delega la gestione del database al DeviceService
@@ -47,6 +49,62 @@ namespace PayStationSW.RESTAPI
             }
         }
 
+        [HttpGet("GetEntityStatus/{deviceType}")]
+        public async Task<ActionResult<DeviceEntityDto>> GetEntityStatus(string deviceType)
+        {
+            try
+            {
+                var device = await _context.DevicesDB.FirstOrDefaultAsync(d => d.DeviceType == deviceType);
+
+                if (device == null)
+                {
+                    return NotFound("Device not found, check the device type.");
+                }
+
+                var response = new DeviceEntityDto
+                {
+                    Status = $"Device {device.Description}: " + (device.Enabled == "1" ? "enabled." : "disabled."),
+                    IsEnabled = device.Enabled == "1"
+                };
+
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
+            }
+        }
+
+        /*
+        [HttpPost("EnableDisableDevice")]
+        public async Task<IActionResult> EnableDisableDevice([FromBody] bool enableDevice)
+        {
+            Console.WriteLine("EnableDisableDevice API called");
+            try
+            {
+                var station = await StationManager.GetStationAsync(_context);
+                var coinDevice = station.Devices[DeviceEnum.Coin] as CoinDevice;
+                if (!coinDevice.Config.IsConnected)
+                {
+                    return BadRequest(new { error = "The Coin device is not a connected device." });
+                }
+                string response = enableDevice ? await coinDevice.Enable() : await coinDevice.DisableCommand();
+                return Ok(new { status = response });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { error = ex.Message });
+            }
+        }
+        */
+
+
+
+
+
+
+
+
         [HttpPost("AutomaticInit")]
         public async Task<IActionResult> AutomaticInit()
         {
@@ -61,6 +119,19 @@ namespace PayStationSW.RESTAPI
                 return StatusCode(500, new { error = ex.Message });
             }
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         [HttpPost("SetImporto")]
         public async Task<IActionResult> SetImporto([FromBody] int importo)
@@ -96,12 +167,12 @@ namespace PayStationSW.RESTAPI
 
                 if (coinDevice.Config.IsConnected)
                 {
-                    await coinDevice.Enable();
+                    coinDevice.Enable();
                     //coinDevice.StartPolling();
                 }
                 if (cashDevice.Config.IsConnected)
                 {
-                    await cashDevice.Enable();
+                    cashDevice.Enable();
                     //cashDevice.StartPolling();
                 }
                 if (posDevice.Config.IsConnected && posDevice.Config.IsSetUp)
@@ -182,6 +253,12 @@ namespace PayStationSW.RESTAPI
         }
     }
 
+
+    public class DeviceEntityDto
+    {
+        public string Status { get; set; }
+        public bool IsEnabled { get; set; }
+    }
 
     public class ParametriPayment
     {

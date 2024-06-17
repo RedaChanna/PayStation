@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\user\\Documents\\GitHub\\PayStation\\PayStation\\PayStation\\PayStationSW.csproj": {}
+    "C:\\Users\\Reda\\Desktop\\Desktop\\Cityware\\PayStation\\PayStation\\PayStation\\PayStationSW.csproj": {}
   },
   "projects": {
-    "C:\\Users\\user\\Documents\\GitHub\\PayStation\\PayStation\\PayStation\\PayStationSW.csproj": {
+    "C:\\Users\\Reda\\Desktop\\Desktop\\Cityware\\PayStation\\PayStation\\PayStation\\PayStationSW.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\user\\Documents\\GitHub\\PayStation\\PayStation\\PayStation\\PayStationSW.csproj",
+        "projectUniqueName": "C:\\Users\\Reda\\Desktop\\Desktop\\Cityware\\PayStation\\PayStation\\PayStation\\PayStationSW.csproj",
         "projectName": "PayStationSW",
-        "projectPath": "C:\\Users\\user\\Documents\\GitHub\\PayStation\\PayStation\\PayStation\\PayStationSW.csproj",
-        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\user\\Documents\\GitHub\\PayStation\\PayStation\\PayStation\\obj\\",
+        "projectPath": "C:\\Users\\Reda\\Desktop\\Desktop\\Cityware\\PayStation\\PayStation\\PayStation\\PayStationSW.csproj",
+        "packagesPath": "C:\\Users\\Reda\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Reda\\Desktop\\Desktop\\Cityware\\PayStation\\PayStation\\PayStation\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Reda\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,6 +26,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -111,7 +116,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

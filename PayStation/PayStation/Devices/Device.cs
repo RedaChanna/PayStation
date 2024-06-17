@@ -30,8 +30,9 @@ namespace PayStationSW.Devices
                 IsReset = false,
                 IsConnected = false,
                 IsSetUp = false,
-                IsExpansionSetUp = false,
-                IsSetUpFeauture = false
+                IsSetUpExpansion = false,
+                IsSetUpFeauture = false,
+                IsPreSetted = false
                 // Altri campi inizializzati...
             };
             retryTimer = new System.Timers.Timer();
@@ -60,8 +61,10 @@ namespace PayStationSW.Devices
             public bool IsReset { get; set; }
             public bool IsConnected { get; set; }
             public bool IsSetUp { get; set; }
-            public bool IsExpansionSetUp { get; set; }
+            public bool IsSetUpExpansion { get; set; }
             public bool IsSetUpFeauture { get; set; }
+            public bool IsPreSetted { get; set; }
+            public bool IsInhibited { get; set; }
 
             // Altri campi necessari...
         }

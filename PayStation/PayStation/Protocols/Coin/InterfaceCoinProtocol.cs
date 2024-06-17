@@ -8,14 +8,20 @@ namespace PayStationSW.Protocols.Coin
 
 
         CommandParameter ResetCommand();
-        CommandParameter EnableCommand();
-        CommandParameter DisableCommand();
+        CommandParameter SetUpCommand();
+        CommandParameter SetUpExpansionCommand();
+
+        CommandParameter SetUpFeautureCommand();
+
+
+        CommandParameter InhibitionCommand();
+        CommandParameter DisinhibitionCommand();
         CommandParameter StatusCommand();
 
 
         Task<bool> setUp();
         Task<bool> setUpFeauture();
-        Task<bool> expansionSetUp();
+        Task<bool> setUpExpansion();
         Task<bool> coinIntroducedLstn();
     }
 }

@@ -267,7 +267,6 @@ namespace PayStationSW.RESTAPI
         {
             try
             {
-                Console.WriteLine("Disconnect and connect Device API called");
                 if (connectionObj == null)
                 {
                     _logger.LogError("Received null connection object.");
@@ -283,6 +282,8 @@ namespace PayStationSW.RESTAPI
                 }
 
                 var deviceName = connectionObj.deviceName.Value;
+
+                Console.WriteLine(deviceName);
 
                 if (!Enum.IsDefined(typeof(DeviceEnum), deviceName))
                 {
@@ -350,18 +351,16 @@ namespace PayStationSW.RESTAPI
             }
         }
 
-        // GET: api/SerialConnection/GetDeviceConnectionParameter
-        [HttpGet("GetDeviceConnectionParameter")]
-        public async Task<ActionResult<SerialConnectionParameterDB>> GetDeviceConnectionParameter(DeviceEnum deviceName)
-        {
-            // Aggiungi un log per stampare il nome del dispositivo ricevuto
-            Console.WriteLine("Received device name: " + deviceName);
 
+        #region tested
+        [HttpGet("GetSerialConnectionParameters")]
+        public async Task<ActionResult<SerialConnectionParameterDB>> GetDeviceConnectionParameters(DeviceEnum deviceName)
+        {
             try
             {
                 if (!Enum.IsDefined(typeof(DeviceEnum), deviceName))
                 {
-                    return BadRequest("Invalid device name.");
+                    return BadRequest("Invalid device name or device not founded.");
                 }
 
                 var device = await _context.SerialConnectionParametersDB
@@ -381,9 +380,8 @@ namespace PayStationSW.RESTAPI
             }
         }
 
-        // POST: api/SerialConnection/SetDeviceConnectionParameters
-        [HttpPost("SetDeviceConnectionParameters")]
-        public async Task<ActionResult> SetDeviceConnectionParameters([FromBody] SerialConnectionParameterDB deviceParameters)
+        [HttpPost("SerialConnectionParameters")]
+        public async Task<ActionResult> SerialConnectionParameters([FromBody] SerialConnectionParameterDB deviceParameters)
         {
             try
             {
@@ -436,8 +434,7 @@ namespace PayStationSW.RESTAPI
             }
         }
 
-        // DELET: api/SerialConnection/DeleteDeviceConnectionParameters
-        [HttpDelete("DeleteDeviceConnectionParameters/{deviceName}")]
+        [HttpDelete("DeleteSerialConnectionParameters/{deviceName}")]
         public async Task<IActionResult> DeleteDeviceConnectionParameters(DeviceEnum deviceName)
         {
             try
@@ -470,6 +467,7 @@ namespace PayStationSW.RESTAPI
                 return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
             }
         }
+        #endregion
 
     }
 }

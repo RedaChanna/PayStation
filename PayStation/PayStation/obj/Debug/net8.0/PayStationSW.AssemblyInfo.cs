@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PayStationSW")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5f184840964fbb6235dd5f7f5f75ed92343910a4")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d407fe4f0dc2951a58c55bf67fc1feb3956b01f4")]
 [assembly: System.Reflection.AssemblyProductAttribute("PayStationSW")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PayStationSW")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
