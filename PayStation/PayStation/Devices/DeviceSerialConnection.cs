@@ -152,7 +152,7 @@ namespace PayStationSW.Devices
             {
                 lastSentMessageByte = message; // Save the current message as the last sent message
                 serialPort.Write(message, 0, message.Length); // Send the byte array
-                Console.WriteLine("Byte message sent: " + BitConverter.ToString(message));
+                //Console.WriteLine("Byte message sent: " + BitConverter.ToString(message)); // Debug
                 if (_commandParameters.expectedResponse)
                 {
                     isWaitingForResponse = true; // Start waiting for response
@@ -279,7 +279,7 @@ namespace PayStationSW.Devices
                         int bytesToRead = serialPort.BytesToRead;
                         byte[] receivedBytes = new byte[bytesToRead];
                         int bytesRead = serialPort.Read(receivedBytes, 0, bytesToRead);
-                        // Console.WriteLine("Received byte data: " + BitConverter.ToString(receivedBytes, 0, bytesRead));
+                        //Console.WriteLine("Received byte data: " + BitConverter.ToString(receivedBytes, 0, bytesRead)); //Debug
 
                         // Thread-safe addition of received bytes to the buffer
                         lock (bufferLock)
@@ -298,6 +298,7 @@ namespace PayStationSW.Devices
                                 List<Byte[]> combinedMessages = new List<Byte[]>();
                                 combinedMessages = messageFragments.ToList();
                                 _commandParameters.responseByte = combinedMessages;
+
                                 OnDataReceived(); // Notify subscribers that a new complete message is ready
                                 // Reset the state for processing the next set of messages
                                 messageFragments.Clear();

@@ -9,17 +9,10 @@ namespace PayStationSW
 
     public partial class CommandDataResponseWeb2Park
     {
-        //this extention of ProtocolVega100 class wil contain the constant and enumerator as the converter
-        //in order to keep the protocol code light and readble
 
-        //Commands
-        public readonly byte SyncByte = 0xFC;
+        public readonly byte[] Ack_Polling = [0x01, 0x30, 0x30, 0x31, 0x31, 0x30, 0x30, 0x30, 0x30, 0x31, 0x31, 0x04];
+        public readonly byte[] Ack_Command = [0x01, 0x31, 0x30, 0x31, 0x31, 0x30, 0x31, 0x30, 0x30, 0x30, 0x30, 0x04];
 
-        //Status of Cash device have different possible response(ResponseStatusCashDevice/PowerUpStatusResponseCashDevice) or ErrorStatusResponseCashDevice
-        public enum StatusCommandAcceptor : byte
-        {
-            StatusRequest = 0X11,
-            ENQ = 0x05
-        }
+
     }
 }

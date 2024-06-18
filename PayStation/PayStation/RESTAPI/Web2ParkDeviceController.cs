@@ -384,6 +384,73 @@ namespace PayStationSW.RESTAPI
         }
         #endregion
 
+
+
+
+
+
+
+
+
+
+        [HttpPost("StartPolling")]
+        public async Task<IActionResult> StartPolling()
+        {
+            try
+            {
+                var station = await StationManager.GetStationAsync(_context);
+                var web2ParkDevice = station.Devices[DeviceEnum.Web2Park] as Web2ParkDevice;
+                if (web2ParkDevice == null)
+                {
+                    return BadRequest(new { error = "The Web2Park is not present as device in PayStation." });
+                }
+                if (!web2ParkDevice.Config.IsConnected)
+                {
+                    return BadRequest(new { error = "The Web2Park serial port is not open." });
+                }
+                if (!web2ParkDevice.Config.IsEnabled)
+                {
+                    return BadRequest(new { error = "The Web2Park is not a enable as device in PayStation." });
+
+                }
+
+                web2ParkDevice.StartPolling();
+                return Ok("Polling start correctly.");
+
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { error = ex.Message });
+            }
+        }
+
+        [HttpPost("StopPolling")]
+        public async Task<IActionResult> StopPolling()
+        {
+            try
+            {
+                var station = await StationManager.GetStationAsync(_context);
+                var web2ParkDevice = station.Devices[DeviceEnum.Web2Park] as Web2ParkDevice;
+                if (web2ParkDevice == null)
+                {
+                    return BadRequest(new { error = "The Web2Park is not present as device in PayStation." });
+                }
+                web2ParkDevice.StopPolling();
+                return Ok("Polling stoped correctly.");
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { error = ex.Message });
+            }
+        }
+
+
+
+
+
+
+
+
         [HttpPost("SendTestMessage")]
         public async Task<IActionResult> SendTestMessage()
         {
@@ -403,5 +470,9 @@ namespace PayStationSW.RESTAPI
                 return StatusCode(500, new { error = ex.Message });
             }
         }
+
+
+
+
     }
 }

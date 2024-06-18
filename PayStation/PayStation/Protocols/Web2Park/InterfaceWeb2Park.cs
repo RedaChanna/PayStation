@@ -10,6 +10,7 @@ namespace PayStationSW.Protocols.Web2Park
 
 
         CommandParameter AckCommand();
+        CommandParameter AckPolling();
         CommandParameter ListenerCommand();
         CommandParameter SendTestCommand();
         

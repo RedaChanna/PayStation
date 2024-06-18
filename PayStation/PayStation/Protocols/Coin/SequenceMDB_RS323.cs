@@ -77,7 +77,23 @@ namespace PayStationSW
         {
             CommandParameter _commandParameter = new CommandParameter();
             _commandParameter.messageToSendBytes = coinIntroducedRequest;
-            _commandParameter.validateAnyResponse = true;
+            _commandParameter.expectedResponse = true;
+            _commandParameter.messageEndingBytes = [0x0D, 0x0A];
+            _commandParameter.messageResponseHaveEndingByte = true;
+            
+            return _commandParameter;
+        }
+
+        public CommandParameter ListenerCommand()
+        {
+            CommandParameter _commandParameter = new CommandParameter();
+            _commandParameter.listenerMode = true;
+            _commandParameter.validateAnyResponse = false;
+            _commandParameter.messageEndingBytes = [0x0D, 0x0A];
+            _commandParameter.messageResponseHaveEndingByte = true;
+            _commandParameter.messageStartingBytes = [0x30];
+            _commandParameter.messageResponseHaveStartingByte = true;
+            _commandParameter.maxRetryAttempts = 100;
             return _commandParameter;
         }
 

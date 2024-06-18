@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using System.Collections;
 
 
 namespace PayStationSW.Devices
@@ -55,7 +56,7 @@ namespace PayStationSW.Devices
                 _isPollingActive = false;
             }
         }
-
+        /*
         private void PollStatus(object state)
         {
             CommandParameter _commandParameter = new CommandParameter();
@@ -72,9 +73,88 @@ namespace PayStationSW.Devices
                 else
                 {
                     // Processa la risposta
-                    Console.WriteLine("Status: " + task.Result.validatedCommand);
+                    Console.WriteLine("Status: " + task.Result.responseByte[0]);
                 }
             });
+        }
+        */
+        private volatile bool waitingResponse = false;  // Now a class-level variable
+        private volatile bool _receved_command = true;
+        private async void PollStatus(object state)
+        {
+            try
+            {
+                CommandParameter commandParameter;
+                if (!waitingResponse)
+                {
+                    waitingResponse = true;
+
+                    commandParameter = new CommandParameter();
+                    commandParameter = _protocol.ListenerCommand();
+                    commandParameter = await this.Command(commandParameter);
+                    if (commandParameter.validatedCommand)
+                    {
+                        await HandleMessage(commandParameter.responseByte[0]);
+                        waitingResponse = false;
+                    }
+                    else
+                    {
+                        Console.WriteLine("No Message from Web2Park received");
+                    }
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Exception in PollStatus: " + ex.Message);
+            }
+        }
+
+        public async Task HandleMessage(byte[] responseByte)
+        {
+
+            if (responseByte == null) {
+                Console.WriteLine("Received byte array is null");
+                return;
+            }
+   
+
+            // Estrai il sesto e il settimo byte per la verifica
+            byte sixthByte = responseByte[4];
+
+            // Determina l'azione in base ai valori specifici dei byte
+            if (sixthByte == 0x30)
+            {
+                _receved_command = false;
+                Console.WriteLine("Introdotti 10 Centesimi");
+            }
+            else if (sixthByte == 0x31)
+            {
+                _receved_command = false;
+                Console.WriteLine("Introdotti 20 Centesimi");
+            }
+            else if (sixthByte == 0x32)
+            {
+                _receved_command = true;
+                Console.WriteLine("Introdotti 50 Centesimi");
+            }
+            else if (sixthByte == 0x33)
+            {
+                _receved_command = true;
+                Console.WriteLine("Introdotti 1 Euro");
+
+            }
+            else if (sixthByte == 0x34)
+            {
+                _receved_command = true;
+                Console.WriteLine("Introdotti 2 Euro");
+
+            }
+            else
+            {
+                Console.WriteLine("Unknown command");
+            }
         }
 
         public static async Task<CoinDevice> CreateAsync(ApplicationDbContext context)

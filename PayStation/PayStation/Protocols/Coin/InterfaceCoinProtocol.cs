@@ -17,6 +17,8 @@ namespace PayStationSW.Protocols.Coin
         CommandParameter InhibitionCommand();
         CommandParameter DisinhibitionCommand();
         CommandParameter StatusCommand();
+        CommandParameter ListenerCommand();
+        
 
 
         Task<bool> setUp();
