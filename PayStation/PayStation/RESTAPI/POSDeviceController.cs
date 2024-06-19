@@ -401,5 +401,32 @@ namespace PayStationSW.RESTAPI
                 return StatusCode(500, new { error = ex.Message });
             }
         }
+
+        [HttpPost("SetImporto")]
+        public async Task<IActionResult> SetImporto()
+        {
+            try
+            {
+
+                var station = await StationManager.GetStationAsync(_context);
+                var pos = station.Devices[DeviceEnum.Pos] as POSDevice;
+
+                if (pos.Config.IsConnected)
+                {
+                    string response = await pos.SetImportoPos();
+                    return Ok(new { status = response });
+                }
+                else
+                {
+                    return BadRequest(new { error = "The Pos device is not a connected device." });
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { error = ex.Message });
+            }
+        }
     }
 }

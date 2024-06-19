@@ -8,6 +8,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
+using System.Runtime.InteropServices;
+
 
 
 
@@ -15,13 +18,14 @@ namespace PayStationSW.Devices
 {
     public class POSDevice : Device
     {
-        private readonly InterfacePOSProtocol _protocol;
-        private readonly ApplicationDbContext _context;
+        private readonly    InterfacePOSProtocol _protocol;
+        private readonly    ApplicationDbContext _context;
+        //0x02 teminal ID from Hex to byte and 0x30 
+        public byte[] ID_Terminal { get; set; } = [0x31, 0x31, 0x30, 0x37, 0x37, 0x31, 0x32, 0x38];
 
         public POSDevice(ApplicationDbContext context)
         {
             DeviceType = DeviceEnum.Pos;
-
             _context = context;
             _protocol = new ProtocolIngenico(this);
         }
@@ -35,6 +39,12 @@ namespace PayStationSW.Devices
             device.Config.IsSetUp = await device.PreSetting();
             return device;
         }
+
+
+
+
+
+
 
         private async Task<bool> PreSetting()
         {
@@ -64,34 +74,69 @@ namespace PayStationSW.Devices
                 return false;
             }
         }
-
-
-
         public async Task<string> ActivatePOS()
         {
             CommandParameter _commandParameter = new CommandParameter();
-
+            byte[] ConcatArray = [];
+            var result = "";
             if (_protocol is ProtocolIngenico ingenicoProtocol)
             {
-                _commandParameter = _protocol.ActivationCommand();
+                _commandParameter = _protocol.ActivationCommand(ID_Terminal);
                 _commandParameter = await this.Command(_commandParameter);
-                Config.IsSetUp = _commandParameter.validatedCommand;
+                if (_commandParameter.validatedCommand)
+                {
+                    Config.IsSetUp = _commandParameter.validatedCommand;
+                   
+                    Console.WriteLine("Recived the ACK command from POS now should Send ACK to POS");
+                }
+                else
+                {
+                    Console.WriteLine("Recived the NCK");
+                    result = "Could not activate POS";
+                    return result;  
+                }
+
             }
             if (Config.IsSetUp)
             {
+                Console.WriteLine(result);
                 _commandParameter = new CommandParameter();
-                _commandParameter = _protocol.ACK();
+
+                _commandParameter = _protocol.ACKCommand();
                 _commandParameter = await this.Command(_commandParameter);
-                return "Pos is activated.";
             }
-            else
-            {
-                return "Pos in not activated.";
-            }
+
+            return result;
+
+
         }
 
         public async Task<string> SetImportoPos()
         {
+            CommandParameter _commandParameter = new CommandParameter();
+            byte[] ConcatArray = [];
+
+
+            if (_protocol is ProtocolIngenico ingenicoProtocol)
+            {
+                _commandParameter = _protocol.ActivationCommand(ID_Terminal);
+                _commandParameter = await this.Command(_commandParameter);
+                if (_commandParameter.validatedCommand)
+                {
+                    Console.WriteLine("Recived the ACK command now should wait Activation comand from POS");
+                }
+                
+            }else
+
+            {
+                
+            }
+
+
+
+
+
+            /*
             CommandParameter _commandParameter = new CommandParameter();
 
             if (_protocol is ProtocolIngenico ingenicoProtocol)
@@ -107,13 +152,10 @@ namespace PayStationSW.Devices
                     return "Pos importo is setted.";
                 }
             }
-
-            return "Pos importo couldn't be setted.";
+            */
+            return "result";
 
         }
-
-
-
 
         public async void ResetDevice()
         {

@@ -1,14 +1,27 @@
 ﻿using PayStationSW.Devices;
 using System.IO.Ports;
+using PayStationSW.Protocols.POS;
+
 using System.Text;
 
-namespace PayStationSW.Protocols.POS
+namespace PayStationSW
 {
 
 
-    public class ProtocolIngenico : InterfacePOSProtocol
+    public partial class ProtocolIngenico : InterfacePOSProtocol
     {
 
+
+        //Response
+        // ACK is the the constant send by Coin device to notice you the acknowledgement of your command
+        private readonly byte[] ACK_command = [0x06, 0x03, 0x7A];
+        private readonly byte[] NAK_command = [0x15, 0x03, 0x69];
+        private readonly byte[] STX = [0x02];
+        private readonly byte[] ETX = [0x03];
+        private readonly byte[] activation_request = [0x61];
+
+        private readonly byte[] resetRequest = [0x30, 0x38, 0x20, 0x32, 0x31, 0x0D, 0x0A];
+        private readonly byte[] DeviceReseted = [0x30, 0x38, 0x20, 0x30, 0x42, 0x0D, 0x0A];
         private const string ACK_SUCCESS = "06037A";
         private const string MESSAGE_START = "02";
         private const string MESSAGE_END = "03";
@@ -33,7 +46,14 @@ namespace PayStationSW.Protocols.POS
             return true;
         }
 
-        public CommandParameter ActivationCommand()
+
+
+
+
+        
+        /*
+
+        public CommandParameter TestActivationCommand()
         {
 
             string terminalID = "11077128";
@@ -85,7 +105,7 @@ namespace PayStationSW.Protocols.POS
                 return commandParameter;
             }
         }
-
+        */
         public CommandParameter ACK()
         {
 

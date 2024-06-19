@@ -1741,6 +1741,49 @@
 					]
 				},
 				{
+					"name": "General",
+					"item": [
+						{
+							"name": "StartPolling",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{host_cassa}}/{{root_api}}/Web2ParkDevice/StartPolling",
+									"host": [
+										"{{host_cassa}}"
+									],
+									"path": [
+										"{{root_api}}",
+										"Web2ParkDevice",
+										"StartPolling"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "StopPolling",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{host_cassa}}/{{root_api}}/Web2ParkDevice/StopPolling",
+									"host": [
+										"{{host_cassa}}"
+									],
+									"path": [
+										"{{root_api}}",
+										"Web2ParkDevice",
+										"StopPolling"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
 					"name": "SendTestMessage",
 					"request": {
 						"method": "POST",
