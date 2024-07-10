@@ -7,6 +7,8 @@ namespace PayStationSW
     {
         #region Parameter validation
 
+
+        
         // Indicates whether a command is in Listen Mode. False means is no Listening so is expected e message to send; true means is Listening so no message to send is expected.
         public bool listenerMode { get; set; } = false;
         // Indicates whether a response is expected from a request. False means no response is expected; true means a response is anticipated.
@@ -26,6 +28,7 @@ namespace PayStationSW
         // Represents the number of responses expected from a request. Default value is 1, indicating one expected response.
         public int nmbrResponseExpected { get; set; } = 1;
 
+        public bool multipleMessageDifferentValidation { get; set; } = false;
 
 
         // Specifies whether a specific length of the response is expected. False means no specific length is anticipated; true indicates a particular length is expected.
@@ -49,6 +52,18 @@ namespace PayStationSW
         // Contains a list of minimum lengths for expected responses. This list ensures that each received response meets the minimum length requirement.
         public List<int> expectedMinLengthList { get; set; } = new List<int>();
         #endregion
+
+        // Represents the sequence of bytes for ending message
+        public List<byte[]>? ListMessageEndingBytes { get; set; } = null;
+        // Represents the sequence of words for ending message
+        public List<string>? ListMessageEndingWord { get; set; } = null;
+        // Represents the sequence of bytes for starting message
+        public List<byte[]>? ListMessageStartingBytes { get; set; } = null;
+        // Represents the sequence of words for starting message
+        public List<string>? ListMessageStartingWord { get; set; } = null;
+
+
+
 
 
         #region Paramters Parsing

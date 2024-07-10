@@ -87,7 +87,7 @@ namespace PayStationSW.Devices
                 {
                     Config.IsSetUp = _commandParameter.validatedCommand;
                    
-                    Console.WriteLine("Recived the ACK command from POS now should Send ACK to POS");
+                    Console.WriteLine("Recived the ACK esit POS Activation");
                 }
                 else
                 {
@@ -97,14 +97,14 @@ namespace PayStationSW.Devices
                 }
 
             }
-            if (Config.IsSetUp)
+           /* if (Config.IsSetUp)
             {
                 Console.WriteLine(result);
                 _commandParameter = new CommandParameter();
 
                 _commandParameter = _protocol.ACKCommand();
                 _commandParameter = await this.Command(_commandParameter);
-            }
+            }*/
 
             return result;
 

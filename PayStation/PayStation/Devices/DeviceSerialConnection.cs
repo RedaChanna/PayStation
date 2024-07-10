@@ -279,7 +279,8 @@ namespace PayStationSW.Devices
                         int bytesToRead = serialPort.BytesToRead;
                         byte[] receivedBytes = new byte[bytesToRead];
                         int bytesRead = serialPort.Read(receivedBytes, 0, bytesToRead);
-                        //Console.WriteLine("Received byte data: " + BitConverter.ToString(receivedBytes, 0, bytesRead)); //Debug
+                        
+                       // Console.WriteLine("Received byte data: " + BitConverter.ToString(receivedBytes, 0, bytesRead)); //Debug
 
                         // Thread-safe addition of received bytes to the buffer
                         lock (bufferLock)
@@ -287,28 +288,31 @@ namespace PayStationSW.Devices
                             messageBuffer.AddRange(receivedBytes.Take(bytesRead)); // Add only the bytes that were read
                         }
 
-                        // Check for complete message and process
-                        if (CheckAndProcessMessageBufferByte())
+                        while (countCompletBufferRecived <= _commandParameters.nmbrResponseExpected)
                         {
-
-                            ++countCompletBufferRecived;
-
-                            if (countCompletBufferRecived == _commandParameters.nmbrResponseExpected)
+                            isWaitingForResponse = true;
+                            if (CheckAndProcessMessageBufferByte(countCompletBufferRecived))
                             {
+
+                                ++countCompletBufferRecived;
                                 List<Byte[]> combinedMessages = new List<Byte[]>();
                                 combinedMessages = messageFragments.ToList();
                                 _commandParameters.responseByte = combinedMessages;
 
-                                OnDataReceived(); // Notify subscribers that a new complete message is ready
-                                // Reset the state for processing the next set of messages
-                                messageFragments.Clear();
-                                countCompletBufferRecived = 0;
-                                isWaitingForResponse = false;
-                                retryTimer.Stop();
-                                currentRetryCount = 0;
-                                _commandParameters.responseByte = null; // Clear the response if not needed after the event
+                                
                             }
+
                         }
+
+                        OnDataReceived(); // Notify subscribers that a new complete message is ready
+                                          // Reset the state for processing the next set of messages
+                        messageFragments.Clear();
+                        countCompletBufferRecived = 0;
+                        isWaitingForResponse = false;
+                        retryTimer.Stop();
+                        currentRetryCount = 0;
+                        _commandParameters.responseByte = null;
+
                     }
                 }
                 catch (Exception ex)
@@ -387,14 +391,17 @@ namespace PayStationSW.Devices
             // Return true indicating success
             return _commandParameters.responseStrings.Count > 0;
         }
-        private bool CheckAndProcessMessageBufferByte()
+        private bool CheckAndProcessMessageBufferByte(int messagecount)
         {
+
             lock (bufferLock)
             {
+                byte[] endBytes = [];
+                byte[] startBytes = [];
                 bool messageProcessed = false;
+                int currentStartIndex = 0;
                 int startIndex = 0;
                 int endIndex = 0;
-
                 // Process the buffer while it contains enough data for at least the minimum message length
                 while (!messageProcessed)
                 {
@@ -402,23 +409,119 @@ namespace PayStationSW.Devices
                     //message have a start index and endindex 
                     if (_commandParameters.messageResponseHaveStartingByte && _commandParameters.messageResponseHaveEndingByte)
                     {
-                        startIndex = FindStartIndexOfCompleteMessage(messageBuffer);
-                        endIndex = FindEndIndexOfCompleteMessage(messageBuffer);
-                        if (endIndex != -1 && startIndex != -1 && endIndex > 0) // A complete message is found based on ending bytes or other criteria
+
+
+                        if (_commandParameters.multipleMessageDifferentValidation)
                         {
-                            byte[] completeMessageFragment = messageBuffer.Take(endIndex + 1).ToArray();
-                            if (startIndex >= 0 && endIndex < messageBuffer.Count)
+                            if (_commandParameters.ListMessageStartingBytes != null)
                             {
-                                messageBuffer.RemoveRange(startIndex, endIndex - startIndex + 1);
+
+                                if (_commandParameters.ListMessageStartingBytes.Count > messagecount)
+                                {
+                                    startBytes = _commandParameters.ListMessageStartingBytes[messagecount];
+                                }
+                                else
+                                {
+                                    startBytes = _commandParameters.ListMessageStartingBytes[_commandParameters.ListMessageStartingBytes.Count - 1];
+                                }
+
                             }
-                            messageFragments.Add(completeMessageFragment);
-                            messageProcessed = true;
+                            if (_commandParameters.ListMessageEndingBytes != null)
+                            {
+
+                                if (_commandParameters.ListMessageEndingBytes.Count > messagecount)
+                                {
+                                    endBytes = _commandParameters.ListMessageEndingBytes[messagecount];
+                                }
+                                else
+                                {
+                                    endBytes = _commandParameters.ListMessageEndingBytes[_commandParameters.ListMessageEndingBytes.Count - 1];
+                                }
+
+                            }
+
                         }
+                        else
+                        {
+
+                            if (_commandParameters.messageStartingBytes != null)
+                            {
+                                startBytes = _commandParameters.messageStartingBytes;
+                            }
+                            if (_commandParameters.messageEndingBytes != null)
+                            {
+                                endBytes = _commandParameters.messageEndingBytes;
+                            }
+
+
+                        }
+
+
+
+                        
+                        while ((startIndex = FindStartIndexOfCompleteMessage(messageBuffer, startBytes, currentStartIndex)) != -1)
+                        {
+                            List<byte> subList = messageBuffer.GetRange(startIndex, messageBuffer.Count - startIndex);
+                            int relativeEndIndex = FindEndIndexOfCompleteMessage(subList, endBytes);
+
+                            if (relativeEndIndex != -1)
+                            {
+                                int absoluteEndIndex = startIndex + relativeEndIndex;
+                                byte[] completeMessageFragment = messageBuffer.GetRange(startIndex, relativeEndIndex + 1).ToArray();
+
+                                // Aggiungi il frammento di messaggio completato agli altri frammenti
+                                messageFragments.Add(completeMessageFragment);
+                                messageProcessed = true;
+
+                                // Mostra il messaggio completato
+                                Console.WriteLine("Complete message fragment:");
+                                foreach (byte b in completeMessageFragment)
+                                {
+                                    Console.Write($"{b:X2} ");
+                                }
+                                Console.WriteLine();
+
+                                // Rimuovi il messaggio processato dal buffer
+                                messageBuffer.RemoveRange(startIndex, relativeEndIndex + 1);
+
+                                // Aggiorna il currentStartIndex per continuare la ricerca
+                                currentStartIndex = startIndex; // Si riparte dalla stessa posizione iniziale per la prossima ricerca
+                            }
+                            else
+                            {
+                                // Se non è stato trovato un messaggio completo, sposta il currentStartIndex oltre il punto di partenza attuale
+                                currentStartIndex = startIndex + 1;
+                            }
+                        }
+                        currentStartIndex = endIndex + 1;
                     }
                     //message have only endindex 
                     else if (!_commandParameters.messageResponseHaveStartingByte && _commandParameters.messageResponseHaveEndingByte)
                     {
-                        endIndex = FindEndIndexOfCompleteMessage(messageBuffer);
+                        if (_commandParameters.multipleMessageDifferentValidation)
+                        {
+                            if (_commandParameters.ListMessageEndingBytes != null)
+                            {
+
+                                if (_commandParameters.ListMessageEndingBytes.Count < messagecount)
+                                {
+                                    endBytes = _commandParameters.ListMessageEndingBytes[messagecount];
+                                }else {
+                                    endBytes = _commandParameters.ListMessageEndingBytes[_commandParameters.ListMessageEndingBytes.Count - 1];
+                                }
+
+                            }
+
+                        }
+                        else
+                        {
+                            if (_commandParameters.messageEndingBytes != null)
+                            {
+                                endBytes = _commandParameters.messageEndingBytes;
+                            }
+
+                        }
+                        endIndex = FindEndIndexOfCompleteMessage(messageBuffer, endBytes);
                         if (endIndex != -1 && endIndex > 0)
                         {
                             byte[] completeMessageFragment = messageBuffer.Take(endIndex + 1).ToArray();
@@ -428,6 +531,15 @@ namespace PayStationSW.Devices
                             }
                             messageFragments.Add(completeMessageFragment);
                             messageProcessed = true;
+
+                            Console.WriteLine("Complete message fragment:");
+                            foreach (byte b in completeMessageFragment)
+                            {
+                                Console.Write($"{b:X2} ");
+                            }
+                            Console.WriteLine();
+
+                            
                         }
                     }
                     else if (messageBuffer.Count >= _commandParameters.minBufferLength) // Not found or not specifid ending, and not found or specified start, but minimum length is met
@@ -435,28 +547,30 @@ namespace PayStationSW.Devices
                         byte[] messageFragment = messageBuffer.ToArray(); // Consider the entire buffer as a message fragment
                         messageBuffer.Clear(); // Clear the buffer since we've taken all its content
                         messageFragments.Add(messageFragment);
+
                         messageProcessed = true;
+
                     }
- 
+
                     break;
-                    
+
                 }
                 return messageProcessed;
             }
         }
-        private int FindStartIndexOfCompleteMessage(List<byte> buffer)
+        private int FindStartIndexOfCompleteMessage(List<byte> buffer, byte[] startingBytes, int startIndex)
         {
             if (_commandParameters.messageResponseHaveStartingByte)
             {
-                if (_commandParameters.messageStartingBytes != null && _commandParameters.messageStartingBytes.Length > 0)
+                if (startingBytes != null && startingBytes.Length > 0)
                 {
-                    // Look for ending bytes sequence in the buffer
-                    for (int i = 0; i <= buffer.Count - _commandParameters.messageStartingBytes.Length; i++)
+                    // Look for starting bytes sequence in the buffer starting from startIndex
+                    for (int i = startIndex; i <= buffer.Count - startingBytes.Length; i++)
                     {
                         bool sequenceFound = true;
-                        for (int j = 0; j < _commandParameters.messageStartingBytes.Length; j++)
+                        for (int j = 0; j < startingBytes.Length; j++)
                         {
-                            if (buffer[i + j] != _commandParameters.messageStartingBytes[j])
+                            if (buffer[i + j] != startingBytes[j])
                             {
                                 sequenceFound = false;
                                 break; // Exit the inner loop as the sequence does not match
@@ -464,26 +578,26 @@ namespace PayStationSW.Devices
                         }
                         if (sequenceFound)
                         {
-                            return i + _commandParameters.messageStartingBytes.Length - 1; // Return the end index of the sequence
+                            return i; // Return the start index of the sequence
                         }
                     }
                 }
             }
-            return -1; // No complete message found
+            return -1; // No starting sequence found
         }
-        private int FindEndIndexOfCompleteMessage(List<byte> buffer)
+        private int FindEndIndexOfCompleteMessage(List<byte> buffer, byte[] endingBytes)
         {
             if (_commandParameters.messageResponseHaveEndingByte)
             {
-                if (_commandParameters.messageEndingBytes != null && _commandParameters.messageEndingBytes.Length > 0)
+                if (endingBytes != null && endingBytes.Length > 0)
                 {
                     // Look for ending bytes sequence in the buffer
-                    for (int i = 0; i <= buffer.Count - _commandParameters.messageEndingBytes.Length; i++)
+                    for (int i = 0; i <= buffer.Count - endingBytes.Length; i++)
                     {
                         bool sequenceFound = true;
-                        for (int j = 0; j < _commandParameters.messageEndingBytes.Length; j++)
+                        for (int j = 0; j < endingBytes.Length; j++)
                         {
-                            if (buffer[i + j] != _commandParameters.messageEndingBytes[j])
+                            if (buffer[i + j] != endingBytes[j])
                             {
                                 sequenceFound = false;
                                 break; // Exit the inner loop as the sequence does not match
@@ -491,7 +605,7 @@ namespace PayStationSW.Devices
                         }
                         if (sequenceFound)
                         {
-                            return i + _commandParameters.messageEndingBytes.Length - 1; // Return the end index of the sequence
+                            return i + endingBytes.Length - 1; // Return the end index of the sequence
                         }
                     }
                 }

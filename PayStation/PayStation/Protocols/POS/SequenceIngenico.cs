@@ -50,10 +50,16 @@ namespace PayStationSW
 
             _commandParameter.messageToSendBytes = Message_to_send;
             _commandParameter.expectedResponse = true;
-            _commandParameter.messageEndingBytes = [0x7A];
+            _commandParameter.expectedMultipleResponse = true;
+            _commandParameter.nmbrResponseExpected = 2;
+            _commandParameter.multipleMessageDifferentValidation = true;
+
+            _commandParameter.ListMessageEndingBytes = new List<byte[]> { new byte[] { 0x7A }, new byte[] { 0x03 } };
             _commandParameter.messageResponseHaveEndingByte = true;
-            _commandParameter.messageStartingBytes = [0x06];
+            _commandParameter.ListMessageStartingBytes = new List<byte[]> { new byte[] { 0x06 }, new byte[] { 0x02 } };
             _commandParameter.messageResponseHaveStartingByte = true;
+            _commandParameter.retryDelayMilliseconds = 10000;
+
             return _commandParameter;
   
         }

@@ -14,6 +14,8 @@ namespace PayStationSW
             _commandParameter.expectedMultipleResponse = true;
             _commandParameter.nmbrResponseExpected = 2;
             _commandParameter.messageEndingBytes = [0x0D, 0x0A];
+            _commandParameter.retryDelayMilliseconds = 10;
+            
             _commandParameter.messageResponseHaveEndingByte = true;
             return _commandParameter;
         }
